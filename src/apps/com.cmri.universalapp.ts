@@ -5,48 +5,53 @@ export default defineGkdApp({
   name: '移动爱家',
   groups: [
 {
-    key: 5,
-    name: '全屏广告-弹窗广告',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 5,
+      name: '全屏广告-弹窗广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: '.SmartMainProxyActivity',
-          matches: '[vid="ivCancelDlg"][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/17872852',
+        key: 0,
+        activityIds: '.SmartMainProxyActivity',
+        matches: '[vid="ivCancelDlg"][visibleToUser=true]',
+        snapshotUrls: 'https://i.gkd.li/i/17872852',
+        _uniqueKey: 0
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 6,
-    name: '局部广告-卡片广告',
-    matchTime: 10000,
-    fastQuery: true,
-    rules: [
+      key: 6,
+      name: '局部广告-卡片广告',
+      matchTime: 10000,
+      fastQuery: true,
+      rules: [
       {
-          key: 0,
-          name: '横幅式',
-          activityIds: '.SmartMainProxyActivity',
-          matches: '[vid="close_banner"][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/17872961',
+        key: 0,
+        name: '横幅式',
+        activityIds: '.SmartMainProxyActivity',
+        matches: '[vid="close_banner"][visibleToUser=true]',
+        snapshotUrls: 'https://i.gkd.li/i/17872961',
+        _uniqueKey: 0
       },
       {
-          key: 1,
-          name: '卡片信息流式',
-          activityIds: '.SmartMainProxyActivity',
-          matches: '[vid="iv_close"][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/17872961',
+        key: 1,
+        name: '卡片信息流式',
+        activityIds: '.SmartMainProxyActivity',
+        matches: '[vid="iv_close"][visibleToUser=true]',
+        snapshotUrls: 'https://i.gkd.li/i/17872961',
+        _uniqueKey: 1
       },
       {
-          key: 2,
-          name: '横幅式2',
-          activityIds: '.smarthome.control.view.CameraControlActivity',
-          matches: '[vid="iv_item_banner_close"][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/25209084',
+        key: 2,
+        name: '横幅式2',
+        activityIds: '.smarthome.control.view.CameraControlActivity',
+        matches: '[vid="iv_item_banner_close"][clickable=true]',
+        snapshotUrls: 'https://i.gkd.li/i/25209084',
+        _uniqueKey: 2
       },
-    ],
-  }
+      ],
+    },
   ],
 });

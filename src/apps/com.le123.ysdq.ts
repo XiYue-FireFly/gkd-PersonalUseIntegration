@@ -5,24 +5,26 @@ export default defineGkdApp({
   name: '影视大全',
   groups: [
 {
-    key: 1,
-    name: '局部广告-卡片广告',
-    rules: [
+      key: 1,
+      name: '局部广告-卡片广告',
+      rules: [
       {
-          key: 0,
-          fastQuery: true,
-          activityIds: 'com.elinkway.infinitemovies.ui.activity.NewMainActivity',
-          matches: '[id="com.le123.ysdq:id/ad_close_iv"]',
-          snapshotUrls: 'https://i.gkd.li/i/13635244',
+        key: 0,
+        activityIds: 'com.elinkway.infinitemovies.ui.activity.NewMainActivity',
+        matches: '[id="com.le123.ysdq:id/ad_close_iv"]',
+        snapshotUrls: 'https://i.gkd.li/i/13635244',
+        fastQuery: true,
+        _uniqueKey: 0
       },
       {
-          key: 0,
-          activityIds: 'com.elinkway.infinitemovies.ui.activity.NewMainActivity',
-          fastQuery: true,
-          matches: '[id="com.le123.ysdq:id/ad_close_iv"]',
-          snapshotUrls: 'https://i.gkd.li/i/13635244',
+        key: 1,
+        activityIds: 'com.elinkway.infinitemovies.ui.activity.NewMainActivity',
+        matches: '[id="com.le123.ysdq:id/ad_close_iv"]',
+        snapshotUrls: 'https://i.gkd.li/i/13635244',
+        fastQuery: true,
+        _uniqueKey: 1
       },
-    ],
-  }
+      ],
+    },
   ],
 });

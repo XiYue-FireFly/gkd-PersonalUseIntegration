@@ -5,17 +5,23 @@ export default defineGkdApp({
   name: 'Zepp Life',
   groups: [
 {
-    key: 1,
-    name: '局部广告-首页-底部广告',
-    rules: [
+      key: 1,
+      name: '局部广告-首页-底部广告',
+      rules: [
       {
-          fastQuery: true,
-          activityIds: 'com.xiaomi.hm.health.activity.ChannelMainTabActivity',
-          matches: 'ImageView[id="com.xiaomi.hm.health:id/close_icon"]',
-          snapshotUrls: 'https://i.gkd.li/i/13695424',
+        key: 0,
+        activityIds: 'com.xiaomi.hm.health.activity.ChannelMainTabActivity',
+        matches: 'ImageView[id="com.xiaomi.hm.health:id/close_icon"]',
+        snapshotUrls: 'https://i.gkd.li/i/13695424',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-      { key: 0, matches: 'ImageView[id="com.xiaomi.hm.health:id/close_icon"]' },
-    ],
-  }
+      {
+        key: 1,
+        matches: 'ImageView[id="com.xiaomi.hm.health:id/close_icon"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
   ],
 });

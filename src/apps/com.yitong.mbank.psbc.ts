@@ -5,60 +5,72 @@ export default defineGkdApp({
   name: '邮储银行',
   groups: [
 {
-    key: 1,
-    name: '局部广告-浮窗广告',
-    desc: '关闭首页右侧的悬浮窗广告',
-    enable: false,
-    activityIds: 'com.yitong.mbank.psbc.module.home.view.activity.MainActivity',
-    fastQuery: true,
-    snapshotUrls: 'https://i.gkd.li/i/16215989',
-    rules: [
-      { key: 0, matches: '[vid="img_close_float_window"]' },
+      key: 1,
+      name: '局部广告-浮窗广告',
+      desc: '关闭首页右侧的悬浮窗广告',
+      enable: false,
+      activityIds: 'com.yitong.mbank.psbc.module.home.view.activity.MainActivity',
+      fastQuery: true,
+      snapshotUrls: 'https://i.gkd.li/i/16215989',
+      rules: [
       {
-          activityIds: [
-              '.module.home.view.activity.MainActivity',
-              '.module.app.view.customview.dialog.DialogUpdateApk',
-          ],
-          matches: 'Button[id="com.yitong.mbank.psbc:id/bt_cancel"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/12685350',
-              'https://i.gkd.li/i/13695462',
-          ],
+        key: 0,
+        matches: '[vid="img_close_float_window"]',
+        _uniqueKey: 0
       },
-    ],
-  },
+      {
+        key: 1,
+        activityIds: ['.module.home.view.activity.MainActivity', '.module.app.view.customview.dialog.DialogUpdateApk'],
+        matches: 'Button[id="com.yitong.mbank.psbc:id/bt_cancel"]',
+        snapshotUrls: ['https://i.gkd.li/i/12685350', 'https://i.gkd.li/i/13695462'],
+        _uniqueKey: 1
+      },
+      ],
+    },
 {
-    key: 2,
-    name: '全屏广告-首页广告弹窗',
-    desc: '关闭首页弹出的全屏主题广告',
-    enable: false,
-    activityIds: 'com.yitong.mbank.psbc.module.home.view.activity.MainActivity',
-    fastQuery: true,
-    snapshotUrls: 'https://i.gkd.li/import/12755516',
-    rules: [
-      { key: 0, matches: '[id="com.yitong.mbank.psbc:id/iv_theme"] + [id="com.yitong.mbank.psbc:id/iv_theme_close_btn"]' },
+      key: 2,
+      name: '全屏广告-首页广告弹窗',
+      desc: '关闭首页弹出的全屏主题广告',
+      enable: false,
+      activityIds: 'com.yitong.mbank.psbc.module.home.view.activity.MainActivity',
+      fastQuery: true,
+      snapshotUrls: 'https://i.gkd.li/import/12755516',
+      rules: [
       {
-          activityIds: 'com.yitong.mbank.psbc.module.home.view.activity.MainActivity',
-          matches: '[id="com.yitong.mbank.psbc:id/iv_theme"] + [id="com.yitong.mbank.psbc:id/iv_theme_close_btn"]',
-          snapshotUrls: 'https://i.gkd.li/i/12755516',
+        key: 0,
+        matches: '[id="com.yitong.mbank.psbc:id/iv_theme"] + [id="com.yitong.mbank.psbc:id/iv_theme_close_btn"]',
+        _uniqueKey: 0
       },
-    ],
-  },
+      {
+        key: 1,
+        activityIds: 'com.yitong.mbank.psbc.module.home.view.activity.MainActivity',
+        matches: '[id="com.yitong.mbank.psbc:id/iv_theme"] + [id="com.yitong.mbank.psbc:id/iv_theme_close_btn"]',
+        snapshotUrls: 'https://i.gkd.li/i/12755516',
+        _uniqueKey: 1
+      },
+      ],
+    },
 {
-    key: 3,
-    name: '局部广告-首页-浮窗广告',
-    rules: [
+      key: 3,
+      name: '局部广告-首页-浮窗广告',
+      rules: [
       {
-          fastQuery: true,
-          matchTime: 10000,
-          actionMaximum: 1,
-          resetMatch: 'app',
-          activityIds: 'com.yitong.mbank.psbc.module.home.view.activity.MainActivity',
-          matches: '[id="com.yitong.mbank.psbc:id/img_close_float_window"]',
-          snapshotUrls: 'https://i.gkd.li/i/13797314',
+        key: 0,
+        activityIds: 'com.yitong.mbank.psbc.module.home.view.activity.MainActivity',
+        matches: '[id="com.yitong.mbank.psbc:id/img_close_float_window"]',
+        snapshotUrls: 'https://i.gkd.li/i/13797314',
+        fastQuery: true,
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: 'app',
+        _uniqueKey: 0
       },
-      { key: 0, matches: '[id="com.yitong.mbank.psbc:id/img_close_float_window"]' },
-    ],
-  }
+      {
+        key: 1,
+        matches: '[id="com.yitong.mbank.psbc:id/img_close_float_window"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
   ],
 });

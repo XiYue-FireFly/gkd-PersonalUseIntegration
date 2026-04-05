@@ -5,14 +5,18 @@ export default defineGkdApp({
   name: '一个',
   groups: [
 {
-    key: 1,
-    name: '全屏广告',
-    enable: false,
-    fastQuery: true,
-    snapshotUrls: 'https://i.gkd.li/i/14099393',
-    rules: [
-      { key: 0, matches: '[vid="ivClose"]' },
-    ],
-  }
+      key: 1,
+      name: '全屏广告',
+      enable: false,
+      fastQuery: true,
+      snapshotUrls: 'https://i.gkd.li/i/14099393',
+      rules: [
+      {
+        key: 0,
+        matches: '[vid="ivClose"]',
+        _uniqueKey: 0
+      },
+      ],
+    },
   ],
 });

@@ -5,32 +5,34 @@ export default defineGkdApp({
   name: '微音乐',
   groups: [
 {
-    key: 1,
-    name: '未分类-广告弹窗',
-    enable: false,
-    activityIds: 'com.zhouyu.music.activities.MainActivity',
-    snapshotUrls: [
-      'https://i.gkd.li/i/13062330',
-      'https://i.gkd.li/i/13068583',
-      'https://i.gkd.li/i/13231850',
-    ],
-    exampleUrls: 'https://github.com/gkd-kit/inspect/assets/38517192/798afc53-4aaf-481f-acb1-7c193bd8e6d6',
-    rules: [
-      { key: 0, matches: '@[id=null][clickable=true] + View >n View [text$="广告"]' },
-    ],
-  },
+      key: 1,
+      name: '青少年模式-广告弹窗',
+      enable: false,
+      activityIds: 'com.zhouyu.music.activities.MainActivity',
+      snapshotUrls: ['https://i.gkd.li/i/13062330', 'https://i.gkd.li/i/13068583', 'https://i.gkd.li/i/13231850'],
+      exampleUrls: 'https://github.com/gkd-kit/inspect/assets/38517192/798afc53-4aaf-481f-acb1-7c193bd8e6d6',
+      rules: [
+      {
+        key: 0,
+        matches: '@[id=null][clickable=true] + View >n View [text$="广告"]',
+        _uniqueKey: 0
+      },
+      ],
+    },
 {
-    key: 2,
-    name: '未分类-搜索底部广告',
-    enable: false,
-    activityIds: 'com.zhouyu.music.activities.MainActivity',
-    fastQuery: true,
-    snapshotUrls: [
-      'https://i.gkd.li/i/13245859',
-    ],
-    rules: [
-      { key: 0, matches: '[id="com.zhouyu.music:id/ksad_ad_dislike"]' },
-    ],
-  }
+      key: 2,
+      name: '更新提示-搜索底部广告',
+      enable: false,
+      activityIds: 'com.zhouyu.music.activities.MainActivity',
+      fastQuery: true,
+      snapshotUrls: ['https://i.gkd.li/i/13245859'],
+      rules: [
+      {
+        key: 0,
+        matches: '[id="com.zhouyu.music:id/ksad_ad_dislike"]',
+        _uniqueKey: 0
+      },
+      ],
+    },
   ],
 });

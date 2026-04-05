@@ -5,28 +5,35 @@ export default defineGkdApp({
   name: 'vivo浏览器',
   groups: [
 {
-    key: 1,
-    name: '功能类-免流提示',
-    rules: [
+      key: 1,
+      name: '功能类-免流提示',
+      rules: [
       {
-          activityIds: 'com.vivo.browser.pendant.PendantActivity',
-          matches: '[id="com.vivo.browser:id/dialog_button_right"][text="继续浏览"]',
-          snapshotUrls: 'https://i.gkd.li/i/12847431',
+        key: 0,
+        activityIds: 'com.vivo.browser.pendant.PendantActivity',
+        matches: '[id="com.vivo.browser:id/dialog_button_right"][text="继续浏览"]',
+        snapshotUrls: 'https://i.gkd.li/i/12847431',
+        _uniqueKey: 0
       },
-      { key: 0, matches: '[id="com.vivo.browser:id/dialog_button_right"][text="继续浏览"]' },
-    ],
-  },
+      {
+        key: 1,
+        matches: '[id="com.vivo.browser:id/dialog_button_right"][text="继续浏览"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
 {
-    key: 2,
-    name: '局部广告-天气详情页面',
-    rules: [
+      key: 2,
+      name: '局部广告-天气详情页面',
+      rules: [
       {
-          key: 0,
-          activityIds: 'com.vivo.browser.lightweb.LightWebNomalStartActivity',
-          matches: '[text$="广告"] +5 * > Image',
-          snapshotUrls: 'https://i.gkd.li/i/14392332',
+        key: 0,
+        activityIds: 'com.vivo.browser.lightweb.LightWebNomalStartActivity',
+        matches: '[text$="广告"] +5 * > Image',
+        snapshotUrls: 'https://i.gkd.li/i/14392332',
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

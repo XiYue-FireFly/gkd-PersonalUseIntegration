@@ -5,18 +5,20 @@ export default defineGkdApp({
   name: '青岛公交查询',
   groups: [
 {
-    key: 0,
-    name: '全屏广告-弹窗广告',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 0,
+      name: '全屏广告-弹窗广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          matches: '[id="com.qingdaonews.bus:id/iv_native_dislike"]',
-          snapshotUrls: 'https://i.gkd.li/i/13467193',
+        key: 0,
+        matches: '[id="com.qingdaonews.bus:id/iv_native_dislike"]',
+        snapshotUrls: 'https://i.gkd.li/i/13467193',
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

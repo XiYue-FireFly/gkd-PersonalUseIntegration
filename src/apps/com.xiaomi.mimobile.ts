@@ -5,15 +5,17 @@ export default defineGkdApp({
   name: '小米移动',
   groups: [
 {
-    key: 1,
-    name: '评价提示',
-    rules: [
+      key: 1,
+      name: '评价提示',
+      rules: [
       {
-          activityIds: '.activity.XiaomiMobileMainActivity',
-          matches: '@ImageView[desc=null] < [desc="「小米移动」使用体验调查"]',
-          snapshotUrls: 'https://i.gkd.li/i/23227230',
+        key: 0,
+        activityIds: '.activity.XiaomiMobileMainActivity',
+        matches: '@ImageView[desc=null] < [desc="「小米移动」使用体验调查"]',
+        snapshotUrls: 'https://i.gkd.li/i/23227230',
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

@@ -5,29 +5,28 @@ export default defineGkdApp({
   name: '牛客',
   groups: [
 {
-    key: 0,
-    name: '开屏广告',
-    matchTime: 10000,
-    actionMaximum: 1,
-    actionMaximumKey: 0,
-    resetMatch: 'app',
-    fastQuery: true,
-    order: -10,
-    rules: [
+      key: 0,
+      name: '开屏广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      actionMaximumKey: 0,
+      resetMatch: 'app',
+      fastQuery: true,
+      order: -10,
+      rules: [
       {
-          key: 0,
-          matches: 'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true] + TextView <<n [id="android:id/content"]',
-          snapshotUrls: 'https://i.gkd.li/i/13855443',
+        key: 0,
+        matches: 'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true] + TextView <<n [id="android:id/content"]',
+        snapshotUrls: 'https://i.gkd.li/i/13855443',
+        _uniqueKey: 0
       },
       {
-          key: 1,
-          matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/14819443',
-              'https://i.gkd.li/i/14845692',
-          ],
+        key: 1,
+        matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
+        snapshotUrls: ['https://i.gkd.li/i/14819443', 'https://i.gkd.li/i/14845692'],
+        _uniqueKey: 1
       },
-    ],
-  }
+      ],
+    },
   ],
 });

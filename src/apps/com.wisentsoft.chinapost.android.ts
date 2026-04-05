@@ -5,18 +5,20 @@ export default defineGkdApp({
   name: '中国邮政',
   groups: [
 {
-    key: 1,
-    name: '全屏广告-首页弹窗',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 1,
+      name: '全屏广告-首页弹窗',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          matches: '@ImageView[clickable=true] <2 LinearLayout <3 ViewGroup < [vid="ll_main"]',
-          snapshotUrls: 'https://i.gkd.li/i/15914347',
+        key: 0,
+        matches: '@ImageView[clickable=true] <2 LinearLayout <3 ViewGroup < [vid="ll_main"]',
+        snapshotUrls: 'https://i.gkd.li/i/15914347',
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

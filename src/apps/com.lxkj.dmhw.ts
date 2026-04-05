@@ -5,31 +5,29 @@ export default defineGkdApp({
   name: '呆萌价',
   groups: [
 {
-    key: 0,
-    name: '开屏广告',
-    matchTime: 10000,
-    actionMaximum: 1,
-    actionMaximumKey: 0,
-    resetMatch: 'app',
-    fastQuery: true,
-    priorityTime: 10000,
-    order: -10,
-    rules: [
+      key: 0,
+      name: '开屏广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      actionMaximumKey: 0,
+      resetMatch: 'app',
+      fastQuery: true,
+      priorityTime: 10000,
+      order: -10,
+      rules: [
       {
-          key: 0,
-          position: {
-              left: 'width * 0.8981',
-              top: 'width * 0.1629',
-          },
-          matches: '[id="com.lxkj.dmhw:id/animation_view"]',
-          snapshotUrls: 'https://i.gkd.li/i/13246178',
+        key: 0,
+        matches: '[id="com.lxkj.dmhw:id/animation_view"]',
+        snapshotUrls: 'https://i.gkd.li/i/13246178',
+        _uniqueKey: 0
       },
       {
-          key: 1,
-          matches: '[text*="跳过"][text.length<10][width<500 && height<300][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/15454142',
+        key: 1,
+        matches: '[text*="跳过"][text.length<10][width<500 && height<300][visibleToUser=true]',
+        snapshotUrls: 'https://i.gkd.li/i/15454142',
+        _uniqueKey: 1
       },
-    ],
-  }
+      ],
+    },
   ],
 });

@@ -5,21 +5,19 @@ export default defineGkdApp({
   name: 'QQ极速版',
   groups: [
 {
-    key: 1,
-    name: '更新提示',
-    enable: false,
-    activityIds: [
-      'com.tencent.mobileqq.activity.SplashActivity',
-    ],
-    order: -9,
-    rules: [
+      key: 1,
+      name: '更新提示',
+      enable: false,
+      activityIds: ['com.tencent.mobileqq.activity.SplashActivity'],
+      order: -9,
+      rules: [
       {
-          matches: '[id="com.tencent.qqlite:id/close_top_bar"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/14428054',
-          ],
+        key: 0,
+        matches: '[id="com.tencent.qqlite:id/close_top_bar"]',
+        snapshotUrls: ['https://i.gkd.li/i/14428054'],
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

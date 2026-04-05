@@ -5,39 +5,42 @@ export default defineGkdApp({
   name: 'Gspace',
   groups: [
 {
-    key: 1,
-    name: '局部广告-主页面上方广告',
-    activityIds: [
-      'com.gspace.android.ui.activity.main.MainActivity',
-    ],
-    rules: [
+      key: 1,
+      name: '局部广告-主页面上方广告',
+      activityIds: ['com.gspace.android.ui.activity.main.MainActivity'],
+      rules: [
       {
-          key: 0,
-          matches: '[id="com.gspace.android:id/hiad_banner_close_button"]',
-          snapshotUrls: 'https://i.gkd.li/i/12705339',
+        key: 0,
+        matches: '[id="com.gspace.android:id/hiad_banner_close_button"]',
+        snapshotUrls: 'https://i.gkd.li/i/12705339',
+        _uniqueKey: 0
       },
       {
-          key: 1,
-          matches: '@Image < View -2 View > View > View TextView[text="广告"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/12910419',
-              'https://i.gkd.li/i/12910935',
-          ],
+        key: 1,
+        matches: '@Image < View -2 View > View > View TextView[text="广告"]',
+        snapshotUrls: ['https://i.gkd.li/i/12910419', 'https://i.gkd.li/i/12910935'],
+        _uniqueKey: 1
       },
       {
-          preKeys: 1,
-          matches: '[id="com.byted.pangle:id/tt_item_tv" && text= "不感兴趣"]',
-          snapshotUrls: 'https://i.gkd.li/i/12910420',
+        key: 2,
+        matches: '[id="com.byted.pangle:id/tt_item_tv" && text= "不感兴趣"]',
+        snapshotUrls: 'https://i.gkd.li/i/12910420',
+        preKeys: 1,
+        _uniqueKey: 2
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 2,
-    name: '全屏广告-Youtube播放视频跳过广告',
-    snapshotUrls: 'https://i.gkd.li/i/12709006',
-    rules: [
-      { key: 0, matches: '[id="com.google.android.youtube:id/skip_ad_button"]' },
-    ],
-  }
+      key: 2,
+      name: '全屏广告-Youtube播放视频跳过广告',
+      snapshotUrls: 'https://i.gkd.li/i/12709006',
+      rules: [
+      {
+        key: 0,
+        matches: '[id="com.google.android.youtube:id/skip_ad_button"]',
+        _uniqueKey: 0
+      },
+      ],
+    },
   ],
 });

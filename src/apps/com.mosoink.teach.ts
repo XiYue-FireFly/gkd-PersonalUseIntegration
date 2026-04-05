@@ -5,65 +5,75 @@ export default defineGkdApp({
   name: '云班课',
   groups: [
 {
-    key: 0,
-    name: '全屏广告-班课列表弹窗广告',
-    desc: '关闭班课列表页面的全屏弹窗广告',
-    enable: false,
-    activityIds: [
-      'com.mosoink.teach.MainMenuActivity',
-      'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
-    ],
-    rules: [
+      key: 0,
+      name: '全屏广告-班课列表弹窗广告',
+      desc: '关闭班课列表页面的全屏弹窗广告',
+      enable: false,
+      activityIds: ['com.mosoink.teach.MainMenuActivity', 'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity'],
+      rules: [
       {
-          key: 2,
-          matches: '@Image[text.length=0] < View <n * > [text="反馈"]',
-          snapshotUrls: 'https://i.gkd.li/i/15051392',
+        key: 2,
+        matches: '@Image[text.length=0] < View <n * > [text="反馈"]',
+        snapshotUrls: 'https://i.gkd.li/i/15051392',
+        _uniqueKey: 2
       },
       {
-          key: 0,
-          matches: 'ImageView[childCount=0][text=null] < @ViewGroup[childCount=1][clickable=true][visibleToUser=true] < ViewGroup +n ViewGroup[childCount=2] > [text="广告"]',
-          exampleUrls: 'https://m.gkd.li/64072399/4f7366d4-77eb-4a11-8e08-26afc29f29ed',
-          snapshotUrls: 'https://i.gkd.li/i/13778179',
+        key: 0,
+        matches: 'ImageView[childCount=0][text=null] < @ViewGroup[childCount=1][clickable=true][visibleToUser=true] < ViewGroup +n ViewGroup[childCount=2] > [text="广告"]',
+        snapshotUrls: 'https://i.gkd.li/i/13778179',
+        exampleUrls: 'https://m.gkd.li/64072399/4f7366d4-77eb-4a11-8e08-26afc29f29ed',
+        _uniqueKey: 0
       },
       {
-          key: 1,
-          matches: 'ImageView[childCount=0][text=null] < @ViewGroup[childCount=1][clickable=true][visibleToUser=true] < ViewGroup -4 ViewGroup >2 [text^="扭动手机"]',
-          exampleUrls: 'https://m.gkd.li/64072399/ab4a196f-725d-4e03-aabf-fb0eb6018f51',
-          snapshotUrls: 'https://i.gkd.li/i/13786802',
+        key: 1,
+        matches: 'ImageView[childCount=0][text=null] < @ViewGroup[childCount=1][clickable=true][visibleToUser=true] < ViewGroup -4 ViewGroup >2 [text^="扭动手机"]',
+        snapshotUrls: 'https://i.gkd.li/i/13786802',
+        exampleUrls: 'https://m.gkd.li/64072399/ab4a196f-725d-4e03-aabf-fb0eb6018f51',
+        _uniqueKey: 1
       },
       {
-          key: 2,
-          matches: '@ImageView[childCount=0][text=null][desc=null][id=null][visibleToUser=true][width<90 && height<90] < FrameLayout[childCount=1][text=null][desc=null][id=null] <2 FrameLayout[childCount=5] + FrameLayout[childCount=2] > [text^="立即" || text$="详情" || text^="了解" || text="去逛逛" || text="去微信看看" || text$="应用" || text="进入小程序" || text="领取优惠" || text="跳转微信"]',
-          exampleUrls: 'https://m.gkd.li/64072399/69bb91ee-5367-4819-94d7-90e357dd9d3c',
-          snapshotUrls: 'https://i.gkd.li/i/13784406',
+        key: 3,
+        matches: '@ImageView[childCount=0][text=null][desc=null][id=null][visibleToUser=true][width<90 && height<90] < FrameLayout[childCount=1][text=null][desc=null][id=null] <2 FrameLayout[childCount=5] + FrameLayout[childCount=2] > [text^="立即" || text$="详情" || text^="了解" || text="去逛逛" || text="去微信看看" || text$="应用" || text="进入小程序" || text="领取优惠" || text="跳转微信"]',
+        snapshotUrls: 'https://i.gkd.li/i/13784406',
+        exampleUrls: 'https://m.gkd.li/64072399/69bb91ee-5367-4819-94d7-90e357dd9d3c',
+        _uniqueKey: 3
       },
       {
-          key: 3,
-          matches: '[vid="interact_ad_root"] > [vid="iv_close"]',
-          exampleUrls: 'https://m.gkd.li/64072399/695871fb-9c73-4c93-a6d1-18d90786604a',
-          snapshotUrls: 'https://i.gkd.li/i/13778123',
+        key: 4,
+        matches: '[vid="interact_ad_root"] > [vid="iv_close"]',
+        snapshotUrls: 'https://i.gkd.li/i/13778123',
+        exampleUrls: 'https://m.gkd.li/64072399/695871fb-9c73-4c93-a6d1-18d90786604a',
+        _uniqueKey: 4
       },
       {
-          matches: '[text="广告"] <2 ViewGroup -2 ViewGroup > ViewGroup',
-          exampleUrls: 'https://m.gkd.li/64072399/4f7366d4-77eb-4a11-8e08-26afc29f29ed',
-          snapshotUrls: 'https://i.gkd.li/i/13778179',
+        key: 5,
+        matches: '[text="广告"] <2 ViewGroup -2 ViewGroup > ViewGroup',
+        snapshotUrls: 'https://i.gkd.li/i/13778179',
+        exampleUrls: 'https://m.gkd.li/64072399/4f7366d4-77eb-4a11-8e08-26afc29f29ed',
+        _uniqueKey: 5
       },
       {
-          matches: '[text="广告"] <2 ViewGroup < ViewGroup < ViewGroup - ViewGroup > FrameLayout + ViewGroup > ViewGroup',
-          exampleUrls: 'https://m.gkd.li/64072399/ab4a196f-725d-4e03-aabf-fb0eb6018f51',
-          snapshotUrls: 'https://i.gkd.li/i/13786802',
+        key: 6,
+        matches: '[text="广告"] <2 ViewGroup < ViewGroup < ViewGroup - ViewGroup > FrameLayout + ViewGroup > ViewGroup',
+        snapshotUrls: 'https://i.gkd.li/i/13786802',
+        exampleUrls: 'https://m.gkd.li/64072399/ab4a196f-725d-4e03-aabf-fb0eb6018f51',
+        _uniqueKey: 6
       },
       {
-          matches: 'TextView - View <1 FrameLayout - FrameLayout >1 FrameLayout > ImageView < FrameLayout',
-          exampleUrls: 'https://m.gkd.li/64072399/69bb91ee-5367-4819-94d7-90e357dd9d3c',
-          snapshotUrls: 'https://i.gkd.li/i/13784406',
+        key: 7,
+        matches: 'TextView - View <1 FrameLayout - FrameLayout >1 FrameLayout > ImageView < FrameLayout',
+        snapshotUrls: 'https://i.gkd.li/i/13784406',
+        exampleUrls: 'https://m.gkd.li/64072399/69bb91ee-5367-4819-94d7-90e357dd9d3c',
+        _uniqueKey: 7
       },
       {
-          matches: '[id$="/iv_close"]',
-          exampleUrls: 'https://m.gkd.li/64072399/695871fb-9c73-4c93-a6d1-18d90786604a',
-          snapshotUrls: 'https://i.gkd.li/i/13778123',
+        key: 8,
+        matches: '[id$="/iv_close"]',
+        snapshotUrls: 'https://i.gkd.li/i/13778123',
+        exampleUrls: 'https://m.gkd.li/64072399/695871fb-9c73-4c93-a6d1-18d90786604a',
+        _uniqueKey: 8
       },
-    ],
-  }
+      ],
+    },
   ],
 });

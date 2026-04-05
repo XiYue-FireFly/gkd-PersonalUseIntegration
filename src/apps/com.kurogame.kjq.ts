@@ -5,77 +5,75 @@ export default defineGkdApp({
   name: '库街区',
   groups: [
 {
-    key: 1,
-    name: '功能类-自动签到',
-    activityIds: 'com.kurogame.kjq.MainActivity',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 1,
+      name: '功能类-自动签到',
+      activityIds: 'com.kurogame.kjq.MainActivity',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          key: 0,
-          matches: '[vid="sign_click"][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/15521224',
+        key: 0,
+        matches: '[vid="sign_click"][visibleToUser=true]',
+        snapshotUrls: 'https://i.gkd.li/i/15521224',
+        _uniqueKey: 0
       },
       {
-          preKeys: [
-              0,
-          ],
-          key: 1,
-          matches: '[vid="bt_close"][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/15521225',
+        key: 1,
+        matches: '[vid="bt_close"][visibleToUser=true]',
+        snapshotUrls: 'https://i.gkd.li/i/15521225',
+        preKeys: [0],
+        _uniqueKey: 1
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 2,
-    name: '全屏广告-弹窗广告',
-    desc: '点击关闭',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    rules: [
+      key: 2,
+      name: '全屏广告-弹窗广告',
+      desc: '点击关闭',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
       {
-          fastQuery: true,
-          activityIds: 'com.kurogame.kjq.MainActivity',
-          matches: '[vid="close"]',
-          exampleUrls: 'https://m.gkd.li/57941037/d9c598fc-5bd4-4773-8db1-316b8f7155c3',
-          snapshotUrls: 'https://i.gkd.li/i/15629864',
+        key: 0,
+        activityIds: 'com.kurogame.kjq.MainActivity',
+        matches: '[vid="close"]',
+        snapshotUrls: 'https://i.gkd.li/i/15629864',
+        exampleUrls: 'https://m.gkd.li/57941037/d9c598fc-5bd4-4773-8db1-316b8f7155c3',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 3,
-    name: '功能类-鸣潮自动签到',
-    activityIds: 'com.kurogame.kjq.profile.ui.activity.WebViewShareActivity',
-    rules: [
+      key: 3,
+      name: '功能类-鸣潮自动签到',
+      activityIds: 'com.kurogame.kjq.profile.ui.activity.WebViewShareActivity',
+      rules: [
       {
-          key: 0,
-          matches: '[text="《鸣潮》每日签到工具"] >6 ListView[childCount=12] > @View[childCount=3][visibleToUser=true] > TextView[width<150] <3 * + View[childCount=2]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/15632005',
-              'https://i.gkd.li/i/15632902',
-          ],
+        key: 0,
+        matches: '[text="《鸣潮》每日签到工具"] >6 ListView[childCount=12] > @View[childCount=3][visibleToUser=true] > TextView[width<150] <3 * + View[childCount=2]',
+        snapshotUrls: ['https://i.gkd.li/i/15632005', 'https://i.gkd.li/i/15632902'],
+        _uniqueKey: 0
       },
       {
-          preKeys: [
-              0,
-          ],
-          key: 1,
-          matches: '@TextView - * > [text="签到成功！"]',
-          snapshotUrls: 'https://i.gkd.li/i/15632138',
+        key: 1,
+        matches: '@TextView - * > [text="签到成功！"]',
+        snapshotUrls: 'https://i.gkd.li/i/15632138',
+        preKeys: [0],
+        _uniqueKey: 1
       },
       {
-          preKeys: [
-              1,
-          ],
-          key: 2,
-          action: 'back',
-          matches: 'View[text="《鸣潮》每日签到工具"][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/15632250',
+        key: 2,
+        matches: 'View[text="《鸣潮》每日签到工具"][visibleToUser=true]',
+        snapshotUrls: 'https://i.gkd.li/i/15632250',
+        preKeys: [1],
+        action: 'back',
+        _uniqueKey: 2
       },
-    ],
-  }
+      ],
+    },
   ],
 });

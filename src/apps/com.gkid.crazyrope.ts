@@ -5,42 +5,53 @@ export default defineGkdApp({
   name: '天天跳绳',
   groups: [
 {
-    key: 1,
-    name: '全屏广告-会员提示',
-    desc: '点击不需要',
-    activityIds: 'com.gkid.crazyrope.ui.member.MemberDiscountsActivity',
-    fastQuery: true,
-    rules: [
+      key: 1,
+      name: '全屏广告-会员提示',
+      desc: '点击不需要',
+      activityIds: 'com.gkid.crazyrope.ui.member.MemberDiscountsActivity',
+      fastQuery: true,
+      rules: [
       {
-          matches: '[id="com.gkid.crazyrope:id/btn_close"][text="暂不需要"]',
-          snapshotUrls: 'https://i.gkd.li/i/12916419',
+        key: 0,
+        matches: '[id="com.gkid.crazyrope:id/btn_close"][text="暂不需要"]',
+        snapshotUrls: 'https://i.gkd.li/i/12916419',
+        _uniqueKey: 0
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 2,
-    name: '分段广告-浮窗广告',
-    desc: '点击关闭-点击关闭广告',
-    activityIds: '.ui.drillcommon.DrillActivity',
-    fastQuery: true,
-    rules: [
+      key: 2,
+      name: '分段广告-浮窗广告',
+      desc: '点击关闭-点击关闭广告',
+      activityIds: '.ui.drillcommon.DrillActivity',
+      fastQuery: true,
+      rules: [
       {
-          key: 0,
-          matches: '[id="com.gkid.crazyrope:id/iv_close"]',
-          exampleUrls: 'https://e.gkd.li/398c08eb-ebfb-4cf6-9349-0b0ad4b575c9',
-          snapshotUrls: 'https://i.gkd.li/i/13262845',
+        key: 0,
+        matches: '[id="com.gkid.crazyrope:id/iv_close"]',
+        snapshotUrls: 'https://i.gkd.li/i/13262845',
+        exampleUrls: 'https://e.gkd.li/398c08eb-ebfb-4cf6-9349-0b0ad4b575c9',
+        _uniqueKey: 0
       },
       {
-          preKeys: [
-              0,
-          ],
-          matches: '[text="关闭广告"]',
-          exampleUrls: 'https://e.gkd.li/3d27d844-b552-4a0c-800b-3dc5790fb8c0',
-          snapshotUrls: 'https://i.gkd.li/i/13262844',
+        key: 1,
+        matches: '[text="关闭广告"]',
+        snapshotUrls: 'https://i.gkd.li/i/13262844',
+        exampleUrls: 'https://e.gkd.li/3d27d844-b552-4a0c-800b-3dc5790fb8c0',
+        preKeys: [0],
+        _uniqueKey: 1
       },
-      { key: 0, matches: '[id="com.gkid.crazyrope:id/iv_close"]' },
-      { key: 0, matches: '[id="com.gkid.crazyrope:id/tv_close"][text="关闭广告"]' },
-    ],
-  }
+      {
+        key: 2,
+        matches: '[id="com.gkid.crazyrope:id/iv_close"]',
+        _uniqueKey: 2
+      },
+      {
+        key: 3,
+        matches: '[id="com.gkid.crazyrope:id/tv_close"][text="关闭广告"]',
+        _uniqueKey: 3
+      },
+      ],
+    },
   ],
 });

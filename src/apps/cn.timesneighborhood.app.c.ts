@@ -5,23 +5,27 @@ export default defineGkdApp({
   name: '邻里邦',
   groups: [
 {
-    key: 1,
-    name: '功能类-自动签到',
-    actionMaximum: 1,
-    resetMatch: 'app',
-    rules: [
+      key: 1,
+      name: '功能类-自动签到',
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
       {
-          activityIds: 'com.zkty.modules.engine.activity.XEngineWebActivity',
-          matches: '[text="立即签到"]',
-          exampleUrls: 'https://m.gkd.li/57941037/e02dac87-41dc-45eb-bf7e-8daa0b69f517',
-          snapshotUrls: 'https://i.gkd.li/i/14545251',
+        key: 0,
+        activityIds: 'com.zkty.modules.engine.activity.XEngineWebActivity',
+        matches: '[text="立即签到"]',
+        snapshotUrls: 'https://i.gkd.li/i/14545251',
+        exampleUrls: 'https://m.gkd.li/57941037/e02dac87-41dc-45eb-bf7e-8daa0b69f517',
+        _uniqueKey: 0
       },
       {
-          matches: '[text="立即签到"]',
-          exampleUrls: 'https://m.gkd.li/101449500/58bc6789-3015-450f-9f3d-d98a02edc7f6',
-          snapshotUrls: 'https://i.gkd.li/i/14545000',
+        key: 1,
+        matches: '[text="立即签到"]',
+        snapshotUrls: 'https://i.gkd.li/i/14545000',
+        exampleUrls: 'https://m.gkd.li/101449500/58bc6789-3015-450f-9f3d-d98a02edc7f6',
+        _uniqueKey: 1
       },
-    ],
-  }
+      ],
+    },
   ],
 });

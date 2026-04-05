@@ -5,24 +5,26 @@ export default defineGkdApp({
   name: '蜜雪冰城',
   groups: [
 {
-    key: 2,
-    name: '全屏广告-主界面弹窗广告',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    rules: [
+      key: 2,
+      name: '全屏广告-主界面弹窗广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
       {
-          key: 1,
-          activityIds: 'com.mxbc.mxsa.modules.main.MainActivity',
-          matches: '[id="com.mxbc.mxsa:id/close"]',
-          snapshotUrls: 'https://i.gkd.li/i/12929345',
+        key: 1,
+        activityIds: 'com.mxbc.mxsa.modules.main.MainActivity',
+        matches: '[id="com.mxbc.mxsa:id/close"]',
+        snapshotUrls: 'https://i.gkd.li/i/12929345',
+        _uniqueKey: 1
       },
       {
-          key: 1,
-          matches: '[id="com.mxbc.mxsa:id/close"]',
-          snapshotUrls: 'https://i.gkd.li/i/12929345',
+        key: 2,
+        matches: '[id="com.mxbc.mxsa:id/close"]',
+        snapshotUrls: 'https://i.gkd.li/i/12929345',
+        _uniqueKey: 2
       },
-    ],
-  }
+      ],
+    },
   ],
 });

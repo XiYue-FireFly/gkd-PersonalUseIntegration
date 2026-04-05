@@ -5,20 +5,22 @@ export default defineGkdApp({
   name: '应用宝',
   groups: [
 {
-    key: 1,
-    name: '功能类-关闭登录弹窗',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 1,
+      name: '功能类-关闭登录弹窗',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: 'com.tencent.assistantv2.activity.MainActivity',
-          matches: '@Button[clickable=true] - [text="欢迎登录应用宝"]',
-          exampleUrls: 'https://m.gkd.li/57941037/29c109c2-7993-4b39-ba80-6ae6451ab533',
-          snapshotUrls: 'https://i.gkd.li/i/16012576',
+        key: 0,
+        activityIds: 'com.tencent.assistantv2.activity.MainActivity',
+        matches: '@Button[clickable=true] - [text="欢迎登录应用宝"]',
+        snapshotUrls: 'https://i.gkd.li/i/16012576',
+        exampleUrls: 'https://m.gkd.li/57941037/29c109c2-7993-4b39-ba80-6ae6451ab533',
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

@@ -5,17 +5,23 @@ export default defineGkdApp({
   name: 'mFood',
   groups: [
 {
-    key: 1,
-    name: '局部广告-浮窗广告',
-    rules: [
+      key: 1,
+      name: '局部广告-浮窗广告',
+      rules: [
       {
-          fastQuery: true,
-          activityIds: 'com.zdyl.mfood.ui.home.MainActivity',
-          matches: '[id="com.m.mfood:id/close"]',
-          snapshotUrls: 'https://i.gkd.li/i/13350787',
+        key: 0,
+        activityIds: 'com.zdyl.mfood.ui.home.MainActivity',
+        matches: '[id="com.m.mfood:id/close"]',
+        snapshotUrls: 'https://i.gkd.li/i/13350787',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-      { key: 0, matches: '[id="com.m.mfood:id/close"]' },
-    ],
-  }
+      {
+        key: 1,
+        matches: '[id="com.m.mfood:id/close"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
   ],
 });

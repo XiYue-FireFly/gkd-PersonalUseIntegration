@@ -5,19 +5,21 @@ export default defineGkdApp({
   name: 'Fing',
   groups: [
 {
-    key: 0,
-    name: '其他-教程弹窗',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 0,
+      name: '其他-教程弹窗',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: '.ui.main.SplashActivity',
-          matches: '[text="關閉"]',
-          snapshotUrls: 'https://i.gkd.li/i/15521827',
+        key: 0,
+        activityIds: '.ui.main.SplashActivity',
+        matches: '[text="關閉"]',
+        snapshotUrls: 'https://i.gkd.li/i/15521827',
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

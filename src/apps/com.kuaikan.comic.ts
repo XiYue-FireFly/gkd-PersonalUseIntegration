@@ -5,13 +5,17 @@ export default defineGkdApp({
   name: '快看漫画',
   groups: [
 {
-    key: 2,
-    name: '局部广告-漫画界面底部弹窗广告',
-    activityIds: 'com.kuaikan.comic.infinitecomic.view.ComicInfiniteActivity',
-    snapshotUrls: 'https://i.gkd.li/i/12910268',
-    rules: [
-      { key: 0, matches: '[id="com.kuaikan.comic:id/adBannerClose"]' },
-    ],
-  }
+      key: 2,
+      name: '局部广告-漫画界面底部弹窗广告',
+      activityIds: 'com.kuaikan.comic.infinitecomic.view.ComicInfiniteActivity',
+      snapshotUrls: 'https://i.gkd.li/i/12910268',
+      rules: [
+      {
+        key: 0,
+        matches: '[id="com.kuaikan.comic:id/adBannerClose"]',
+        _uniqueKey: 0
+      },
+      ],
+    },
   ],
 });

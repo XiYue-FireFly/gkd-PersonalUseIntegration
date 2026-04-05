@@ -5,111 +5,104 @@ export default defineGkdApp({
   name: '掌上生活',
   groups: [
 {
-    key: 1,
-    name: '更新提示',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 1,
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: [
-              '.CMBRootActivityV2',
-              '.secplugin.activity.login.fingerprint.cmbR6VH0R',
-          ],
-          matches: '[text="暂不更新"][visibleToUser=true]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/12647025',
-              'https://i.gkd.li/i/12727203',
-              'https://i.gkd.li/i/13345771',
-          ],
+        key: 0,
+        activityIds: ['.CMBRootActivityV2', '.secplugin.activity.login.fingerprint.cmbR6VH0R'],
+        matches: '[text="暂不更新"][visibleToUser=true]',
+        snapshotUrls: ['https://i.gkd.li/i/12647025', 'https://i.gkd.li/i/12727203', 'https://i.gkd.li/i/13345771'],
+        _uniqueKey: 0
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 2,
-    name: '全屏广告-首页弹窗广告',
-    activityIds: [
-      'com.cmbchina.ccd.pluto.cmbActivity.CMBRootActivityV2',
-    ],
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    snapshotUrls: [
-      'https://i.gkd.li/i/12647000',
-      'https://i.gkd.li/i/13360282',
-    ],
-    rules: [
-      { key: 0, matches: '[id="com.cmbchina.ccd.pluto.cmbActivity:id/lly_pop_shell"] > [id="com.cmbchina.ccd.pluto.cmbActivity:id/img_cf_view_close"]' },
-    ],
-  },
-{
-    key: 3,
-    name: '局部广告-右侧悬浮广告',
-    matchTime: 10000,
-    actionMaximum: 2,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 2,
+      name: '全屏广告-首页弹窗广告',
+      activityIds: ['com.cmbchina.ccd.pluto.cmbActivity.CMBRootActivityV2'],
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      snapshotUrls: ['https://i.gkd.li/i/12647000', 'https://i.gkd.li/i/13360282'],
+      rules: [
       {
-          name: '信用卡、我的页面',
-          activityIds: [
-              'com.cmbchina.ccd.pluto.cmbActivity.CMBRootActivityV2',
-              'com.cmbchina.ccd.pluto.cmbActivity.secondNav',
-          ],
-          matches: '[id="com.cmbchina.ccd.pluto.cmbActivity:id/img_floating_ad_cmb"] - [id="com.cmbchina.ccd.pluto.cmbActivity:id/img_close_floating_ad_cmb"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/12647039',
-              'https://i.gkd.li/i/12647052',
-          ],
+        key: 0,
+        matches: '[id="com.cmbchina.ccd.pluto.cmbActivity:id/lly_pop_shell"] > [id="com.cmbchina.ccd.pluto.cmbActivity:id/img_cf_view_close"]',
+        _uniqueKey: 0
+      },
+      ],
+    },
+{
+      key: 3,
+      name: '局部广告-右侧悬浮广告',
+      matchTime: 10000,
+      actionMaximum: 2,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
+      {
+        key: 0,
+        name: '信用卡、我的页面',
+        activityIds: ['com.cmbchina.ccd.pluto.cmbActivity.CMBRootActivityV2', 'com.cmbchina.ccd.pluto.cmbActivity.secondNav'],
+        matches: '[id="com.cmbchina.ccd.pluto.cmbActivity:id/img_floating_ad_cmb"] - [id="com.cmbchina.ccd.pluto.cmbActivity:id/img_close_floating_ad_cmb"]',
+        snapshotUrls: ['https://i.gkd.li/i/12647039', 'https://i.gkd.li/i/12647052'],
+        _uniqueKey: 0
       },
       {
-          name: '查账页面',
-          activityIds: [
-              'com.cmbchina.ccd.pluto.cmbActivity.CMBRootActivityV2',
-              'com.cmbchina.ccd.pluto.cmbActivity.repaymentBillv3.billRepay',
-              'com.cmbchina.ccd.pluto.cmbActivity.repaymentBillv3.billDetail.view',
-          ],
-          matches: '@[vid="img_cmb_drag_pendant_close"] + [vid="img_cmb_drag_pendant_bg"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/12647127',
-              'https://i.gkd.li/i/14209121',
-          ],
+        key: 1,
+        name: '查账页面',
+        activityIds: ['com.cmbchina.ccd.pluto.cmbActivity.CMBRootActivityV2', 'com.cmbchina.ccd.pluto.cmbActivity.repaymentBillv3.billRepay', 'com.cmbchina.ccd.pluto.cmbActivity.repaymentBillv3.billDetail.view'],
+        matches: '@[vid="img_cmb_drag_pendant_close"] + [vid="img_cmb_drag_pendant_bg"]',
+        snapshotUrls: ['https://i.gkd.li/i/12647127', 'https://i.gkd.li/i/14209121'],
+        _uniqueKey: 1
       },
       {
-          name: '发现页',
-          activityIds: 'com.cmbchina.ccd.pluto.cmbActivity.CMBRootActivityV2',
-          matches: '[id="com.cmbchina.ccd.pluto.cmbActivity:id/view_cat"] + [id="com.cmbchina.ccd.pluto.cmbActivity:id/view_close"]',
-          snapshotUrls: 'https://i.gkd.li/i/13402782',
+        key: 2,
+        name: '发现页',
+        activityIds: 'com.cmbchina.ccd.pluto.cmbActivity.CMBRootActivityV2',
+        matches: '[id="com.cmbchina.ccd.pluto.cmbActivity:id/view_cat"] + [id="com.cmbchina.ccd.pluto.cmbActivity:id/view_close"]',
+        snapshotUrls: 'https://i.gkd.li/i/13402782',
+        _uniqueKey: 2
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 4,
-    name: '权限提示-通知权限',
-    desc: '点击x按钮，不开启系统通知',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    snapshotUrls: [
-      'https://i.gkd.li/i/12647068',
-    ],
-    rules: [
-      { key: 0, matches: '[id="com.cmbchina.ccd.pluto.cmbActivity:id/btn_open_notify"] + [id="com.cmbchina.ccd.pluto.cmbActivity:id/iv_delete"]' },
-    ],
-  },
+      key: 4,
+      name: '权限提示-通知权限',
+      desc: '点击x按钮，不开启系统通知',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      snapshotUrls: ['https://i.gkd.li/i/12647068'],
+      rules: [
+      {
+        key: 0,
+        matches: '[id="com.cmbchina.ccd.pluto.cmbActivity:id/btn_open_notify"] + [id="com.cmbchina.ccd.pluto.cmbActivity:id/iv_delete"]',
+        _uniqueKey: 0
+      },
+      ],
+    },
 {
-    key: 5,
-    name: '权限提示-定位权限',
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    snapshotUrls: 'https://i.gkd.li/i/14209071',
-    rules: [
-      { key: 0, matches: '[text="定位服务"] +n * > [text="取消"]' },
-    ],
-  }
+      key: 5,
+      name: '权限提示-定位权限',
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      snapshotUrls: 'https://i.gkd.li/i/14209071',
+      rules: [
+      {
+        key: 0,
+        matches: '[text="定位服务"] +n * > [text="取消"]',
+        _uniqueKey: 0
+      },
+      ],
+    },
   ],
 });

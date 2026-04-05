@@ -5,28 +5,29 @@ export default defineGkdApp({
   name: 'Fa米家',
   groups: [
 {
-    key: 1,
-    name: '更新提示',
-    desc: '关闭升级弹窗',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 1,
+      name: '更新提示',
+      desc: '关闭升级弹窗',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: '.MainActivity',
-          matches: [
-              '[id="com.x2era.xcloud.app:id/tv_upgrade"]',
-              '[id="com.x2era.xcloud.app:id/iv_cancel"]',
-          ],
-          snapshotUrls: 'https://i.gkd.li/i/13420706',
+        key: 0,
+        activityIds: '.MainActivity',
+        matches: ['[id="com.x2era.xcloud.app:id/tv_upgrade"]', '[id="com.x2era.xcloud.app:id/iv_cancel"]'],
+        snapshotUrls: 'https://i.gkd.li/i/13420706',
+        _uniqueKey: 0
       },
       {
-          activityIds: 'com.x2era.xcloud.app.MainActivity',
-          matches: '[id$="com.x2era.xcloud.app:id/iv_cancel"]',
-          snapshotUrls: 'https://i.gkd.li/i/13420706',
+        key: 1,
+        activityIds: 'com.x2era.xcloud.app.MainActivity',
+        matches: '[id$="com.x2era.xcloud.app:id/iv_cancel"]',
+        snapshotUrls: 'https://i.gkd.li/i/13420706',
+        _uniqueKey: 1
       },
-    ],
-  }
+      ],
+    },
   ],
 });

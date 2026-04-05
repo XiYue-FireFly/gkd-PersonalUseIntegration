@@ -5,44 +5,60 @@ export default defineGkdApp({
   name: '薄荷健康',
   groups: [
 {
-    key: 1,
-    name: '更新提示',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    rules: [
+      key: 1,
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
       {
-          activityIds: 'com.boohee.library.update.UpdateDialogActivity',
-          matches: '@[id="com.boohee.one:id/tv_ignore"] + [id="com.boohee.one:id/tv_update"]',
-          snapshotUrls: 'https://i.gkd.li/i/12716918',
+        key: 0,
+        activityIds: 'com.boohee.library.update.UpdateDialogActivity',
+        matches: '@[id="com.boohee.one:id/tv_ignore"] + [id="com.boohee.one:id/tv_update"]',
+        snapshotUrls: 'https://i.gkd.li/i/12716918',
+        _uniqueKey: 0
       },
-      { key: 0, matches: '@[id="com.boohee.one:id/tv_ignore"] + [id="com.boohee.one:id/tv_update"]' },
-    ],
-  },
-{
-    key: 2,
-    name: '全屏广告-发现页弹窗广告',
-    activityIds: 'com.sensorsdata.sf.ui.view.DialogActivity',
-    snapshotUrls: 'https://i.gkd.li/i/12716970',
-    rules: [
-      { key: 0, matches: 'LinearLayout[childCount=2] > @ImageView[id=null][clickable=true] + ImageView' },
-    ],
-  },
-{
-    key: 10,
-    name: '权限提示-通知权限',
-    desc: '点击关闭',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    rules: [
       {
-          activityIds: '.app.account.ui.activity.MsgCategoryActivityV2',
-          matches: '[id="com.boohee.one:id/img_close_push"]',
-          snapshotUrls: 'https://i.gkd.li/i/12716950',
+        key: 1,
+        matches: '@[id="com.boohee.one:id/tv_ignore"] + [id="com.boohee.one:id/tv_update"]',
+        _uniqueKey: 1
       },
-      { key: 0, matches: '[id="com.boohee.one:id/img_close_push"]' },
-    ],
-  }
+      ],
+    },
+{
+      key: 2,
+      name: '全屏广告-发现页弹窗广告',
+      activityIds: 'com.sensorsdata.sf.ui.view.DialogActivity',
+      snapshotUrls: 'https://i.gkd.li/i/12716970',
+      rules: [
+      {
+        key: 0,
+        matches: 'LinearLayout[childCount=2] > @ImageView[id=null][clickable=true] + ImageView',
+        _uniqueKey: 0
+      },
+      ],
+    },
+{
+      key: 10,
+      name: '权限提示-通知权限',
+      desc: '点击关闭',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
+      {
+        key: 0,
+        activityIds: '.app.account.ui.activity.MsgCategoryActivityV2',
+        matches: '[id="com.boohee.one:id/img_close_push"]',
+        snapshotUrls: 'https://i.gkd.li/i/12716950',
+        _uniqueKey: 0
+      },
+      {
+        key: 1,
+        matches: '[id="com.boohee.one:id/img_close_push"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
   ],
 });

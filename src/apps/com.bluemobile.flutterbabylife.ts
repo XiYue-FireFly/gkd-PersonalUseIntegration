@@ -5,26 +5,30 @@ export default defineGkdApp({
   name: '宝宝生活记录',
   groups: [
 {
-    key: 1,
-    name: '全屏广告-弹窗广告',
-    matchTime: 10000,
-    actionMaximum: 1,
-    rules: [
+      key: 1,
+      name: '全屏广告-弹窗广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      rules: [
       {
-          key: 0,
-          name: '字节SDK',
-          activityIds: 'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
-          matches: '@Image[childCount=0][text=""][width<60 && height<60] < View[childCount=1] + View +n View > View[childCount=1] > TextView[text$="广告"]',
-          snapshotUrls: 'https://i.gkd.li/i/13632639',
+        key: 0,
+        name: '字节SDK',
+        activityIds: 'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
+        matches: '@Image[childCount=0][text=""][width<60 && height<60] < View[childCount=1] + View +n View > View[childCount=1] > TextView[text$="广告"]',
+        snapshotUrls: 'https://i.gkd.li/i/13632639',
+        _uniqueKey: 0
       },
       {
-          key: 0,
-          name: '字节SDK',
-          activityIds: 'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
-          matches: 'View[childCount=7] > View[index=1]',
-          snapshotUrls: 'https://i.gkd.li/i/13632639',
+        key: 1,
+        name: '字节SDK-1',
+        activityIds: 'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
+        matches: 'View[childCount=7] > View[index=1]',
+        snapshotUrls: 'https://i.gkd.li/i/13632639',
+        _uniqueKey: 1,
+        _uniqueName: '字节SDK-1',
+        name: '字节SDK-1'
       },
-    ],
-  }
+      ],
+    },
   ],
 });

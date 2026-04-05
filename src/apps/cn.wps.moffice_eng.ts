@@ -5,251 +5,246 @@ export default defineGkdApp({
   name: 'WPS',
   groups: [
 {
-    key: 1,
-    name: '分段广告-首页文档列表广告',
-    desc: '关闭首页文档列表中的广告',
-    enable: false,
-    activityIds: [
-      'cn.wps.moffice.main.StartPublicActivity',
-      'cn.wps.moffice.documentmanager.PreStartActivity',
-      'cn.wps.moffice.main.local.HomeRootActivity',
-    ],
-    fastQuery: true,
-    rules: [
+      key: 1,
+      name: '分段广告-首页文档列表广告',
+      desc: '关闭首页文档列表中的广告',
+      enable: false,
+      activityIds: ['cn.wps.moffice.main.StartPublicActivity', 'cn.wps.moffice.documentmanager.PreStartActivity', 'cn.wps.moffice.main.local.HomeRootActivity'],
+      fastQuery: true,
+      rules: [
       {
-          key: 0,
-          matches: '[id="com.mopub.ad.xiaomi:id/nativeclose"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/12505350',
-              'https://i.gkd.li/i/12505286',
-          ],
+        key: 0,
+        matches: '[id="com.mopub.ad.xiaomi:id/nativeclose"]',
+        snapshotUrls: ['https://i.gkd.li/i/12505350', 'https://i.gkd.li/i/12505286'],
+        _uniqueKey: 0
       },
       {
-          preKeys: [
-              0,
-          ],
-          key: 99,
-          matches: '[text="不喜欢此广告"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/12505365',
-              'https://i.gkd.li/i/13259090',
-          ],
+        key: 99,
+        matches: '[text="不喜欢此广告"]',
+        snapshotUrls: ['https://i.gkd.li/i/12505365', 'https://i.gkd.li/i/13259090'],
+        preKeys: [0],
+        _uniqueKey: 99
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 2,
-    name: '全屏广告-弹窗广告',
-    desc: '关闭登录后弹窗和体验会员提示弹窗',
-    enable: false,
-    rules: [
+      key: 2,
+      name: '全屏广告-弹窗广告',
+      desc: '关闭登录后弹窗和体验会员提示弹窗',
+      enable: false,
+      rules: [
       {
-          key: 0,
-          fastQuery: true,
-          activityIds: [
-              'cn.wps.moffice.main.AfterLoginActivity',
-              'com.android.packageinstaller.permission.ui.GrantPermissionsActivity',
-          ],
-          matches: '[id="cn.wps.moffice_eng:id/afterlogin_cancel"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/13259097',
-              'https://i.gkd.li/i/12882712',
-          ],
+        key: 0,
+        activityIds: ['cn.wps.moffice.main.AfterLoginActivity', 'com.android.packageinstaller.permission.ui.GrantPermissionsActivity'],
+        matches: '[id="cn.wps.moffice_eng:id/afterlogin_cancel"]',
+        snapshotUrls: ['https://i.gkd.li/i/13259097', 'https://i.gkd.li/i/12882712'],
+        fastQuery: true,
+        _uniqueKey: 0
       },
       {
-          key: 1,
-          fastQuery: true,
-          activityIds: 'cn.wps.moffice.main.local.HomeRootActivity',
-          matches: 'View[childCount=3] > Image[text!=null] +2 @TextView[clickable=true] <<n [vid="push_tips_ptr_super_webview"]',
-          snapshotUrls: 'https://i.gkd.li/i/13945835',
+        key: 1,
+        activityIds: 'cn.wps.moffice.main.local.HomeRootActivity',
+        matches: 'View[childCount=3] > Image[text!=null] +2 @TextView[clickable=true] <<n [vid="push_tips_ptr_super_webview"]',
+        snapshotUrls: 'https://i.gkd.li/i/13945835',
+        fastQuery: true,
+        _uniqueKey: 1
       },
       {
-          key: 2,
-          fastQuery: true,
-          activityIds: 'cn.wps.moffice.plugin.cloudPage.newpage.NewCloudSettingNewActivity',
-          matches: '[vid="cloud_popup_close_view"][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/23786698',
+        key: 2,
+        activityIds: 'cn.wps.moffice.plugin.cloudPage.newpage.NewCloudSettingNewActivity',
+        matches: '[vid="cloud_popup_close_view"][clickable=true]',
+        snapshotUrls: 'https://i.gkd.li/i/23786698',
+        fastQuery: true,
+        _uniqueKey: 2
       },
-      { key: 0, matches: '[id="cn.wps.moffice_eng:id/afterlogin_cancel"]' },
-    ],
-  },
+      {
+        key: 3,
+        matches: '[id="cn.wps.moffice_eng:id/afterlogin_cancel"]',
+        _uniqueKey: 3
+      },
+      ],
+    },
 {
-    key: 3,
-    name: '更新提示',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 3,
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          matches: '[id="cn.wps.moffice_eng:id/close_new_func_guide_dialog_imageView"]',
-          snapshotUrls: 'https://i.gkd.li/i/12882371',
+        key: 0,
+        matches: '[id="cn.wps.moffice_eng:id/close_new_func_guide_dialog_imageView"]',
+        snapshotUrls: 'https://i.gkd.li/i/12882371',
+        _uniqueKey: 0
       },
-      { key: 0, matches: '[id="cn.wps.moffice_eng:id/close_new_func_guide_dialog_imageView"]' },
-    ],
-  },
+      {
+        key: 1,
+        matches: '[id="cn.wps.moffice_eng:id/close_new_func_guide_dialog_imageView"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
 {
-    key: 4,
-    name: '全屏广告-关闭[开启WPS云服务]弹窗',
-    desc: '自动点击不开启',
-    enable: false,
-    activityIds: [
-      'cn.wps.moffice.main.cloud.roaming.login.core.QingLoginActivity',
-      'com.tencent.mm.plugin.webview.ui.tools.SDKOAuthUI',
-      'com.tencent.mm.ui.base.w',
-    ],
-    fastQuery: true,
-    rules: [
+      key: 4,
+      name: '全屏广告-关闭[开启WPS云服务]弹窗',
+      desc: '自动点击不开启',
+      enable: false,
+      activityIds: ['cn.wps.moffice.main.cloud.roaming.login.core.QingLoginActivity', 'com.tencent.mm.plugin.webview.ui.tools.SDKOAuthUI', 'com.tencent.mm.ui.base.w'],
+      fastQuery: true,
+      rules: [
       {
-          key: 1,
-          matches: '[id="cn.wps.moffice_eng:id/cloud_protocol_dialog_not_start_btn"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/12882536',
-              'https://i.gkd.li/i/12882610',
-              'https://i.gkd.li/i/12882678',
-          ],
+        key: 1,
+        matches: '[id="cn.wps.moffice_eng:id/cloud_protocol_dialog_not_start_btn"]',
+        snapshotUrls: ['https://i.gkd.li/i/12882536', 'https://i.gkd.li/i/12882610', 'https://i.gkd.li/i/12882678'],
+        _uniqueKey: 1
       },
       {
-          key: 2,
-          matches: '[id="cn.wps.moffice_eng:id/dialog_button_positive"]',
-          snapshotUrls: 'https://i.gkd.li/i/12882554',
+        key: 2,
+        matches: '[id="cn.wps.moffice_eng:id/dialog_button_positive"]',
+        snapshotUrls: 'https://i.gkd.li/i/12882554',
+        _uniqueKey: 2
       },
       {
-          matches: '[id="cn.wps.moffice_eng:id/cloud_protocol_dialog_not_start_btn"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/12882536',
-              'https://i.gkd.li/i/12882610',
-              'https://i.gkd.li/i/12882678',
-          ],
+        key: 3,
+        matches: '[id="cn.wps.moffice_eng:id/cloud_protocol_dialog_not_start_btn"]',
+        snapshotUrls: ['https://i.gkd.li/i/12882536', 'https://i.gkd.li/i/12882610', 'https://i.gkd.li/i/12882678'],
+        _uniqueKey: 3
       },
       {
-          matches: '[id="cn.wps.moffice_eng:id/dialog_button_positive"]',
-          snapshotUrls: 'https://i.gkd.li/i/12882554',
+        key: 4,
+        matches: '[id="cn.wps.moffice_eng:id/dialog_button_positive"]',
+        snapshotUrls: 'https://i.gkd.li/i/12882554',
+        _uniqueKey: 4
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 5,
-    name: '分段广告-文档末尾广告',
-    desc: '关闭文档末尾的广告内容',
-    enable: false,
-    activityIds: 'cn.wps.moffice.writer.multiactivity.Writer',
-    fastQuery: true,
-    rules: [
+      key: 5,
+      name: '分段广告-文档末尾广告',
+      desc: '关闭文档末尾的广告内容',
+      enable: false,
+      activityIds: 'cn.wps.moffice.writer.multiactivity.Writer',
+      fastQuery: true,
+      rules: [
       {
-          key: 1,
-          matches: '[id="cn.wps.moffice_eng:id/doc_end_ad_container_main"] >2 [id="cn.wps.moffice_eng:id/btn_close"]',
-          snapshotUrls: 'https://i.gkd.li/i/13513911',
+        key: 1,
+        matches: '[id="cn.wps.moffice_eng:id/doc_end_ad_container_main"] >2 [id="cn.wps.moffice_eng:id/btn_close"]',
+        snapshotUrls: 'https://i.gkd.li/i/13513911',
+        _uniqueKey: 1
       },
       {
-          preKeys: [
-              1,
-          ],
-          key: 2,
-          matches: '[text="关闭当前广告"]',
-          snapshotUrls: 'https://i.gkd.li/i/13513914',
+        key: 2,
+        matches: '[text="关闭当前广告"]',
+        snapshotUrls: 'https://i.gkd.li/i/13513914',
+        preKeys: [1],
+        _uniqueKey: 2
       },
       {
-          preKeys: 1,
-          key: 2,
-          matches: '[text="关闭当前广告"]',
-          snapshotUrls: 'https://i.gkd.li/i/13513914',
+        key: 3,
+        matches: '[text="关闭当前广告"]',
+        snapshotUrls: 'https://i.gkd.li/i/13513914',
+        preKeys: 1,
+        _uniqueKey: 3
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 6,
-    name: '局部广告',
-    desc: '关闭各类局部广告',
-    enable: false,
-    rules: [
+      key: 6,
+      name: '局部广告',
+      desc: '关闭各类局部广告',
+      enable: false,
+      rules: [
       {
-          key: 1,
-          fastQuery: true,
-          activityIds: 'cn.wps.moffice.main.local.HomeRootActivity',
-          matches: '[id="cn.wps.moffice_eng:id/home_banner_ad_spread_close" || vid="phone_message_close_button" || vid="close_home_ad_banner_iv" || vid="iv_item_close" || vid="iv_cloud_sync_close"][visibleToUser=true]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/13804525',
-              'https://i.gkd.li/i/17893252',
-              'https://i.gkd.li/i/18047731',
-              'https://i.gkd.li/i/23577590',
-              'https://i.gkd.li/i/23786789',
-          ],
+        key: 1,
+        activityIds: 'cn.wps.moffice.main.local.HomeRootActivity',
+        matches: '[id="cn.wps.moffice_eng:id/home_banner_ad_spread_close" || vid="phone_message_close_button" || vid="close_home_ad_banner_iv" || vid="iv_item_close" || vid="iv_cloud_sync_close"][visibleToUser=true]',
+        snapshotUrls: ['https://i.gkd.li/i/13804525', 'https://i.gkd.li/i/17893252', 'https://i.gkd.li/i/18047731', 'https://i.gkd.li/i/23577590', 'https://i.gkd.li/i/23786789'],
+        fastQuery: true,
+        _uniqueKey: 1
       },
       {
-          key: 2,
-          fastQuery: true,
-          activityIds: 'cn.wps.moffice.writer.multiactivity.Writer1',
-          matches: '[vid="public_login"] <2 LinearLayout[childCount=2] + [vid="public_close"][clickable=true][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/26026279',
-          exampleUrls: 'https://e.gkd.li/a17eca15-c7bd-4ea6-ba84-0d3242641697',
+        key: 2,
+        activityIds: 'cn.wps.moffice.writer.multiactivity.Writer1',
+        matches: '[vid="public_login"] <2 LinearLayout[childCount=2] + [vid="public_close"][clickable=true][visibleToUser=true]',
+        snapshotUrls: 'https://i.gkd.li/i/26026279',
+        exampleUrls: 'https://e.gkd.li/a17eca15-c7bd-4ea6-ba84-0d3242641697',
+        fastQuery: true,
+        _uniqueKey: 2
       },
-      { key: 0, matches: '[id="cn.wps.moffice_eng:id/home_banner_ad_spread_close"]' },
-    ],
-  },
+      {
+        key: 0,
+        matches: '[id="cn.wps.moffice_eng:id/home_banner_ad_spread_close"]',
+        _uniqueKey: 0
+      },
+      ],
+    },
 {
-    key: 7,
-    name: '局部广告-首页底部升级会员卡片',
-    enable: false,
-    fastQuery: true,
-    rules: [
+      key: 7,
+      name: '局部广告-首页底部升级会员卡片',
+      enable: false,
+      fastQuery: true,
+      rules: [
       {
-          activityIds: 'cn.wps.moffice.main.local.HomeRootActivity',
-          matches: '[id="cn.wps.moffice_eng:id/phone_message_close_button"]',
-          snapshotUrls: 'https://i.gkd.li/i/13945839',
+        key: 0,
+        activityIds: 'cn.wps.moffice.main.local.HomeRootActivity',
+        matches: '[id="cn.wps.moffice_eng:id/phone_message_close_button"]',
+        snapshotUrls: 'https://i.gkd.li/i/13945839',
+        _uniqueKey: 0
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 8,
-    name: '全屏广告-体验超级会员弹窗',
-    enable: false,
-    fastQuery: true,
-    rules: [
+      key: 8,
+      name: '全屏广告-体验超级会员弹窗',
+      enable: false,
+      fastQuery: true,
+      rules: [
       {
-          activityIds: 'cn.wps.moffice.main.local.HomeRootActivity',
-          matches: 'View[childCount=3] > Image[text!=null] +2 @TextView[clickable=true] <<n [vid="push_tips_ptr_super_webview"]',
-          snapshotUrls: 'https://i.gkd.li/i/13945835',
+        key: 0,
+        activityIds: 'cn.wps.moffice.main.local.HomeRootActivity',
+        matches: 'View[childCount=3] > Image[text!=null] +2 @TextView[clickable=true] <<n [vid="push_tips_ptr_super_webview"]',
+        snapshotUrls: 'https://i.gkd.li/i/13945835',
+        _uniqueKey: 0
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 9,
-    name: '功能类-自动签到',
-    activityIds: 'cn.wps.moffice.main.push.explore.PushTipsWebActivity',
-    fastQuery: true,
-    rules: [
+      key: 9,
+      name: '功能类-自动签到',
+      activityIds: 'cn.wps.moffice.main.push.explore.PushTipsWebActivity',
+      fastQuery: true,
+      rules: [
       {
-          key: 0,
-          matches: '@[visibleToUser=true][text="签到"] <<n [vid="push_tips_ptr_super_webview"]',
-          exampleUrls: 'https://e.gkd.li/c83fe3b0-74f2-45af-9f8d-6b70c622b424',
-          snapshotUrls: 'https://i.gkd.li/i/16382069',
+        key: 0,
+        matches: '@[visibleToUser=true][text="签到"] <<n [vid="push_tips_ptr_super_webview"]',
+        snapshotUrls: 'https://i.gkd.li/i/16382069',
+        exampleUrls: 'https://e.gkd.li/c83fe3b0-74f2-45af-9f8d-6b70c622b424',
+        _uniqueKey: 0
       },
       {
-          preKeys: [
-              0,
-          ],
-          key: 1,
-          matches: '[text="签到成功"] -2 View[childCount=1] > @Image[text!=null][childCount=0] <<n [vid="push_tips_ptr_super_webview"]',
-          exampleUrls: 'https://e.gkd.li/c8c2f3cb-9bde-4a01-8eb6-145cf668993f',
-          snapshotUrls: 'https://i.gkd.li/i/16382075',
+        key: 1,
+        matches: '[text="签到成功"] -2 View[childCount=1] > @Image[text!=null][childCount=0] <<n [vid="push_tips_ptr_super_webview"]',
+        snapshotUrls: 'https://i.gkd.li/i/16382075',
+        exampleUrls: 'https://e.gkd.li/c8c2f3cb-9bde-4a01-8eb6-145cf668993f',
+        preKeys: [0],
+        _uniqueKey: 1
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 10,
-    name: '评价提示',
-    rules: [
+      key: 10,
+      name: '评价提示',
+      rules: [
       {
-          fastQuery: true,
-          activityIds: 'cn.wps.moffice.main.local.HomeRootActivity',
-          matches: [
-              '[text="喜欢WPS Office吗？"]',
-              '[text="以后再说"][clickable=true]',
-          ],
-          snapshotUrls: 'https://i.gkd.li/i/23714159',
+        key: 0,
+        activityIds: 'cn.wps.moffice.main.local.HomeRootActivity',
+        matches: ['[text="喜欢WPS Office吗？"]', '[text="以后再说"][clickable=true]'],
+        snapshotUrls: 'https://i.gkd.li/i/23714159',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

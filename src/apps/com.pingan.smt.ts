@@ -5,21 +5,23 @@ export default defineGkdApp({
   name: 'i深圳',
   groups: [
 {
-    key: 1,
-    name: '全屏广告-弹窗广告',
-    desc: '点击关闭',
-    rules: [
+      key: 1,
+      name: '全屏广告-弹窗广告',
+      desc: '点击关闭',
+      rules: [
       {
-          fastQuery: true,
-          matchTime: 10000,
-          actionMaximum: 1,
-          resetMatch: 'app',
-          activityIds: 'com.pingan.smt.MainActivity',
-          matches: '[vid="close_view"]',
-          exampleUrls: 'https://e.gkd.li/97a058cf-0564-4194-b527-b2ec40233204',
-          snapshotUrls: 'https://i.gkd.li/i/17011387',
+        key: 0,
+        activityIds: 'com.pingan.smt.MainActivity',
+        matches: '[vid="close_view"]',
+        snapshotUrls: 'https://i.gkd.li/i/17011387',
+        exampleUrls: 'https://e.gkd.li/97a058cf-0564-4194-b527-b2ec40233204',
+        fastQuery: true,
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: 'app',
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

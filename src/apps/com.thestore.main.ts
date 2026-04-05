@@ -5,23 +5,27 @@ export default defineGkdApp({
   name: '1号会员店',
   groups: [
 {
-    key: 1,
-    name: '全屏广告-弹窗广告',
-    desc: '关闭弹窗',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    rules: [
+      key: 1,
+      name: '全屏广告-弹窗广告',
+      desc: '关闭弹窗',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
       {
-          activityIds: 'com.thestore.main.app.home.HomeActivity',
-          matches: '@TextView[clickable=true][childCount=0] <2 RelativeLayout[childCount=2] < FrameLayout < [parent=null]',
-          snapshotUrls: 'https://i.gkd.li/i/13163686',
+        key: 0,
+        activityIds: 'com.thestore.main.app.home.HomeActivity',
+        matches: '@TextView[clickable=true][childCount=0] <2 RelativeLayout[childCount=2] < FrameLayout < [parent=null]',
+        snapshotUrls: 'https://i.gkd.li/i/13163686',
+        _uniqueKey: 0
       },
       {
-          matches: '[id="com.thestore.main.home.feature:id/ad"] > TextView',
-          snapshotUrls: 'https://i.gkd.li/i/13163686',
+        key: 1,
+        matches: '[id="com.thestore.main.home.feature:id/ad"] > TextView',
+        snapshotUrls: 'https://i.gkd.li/i/13163686',
+        _uniqueKey: 1
       },
-    ],
-  }
+      ],
+    },
   ],
 });

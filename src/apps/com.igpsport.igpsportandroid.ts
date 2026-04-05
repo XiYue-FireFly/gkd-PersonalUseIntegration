@@ -5,21 +5,27 @@ export default defineGkdApp({
   name: 'iGPSPORT',
   groups: [
 {
-    key: 1,
-    name: '更新提示',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    rules: [
+      key: 1,
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
       {
-          fastQuery: true,
-          activityIds: 'com.igpsport.globalapp.main.MainActivity',
-          matches: '@[visibleToUser=true][text="忽略本次"] <<n [vid="updateComposeView"]',
-          exampleUrls: 'https://e.gkd.li/57341233-2547-4469-869c-e05fdebb20fc',
-          snapshotUrls: 'https://i.gkd.li/i/13797203',
+        key: 0,
+        activityIds: 'com.igpsport.globalapp.main.MainActivity',
+        matches: '@[visibleToUser=true][text="忽略本次"] <<n [vid="updateComposeView"]',
+        snapshotUrls: 'https://i.gkd.li/i/13797203',
+        exampleUrls: 'https://e.gkd.li/57341233-2547-4469-869c-e05fdebb20fc',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-      { key: 0, matches: '@[text="忽略本次"] + [text="立即升级"]' },
-    ],
-  }
+      {
+        key: 1,
+        matches: '@[text="忽略本次"] + [text="立即升级"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
   ],
 });

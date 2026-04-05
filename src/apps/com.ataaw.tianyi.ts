@@ -5,17 +5,25 @@ export default defineGkdApp({
   name: '天翼生活',
   groups: [
 {
-    key: 2,
-    name: '更新提示',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    snapshotUrls: 'https://i.gkd.li/i/13867468',
-    rules: [
-      { key: 0, matches: '[vid="version"]' },
-      { key: 0, matches: '[vid="ignore"]' },
-    ],
-  }
+      key: 2,
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      snapshotUrls: 'https://i.gkd.li/i/13867468',
+      rules: [
+      {
+        key: 0,
+        matches: '[vid="version"]',
+        _uniqueKey: 0
+      },
+      {
+        key: 1,
+        matches: '[vid="ignore"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
   ],
 });

@@ -5,47 +5,57 @@ export default defineGkdApp({
   name: '万能遥控',
   groups: [
 {
-    key: 0,
-    name: '局部广告-底部横幅广告',
-    desc: '关闭主界面底部的横幅广告',
-    enable: false,
-    rules: [
+      key: 0,
+      name: '局部广告-底部横幅广告',
+      desc: '关闭主界面底部的横幅广告',
+      enable: false,
+      rules: [
       {
-          fastQuery: true,
-          activityIds: 'com.xiaomi.mitv.phone.remotecontroller.HoriWidgetMainActivityV2',
-          matches: '[vid="image_close_banner"][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/22451785',
+        key: 0,
+        activityIds: 'com.xiaomi.mitv.phone.remotecontroller.HoriWidgetMainActivityV2',
+        matches: '[vid="image_close_banner"][visibleToUser=true]',
+        snapshotUrls: 'https://i.gkd.li/i/22451785',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 4,
-    name: '权限提示-定位权限',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 4,
+      name: '权限提示-定位权限',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: 'com.xiaomi.mitv.phone.remotecontroller.HoriWidgetMainActivityV2',
-          matches: '[id="com.duokan.phone.remotecontroller:id/ll_permission"] >2 [text="取消"]',
-          snapshotUrls: 'https://i.gkd.li/i/13642080',
+        key: 0,
+        activityIds: 'com.xiaomi.mitv.phone.remotecontroller.HoriWidgetMainActivityV2',
+        matches: '[id="com.duokan.phone.remotecontroller:id/ll_permission"] >2 [text="取消"]',
+        snapshotUrls: 'https://i.gkd.li/i/13642080',
+        _uniqueKey: 0
       },
-      { key: 0, matches: '[id="com.duokan.phone.remotecontroller:id/ll_permission"] [text="取消"]' },
-    ],
-  },
+      {
+        key: 1,
+        matches: '[id="com.duokan.phone.remotecontroller:id/ll_permission"] [text="取消"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
 {
-    key: 5,
-    name: '局部广告',
-    rules: [
+      key: 5,
+      name: '局部广告',
+      rules: [
       {
-          fastQuery: true,
-          activityIds: 'com.xiaomi.mitv.phone.remotecontroller.HoriWidgetMainActivityV2',
-          matches: '[vid="image_close_banner"][visibleToUser=true]',
-          exampleUrls: 'https://e.gkd.li/bf36812a-1bf9-43dc-aca5-f351c2f8d1f6',
-          snapshotUrls: 'https://i.gkd.li/i/22451785',
+        key: 0,
+        activityIds: 'com.xiaomi.mitv.phone.remotecontroller.HoriWidgetMainActivityV2',
+        matches: '[vid="image_close_banner"][visibleToUser=true]',
+        snapshotUrls: 'https://i.gkd.li/i/22451785',
+        exampleUrls: 'https://e.gkd.li/bf36812a-1bf9-43dc-aca5-f351c2f8d1f6',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

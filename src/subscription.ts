@@ -1,18 +1,29 @@
-import { Subscription } from '@gkd-kit/api';
+import { defineGkdSubscription } from '@gkd-kit/define';
+import { batchImportApps } from '@gkd-kit/tools';
 import categories from './categories';
 import globalGroups from './globalGroups';
-import apps from './apps';
+import { RawApp, RawAppGroup } from '@gkd-kit/api';
 
-export default <Subscription>{
-  id: 888,
-  name: 'GKD订阅',
-  version: 1,
-  author: '',
-  description: '',
-  supportUri: '',
-  openEmptyRuleGroup: true,
-  referenceRules: [],
+const apps = await batchImportApps(`${import.meta.dirname}/apps`);
+
+const rawApps: RawApp[] = [];
+apps.forEach((appConfig) => {
+  appConfig.groups?.forEach((g: RawAppGroup) => {
+    if (g.name?.startsWith('开屏广告')) {
+      g.order = -10;
+    }
+  });
+  rawApps.push(appConfig);
+});
+
+export default defineGkdSubscription({
+  id: 999,
+  name: '个人订阅',
+  version: 0,
+  author: 'XiYue-FireFly',
+  checkUpdateUrl: './gkd.version.json5',
+  supportUri: 'https://github.com/XiYue-FireFly/gkd-PersonalUseIntegration/issues/new/choose',
   categories,
   globalGroups,
-  apps,
-};
+  apps: rawApps,
+});

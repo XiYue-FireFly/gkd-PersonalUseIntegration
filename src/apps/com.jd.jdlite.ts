@@ -5,34 +5,46 @@ export default defineGkdApp({
   name: '京喜特价',
   groups: [
 {
-    key: 1,
-    name: '全屏广告-首页弹窗广告',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    rules: [
+      key: 1,
+      name: '全屏广告-首页弹窗广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
       {
-          activityIds: 'com.jd.jdlite.MainFrameActivity',
-          matches: '@[desc="关闭页面"] - FrameLayout >n [text="极速版弹窗"]',
-          snapshotUrls: 'https://i.gkd.li/i/12727396',
+        key: 0,
+        activityIds: 'com.jd.jdlite.MainFrameActivity',
+        matches: '@[desc="关闭页面"] - FrameLayout >n [text="极速版弹窗"]',
+        snapshotUrls: 'https://i.gkd.li/i/12727396',
+        _uniqueKey: 0
       },
-      { key: 0, matches: '@[desc="关闭页面"] - FrameLayout >n [text="极速版弹窗"]' },
-    ],
-  },
+      {
+        key: 1,
+        matches: '@[desc="关闭页面"] - FrameLayout >n [text="极速版弹窗"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
 {
-    key: 10,
-    name: '权限提示-通知权限',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    rules: [
+      key: 10,
+      name: '权限提示-通知权限',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
       {
-          activityIds: '.MainFrameActivity',
-          matches: '@ImageView[clickable=true] - LinearLayout > [text="开启消息通知"]',
-          snapshotUrls: 'https://i.gkd.li/i/13062969',
+        key: 0,
+        activityIds: '.MainFrameActivity',
+        matches: '@ImageView[clickable=true] - LinearLayout > [text="开启消息通知"]',
+        snapshotUrls: 'https://i.gkd.li/i/13062969',
+        _uniqueKey: 0
       },
-      { key: 0, matches: '@ImageView[clickable=true] - LinearLayout > [text="开启消息通知"]' },
-    ],
-  }
+      {
+        key: 1,
+        matches: '@ImageView[clickable=true] - LinearLayout > [text="开启消息通知"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
   ],
 });

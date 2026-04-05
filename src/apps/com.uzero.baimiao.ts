@@ -5,16 +5,18 @@ export default defineGkdApp({
   name: '白描',
   groups: [
 {
-    key: 1,
-    name: '功能类-自动点击截取全屏',
-    rules: [
+      key: 1,
+      name: '功能类-自动点击截取全屏',
+      rules: [
       {
-          fastQuery: true,
-          activityIds: '.ui.screen.ScreenCaptureActivity',
-          matches: '[text="截取全屏"]',
-          snapshotUrls: 'https://i.gkd.li/i/23054772',
+        key: 0,
+        activityIds: '.ui.screen.ScreenCaptureActivity',
+        matches: '[text="截取全屏"]',
+        snapshotUrls: 'https://i.gkd.li/i/23054772',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

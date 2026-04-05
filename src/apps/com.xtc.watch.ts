@@ -5,57 +5,57 @@ export default defineGkdApp({
   name: '小天才',
   groups: [
 {
-    key: 2,
-    name: '更新提示',
-    desc: '点击关闭',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 2,
+      name: '更新提示',
+      desc: '点击关闭',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: 'com.xtc.widget.phone.popup.activity.CustomActivity14',
-          matches: [
-              '[text="App功能更新了"]',
-              '[id="com.xtc.watch:id/iv_close"]',
-          ],
-          snapshotUrls: 'https://i.gkd.li/i/13197390',
+        key: 0,
+        activityIds: 'com.xtc.widget.phone.popup.activity.CustomActivity14',
+        matches: ['[text="App功能更新了"]', '[id="com.xtc.watch:id/iv_close"]'],
+        snapshotUrls: 'https://i.gkd.li/i/13197390',
+        _uniqueKey: 0
       },
-      { key: 0, matches: '[id="com.xtc.watch:id/iv_close"]' },
-    ],
-  },
+      {
+        key: 1,
+        matches: '[id="com.xtc.watch:id/iv_close"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
 {
-    key: 3,
-    name: '权限提示-通知权限',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 3,
+      name: '权限提示-通知权限',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          key: 0,
-          activityIds: 'com.xtc.widget.phone.popup.activity.CustomActivity13',
-          matches: [
-              '[text*="开启消息通知"]',
-              '[id="com.xtc.watch:id/iv_close"]',
-          ],
-          snapshotUrls: 'https://i.gkd.li/i/13063274',
+        key: 0,
+        activityIds: 'com.xtc.widget.phone.popup.activity.CustomActivity13',
+        matches: ['[text*="开启消息通知"]', '[id="com.xtc.watch:id/iv_close"]'],
+        snapshotUrls: 'https://i.gkd.li/i/13063274',
+        _uniqueKey: 0
       },
       {
-          key: 1,
-          activityIds: '.view.home.activity.XtcHomeActivity',
-          matches: '[id="com.xtc.watch:id/iv_notify_permission_close"]',
-          snapshotUrls: 'https://i.gkd.li/i/13059965',
+        key: 1,
+        activityIds: '.view.home.activity.XtcHomeActivity',
+        matches: '[id="com.xtc.watch:id/iv_notify_permission_close"]',
+        snapshotUrls: 'https://i.gkd.li/i/13059965',
+        _uniqueKey: 1
       },
       {
-          matches: [
-              '[id="com.xtc.watch:id/iv_notify_permission_close"]',
-          ],
-          snapshotUrls: [
-              'https://i.gkd.li/i/13059965',
-          ],
+        key: 2,
+        matches: ['[id="com.xtc.watch:id/iv_notify_permission_close"]'],
+        snapshotUrls: ['https://i.gkd.li/i/13059965'],
+        _uniqueKey: 2
       },
-    ],
-  }
+      ],
+    },
   ],
 });

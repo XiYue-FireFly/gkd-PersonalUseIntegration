@@ -5,31 +5,34 @@ export default defineGkdApp({
   name: '绿洲',
   groups: [
 {
-    key: 1,
-    name: '分段广告-首页推荐广告',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 1,
+      name: '分段广告-首页推荐广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          key: 0,
-          matches: 'ImageView[id="com.sina.oasis:id/gdt_v2_banner_ad_close_btn"]',
-          snapshotUrls: 'https://i.gkd.li/i/13434468',
+        key: 0,
+        matches: 'ImageView[id="com.sina.oasis:id/gdt_v2_banner_ad_close_btn"]',
+        snapshotUrls: 'https://i.gkd.li/i/13434468',
+        _uniqueKey: 0
       },
       {
-          preKeys: [
-              0,
-          ],
-          matches: '@LinearLayout > [text*="关闭此广告"][text.length<=10]',
-          snapshotUrls: 'https://i.gkd.li/i/13498631',
+        key: 1,
+        matches: '@LinearLayout > [text*="关闭此广告"][text.length<=10]',
+        snapshotUrls: 'https://i.gkd.li/i/13498631',
+        preKeys: [0],
+        _uniqueKey: 1
       },
       {
-          preKeys: 0,
-          matches: '@LinearLayout > [text*="关闭此广告"][text.length<=10]',
-          snapshotUrls: 'https://i.gkd.li/i/13498631',
+        key: 2,
+        matches: '@LinearLayout > [text*="关闭此广告"][text.length<=10]',
+        snapshotUrls: 'https://i.gkd.li/i/13498631',
+        preKeys: 0,
+        _uniqueKey: 2
       },
-    ],
-  }
+      ],
+    },
   ],
 });

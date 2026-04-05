@@ -5,20 +5,26 @@ export default defineGkdApp({
   name: '搜狐视频',
   groups: [
 {
-    key: 1,
-    name: '更新提示',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 1,
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: '.ui.homepage.MainActivity',
-          matches: '@[id="com.sohu.sohuvideo:id/ivClose"] + LinearLayout [text="新版本上线啦"]',
-          snapshotUrls: 'https://i.gkd.li/i/13435504',
+        key: 0,
+        activityIds: '.ui.homepage.MainActivity',
+        matches: '@[id="com.sohu.sohuvideo:id/ivClose"] + LinearLayout [text="新版本上线啦"]',
+        snapshotUrls: 'https://i.gkd.li/i/13435504',
+        _uniqueKey: 0
       },
-      { key: 0, matches: '@[id="com.sohu.sohuvideo:id/ivClose"] + LinearLayout [text="新版本上线啦"]' },
-    ],
-  }
+      {
+        key: 1,
+        matches: '@[id="com.sohu.sohuvideo:id/ivClose"] + LinearLayout [text="新版本上线啦"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
   ],
 });

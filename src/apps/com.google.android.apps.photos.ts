@@ -5,54 +5,53 @@ export default defineGkdApp({
   name: '谷歌相册',
   groups: [
 {
-    key: 0,
-    name: '更新提示',
-    desc: '点击[以后再说]',
-    matchTime: 10000,
-    actionMaximum: 1,
-    fastQuery: true,
-    matchRoot: true,
-    rules: [
+      key: 0,
+      name: '更新提示',
+      desc: '点击[以后再说]',
+      matchTime: 10000,
+      actionMaximum: 1,
+      fastQuery: true,
+      matchRoot: true,
+      rules: [
       {
-          activityIds: [
-              '.update.treatment.UpdateAppTreatmentPromoPageActivity',
-              '.home.HomeActivity',
-          ],
-          matches: '[text="以后再说" || text="Not now"][visibleToUser=true]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/13218940',
-              'https://i.gkd.li/i/18522070',
-              'https://i.gkd.li/i/18608917',
-          ],
+        key: 0,
+        activityIds: ['.update.treatment.UpdateAppTreatmentPromoPageActivity', '.home.HomeActivity'],
+        matches: '[text="以后再说" || text="Not now"][visibleToUser=true]',
+        snapshotUrls: ['https://i.gkd.li/i/13218940', 'https://i.gkd.li/i/18522070', 'https://i.gkd.li/i/18608917'],
+        _uniqueKey: 0
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 1,
-    name: '全屏广告-会员广告',
-    desc: '点击关闭',
-    rules: [
+      key: 1,
+      name: '全屏广告-会员广告',
+      desc: '点击关闭',
+      rules: [
       {
-          key: 0,
-          fastQuery: true,
-          activityIds: 'com.google.android.apps.photos.cloudstorage.paidfeatures.PaidFeaturesActivity',
-          matches: '@[desc="转到上一层级"] < ViewGroup[id="com.google.android.apps.photos:id/toolbar"]',
-          snapshotUrls: 'https://i.gkd.li/i/13774247',
+        key: 0,
+        activityIds: 'com.google.android.apps.photos.cloudstorage.paidfeatures.PaidFeaturesActivity',
+        matches: '@[desc="转到上一层级"] < ViewGroup[id="com.google.android.apps.photos:id/toolbar"]',
+        snapshotUrls: 'https://i.gkd.li/i/13774247',
+        fastQuery: true,
+        _uniqueKey: 0
       },
       {
-          key: 1,
-          fastQuery: true,
-          activityIds: '.home.HomeActivity',
-          matches: '[vid="spark_container"] > [vid="close_button"][visibleToUser=true]',
-          exampleUrls: 'https://e.gkd.li/581cad00-a5fa-4f42-b31f-84a2d5c89afc',
-          snapshotUrls: 'https://i.gkd.li/i/22482732',
+        key: 1,
+        activityIds: '.home.HomeActivity',
+        matches: '[vid="spark_container"] > [vid="close_button"][visibleToUser=true]',
+        snapshotUrls: 'https://i.gkd.li/i/22482732',
+        exampleUrls: 'https://e.gkd.li/581cad00-a5fa-4f42-b31f-84a2d5c89afc',
+        fastQuery: true,
+        _uniqueKey: 1
       },
       {
-          activityIds: 'com.google.android.apps.photos.cloudstorage.paidfeatures.PaidFeaturesActivity',
-          matches: '@[desc="转到上一层级"] < ViewGroup[id="com.google.android.apps.photos:id/toolbar"]',
-          snapshotUrls: 'https://i.gkd.li/i/13774247',
+        key: 2,
+        activityIds: 'com.google.android.apps.photos.cloudstorage.paidfeatures.PaidFeaturesActivity',
+        matches: '@[desc="转到上一层级"] < ViewGroup[id="com.google.android.apps.photos:id/toolbar"]',
+        snapshotUrls: 'https://i.gkd.li/i/13774247',
+        _uniqueKey: 2
       },
-    ],
-  }
+      ],
+    },
   ],
 });

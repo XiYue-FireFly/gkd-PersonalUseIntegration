@@ -5,28 +5,32 @@ export default defineGkdApp({
   name: 'CFMOTO',
   groups: [
 {
-    key: 1,
-    name: '全屏广告-弹窗广告',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    rules: [
+      key: 1,
+      name: '全屏广告-弹窗广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
       {
-          key: 1,
-          name: '首页弹窗广告',
-          fastQuery: true,
-          activityIds: 'com.cfmoto.oilmoto.ui.MainCfActivity',
-          matches: '[id="com.lxt.cfmoto:id/closeClick"]',
-          snapshotUrls: 'https://i.gkd.li/i/13401967',
+        key: 1,
+        name: '首页弹窗广告',
+        activityIds: 'com.cfmoto.oilmoto.ui.MainCfActivity',
+        matches: '[id="com.lxt.cfmoto:id/closeClick"]',
+        snapshotUrls: 'https://i.gkd.li/i/13401967',
+        fastQuery: true,
+        _uniqueKey: 1
       },
       {
-          key: 1,
-          name: '首页弹窗广告',
-          activityIds: 'com.cfmoto.oilmoto.ui.MainCfActivity',
-          matches: 'RelativeLayout[childCount=2] > [id="com.lxt.cfmoto:id/image"] + [id="com.lxt.cfmoto:id/closeClick"]',
-          snapshotUrls: 'https://i.gkd.li/i/13401967',
+        key: 2,
+        name: '首页弹窗广告-1',
+        activityIds: 'com.cfmoto.oilmoto.ui.MainCfActivity',
+        matches: 'RelativeLayout[childCount=2] > [id="com.lxt.cfmoto:id/image"] + [id="com.lxt.cfmoto:id/closeClick"]',
+        snapshotUrls: 'https://i.gkd.li/i/13401967',
+        _uniqueKey: 2,
+        _uniqueName: '首页弹窗广告-1',
+        name: '首页弹窗广告-1'
       },
-    ],
-  }
+      ],
+    },
   ],
 });

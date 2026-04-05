@@ -5,21 +5,23 @@ export default defineGkdApp({
   name: '盒马',
   groups: [
 {
-    key: 1,
-    name: '全屏广告',
-    desc: '点击关闭',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    rules: [
+      key: 1,
+      name: '全屏广告',
+      desc: '点击关闭',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
       {
-          fastQuery: true,
-          activityIds: '.launcher.splash.SplashActivity',
-          matches: '[vid="home_pop_close"][visibleToUser=true]',
-          exampleUrls: 'https://e.gkd.li/7719d496-8331-4ddd-996d-5e1b5a88d7b7',
-          snapshotUrls: 'https://i.gkd.li/i/22988411',
+        key: 0,
+        activityIds: '.launcher.splash.SplashActivity',
+        matches: '[vid="home_pop_close"][visibleToUser=true]',
+        snapshotUrls: 'https://i.gkd.li/i/22988411',
+        exampleUrls: 'https://e.gkd.li/7719d496-8331-4ddd-996d-5e1b5a88d7b7',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

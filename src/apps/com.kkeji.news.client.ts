@@ -5,20 +5,22 @@ export default defineGkdApp({
   name: '快科技',
   groups: [
 {
-    key: 0,
-    name: '开屏广告',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    priorityTime: 10000,
-    order: -10,
-    rules: [
+      key: 0,
+      name: '开屏广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      priorityTime: 10000,
+      order: -10,
+      rules: [
       {
-          matches: '[id="com.kkeji.news.client:id/tv_counter"]',
-          snapshotUrls: 'https://i.gkd.li/i/13197536',
+        key: 0,
+        matches: '[id="com.kkeji.news.client:id/tv_counter"]',
+        snapshotUrls: 'https://i.gkd.li/i/13197536',
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

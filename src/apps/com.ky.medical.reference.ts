@@ -5,36 +5,44 @@ export default defineGkdApp({
   name: '用药参考',
   groups: [
 {
-    key: -1,
-    name: '开屏广告',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    priorityTime: 10000,
-    order: -10,
-    snapshotUrls: 'https://i.gkd.li/i/12918049',
-    rules: [
-      { key: 0, matches: '[id="com.ky.medical.reference:id/btn_go"][text^="关闭"]' },
-    ],
-  },
+      key: -1,
+      name: '开屏广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      priorityTime: 10000,
+      order: -10,
+      snapshotUrls: 'https://i.gkd.li/i/12918049',
+      rules: [
+      {
+        key: 0,
+        matches: '[id="com.ky.medical.reference:id/btn_go"][text^="关闭"]',
+        _uniqueKey: 0
+      },
+      ],
+    },
 {
-    key: 0,
-    name: '全屏广告-弹窗广告',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    rules: [
+      key: 0,
+      name: '全屏广告-弹窗广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
       {
-          activityIds: 'com.ky.medical.reference.promotion.AdDialogActivity',
-          matches: '[id="com.ky.medical.reference:id/icClose"]',
-          snapshotUrls: 'https://i.gkd.li/i/12840924',
+        key: 0,
+        activityIds: 'com.ky.medical.reference.promotion.AdDialogActivity',
+        matches: '[id="com.ky.medical.reference:id/icClose"]',
+        snapshotUrls: 'https://i.gkd.li/i/12840924',
+        _uniqueKey: 0
       },
       {
-          matches: '[id="com.ky.medical.reference:id/icClose"]',
-          snapshotUrls: 'https://i.gkd.li/i/12840924',
+        key: 1,
+        matches: '[id="com.ky.medical.reference:id/icClose"]',
+        snapshotUrls: 'https://i.gkd.li/i/12840924',
+        _uniqueKey: 1
       },
-    ],
-  }
+      ],
+    },
   ],
 });

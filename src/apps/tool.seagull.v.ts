@@ -5,83 +5,76 @@ export default defineGkdApp({
   name: '海鸥加速器',
   groups: [
 {
-    key: 1,
-    name: '局部广告-卡片广告',
-    rules: [
+      key: 1,
+      name: '局部广告-卡片广告',
+      rules: [
       {
-          key: 0,
-          name: '卡片广告-1',
-          activityIds: 'io.github.trojan_gfw.igniter.MainActivity',
-          matches: 'View[childCount=2] > @Button[clickable=true] - View > View > View > Image',
-          snapshotUrls: 'https://i.gkd.li/i/13413556',
+        key: 0,
+        name: '卡片广告-1',
+        activityIds: 'io.github.trojan_gfw.igniter.MainActivity',
+        matches: 'View[childCount=2] > @Button[clickable=true] - View > View > View > Image',
+        snapshotUrls: 'https://i.gkd.li/i/13413556',
+        _uniqueKey: 0
       },
       {
-          key: 0,
-          name: '卡片式广告-1',
-          activityIds: 'io.github.trojan_gfw.igniter.MainActivity',
-          matches: 'View[childCount=2] > @Button[clickable=true] - View > View > View > Image',
-          snapshotUrls: 'https://i.gkd.li/i/13413556',
+        key: 1,
+        name: '卡片式广告-1',
+        activityIds: 'io.github.trojan_gfw.igniter.MainActivity',
+        matches: 'View[childCount=2] > @Button[clickable=true] - View > View > View > Image',
+        snapshotUrls: 'https://i.gkd.li/i/13413556',
+        _uniqueKey: 1
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 2,
-    name: '全屏广告-谷歌广告',
-    rules: [
+      key: 2,
+      name: '全屏广告-谷歌广告',
+      rules: [
       {
-          key: 0,
-          name: '谷歌广告-1',
-          activityIds: [
-              'io.github.trojan_gfw.igniter.MainActivity',
-              'com.google.android.gms.ads.AdActivity',
-          ],
-          matches: '[desc="OPEN" || desc="開啟"] - @View[clickable=true][visibleToUser=true] > [text="关闭"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/13426255',
-              'https://i.gkd.li/i/13459399',
-          ],
+        key: 0,
+        name: '谷歌广告-1',
+        activityIds: ['io.github.trojan_gfw.igniter.MainActivity', 'com.google.android.gms.ads.AdActivity'],
+        matches: '[desc="OPEN" || desc="開啟"] - @View[clickable=true][visibleToUser=true] > [text="关闭"]',
+        snapshotUrls: ['https://i.gkd.li/i/13426255', 'https://i.gkd.li/i/13459399'],
+        _uniqueKey: 0
       },
       {
-          key: 1,
-          name: '谷歌广告-2',
-          activityIds: 'com.google.android.gms.ads.AdActivity',
-          matches: '@Button[clickable=true][childCount=0] < View[childCount=1] <2 View[childCount=2] - View >3 [desc="開啟"]',
-          snapshotUrls: 'https://i.gkd.li/i/13476799',
+        key: 1,
+        name: '谷歌广告-2',
+        activityIds: 'com.google.android.gms.ads.AdActivity',
+        matches: '@Button[clickable=true][childCount=0] < View[childCount=1] <2 View[childCount=2] - View >3 [desc="開啟"]',
+        snapshotUrls: 'https://i.gkd.li/i/13476799',
+        _uniqueKey: 1
       },
       {
-          key: 2,
-          name: '谷歌广告-3',
-          activityIds: 'com.google.android.gms.ads.AdActivity',
-          matches: '[desc="Interstitial close button"]',
-          snapshotUrls: 'https://i.gkd.li/i/13476579',
+        key: 2,
+        name: '谷歌广告-3',
+        activityIds: 'com.google.android.gms.ads.AdActivity',
+        matches: '[desc="Interstitial close button"]',
+        snapshotUrls: 'https://i.gkd.li/i/13476579',
+        _uniqueKey: 2
       },
       {
-          key: 0,
-          name: '谷歌广告-1',
-          activityIds: [
-              'io.github.trojan_gfw.igniter.MainActivity',
-              'com.google.android.gms.ads.AdActivity',
-          ],
-          matches: [
-              '[id="mys-wrapper"] + View >n Image',
-              '@View[clickable=true] > [text="关闭"]',
-          ],
-          snapshotUrls: [
-              'https://i.gkd.li/i/13426255',
-              'https://i.gkd.li/i/13459399',
-          ],
+        key: 3,
+        name: '谷歌广告-1-1',
+        activityIds: ['io.github.trojan_gfw.igniter.MainActivity', 'com.google.android.gms.ads.AdActivity'],
+        matches: ['[id="mys-wrapper"] + View >n Image', '@View[clickable=true] > [text="关闭"]'],
+        snapshotUrls: ['https://i.gkd.li/i/13426255', 'https://i.gkd.li/i/13459399'],
+        _uniqueKey: 3,
+        _uniqueName: '谷歌广告-1-1',
+        name: '谷歌广告-1-1'
       },
       {
-          key: 1,
-          name: '谷歌广告-2',
-          activityIds: 'com.google.android.gms.ads.AdActivity',
-          matches: [
-              '[id="mys-wrapper"] + View >n Image',
-              '[id="mys-wrapper"] >n View > View > Button',
-          ],
-          snapshotUrls: 'https://i.gkd.li/i/13476799',
+        key: 4,
+        name: '谷歌广告-2-1',
+        activityIds: 'com.google.android.gms.ads.AdActivity',
+        matches: ['[id="mys-wrapper"] + View >n Image', '[id="mys-wrapper"] >n View > View > Button'],
+        snapshotUrls: 'https://i.gkd.li/i/13476799',
+        _uniqueKey: 4,
+        _uniqueName: '谷歌广告-2-1',
+        name: '谷歌广告-2-1'
       },
-    ],
-  }
+      ],
+    },
   ],
 });

@@ -5,21 +5,27 @@ export default defineGkdApp({
   name: '会计云课堂',
   groups: [
 {
-    key: 0,
-    name: '开屏广告',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    priorityTime: 10000,
-    order: -10,
-    rules: [
+      key: 0,
+      name: '开屏广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      priorityTime: 10000,
+      order: -10,
+      rules: [
       {
-          fastQuery: true,
-          matches: '[vid="tv_welcome_guide"]',
-          snapshotUrls: 'https://i.gkd.li/i/14809185',
+        key: 0,
+        matches: '[vid="tv_welcome_guide"]',
+        snapshotUrls: 'https://i.gkd.li/i/14809185',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-      { key: 0, matches: '[vid="tv_welcome_guide"]' },
-    ],
-  }
+      {
+        key: 1,
+        matches: '[vid="tv_welcome_guide"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
   ],
 });

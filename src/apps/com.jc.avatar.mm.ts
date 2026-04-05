@@ -5,20 +5,26 @@ export default defineGkdApp({
   name: '萌妹',
   groups: [
 {
-    key: 1,
-    name: '全屏广告-弹窗广告',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 1,
+      name: '全屏广告-弹窗广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: 'com.jc.avatar.mm.MainActivity',
-          matches: '@ImageView[childCount=0][text=null][visibleToUser=true] < FrameLayout[childCount=1] <2 FrameLayout[childCount=2] <2 FrameLayout[childCount=2] <2 FrameLayout[childCount=2] - FrameLayout > [text^="扭动或点击"]',
-          snapshotUrls: 'https://i.gkd.li/i/13188475',
+        key: 0,
+        activityIds: 'com.jc.avatar.mm.MainActivity',
+        matches: '@ImageView[childCount=0][text=null][visibleToUser=true] < FrameLayout[childCount=1] <2 FrameLayout[childCount=2] <2 FrameLayout[childCount=2] <2 FrameLayout[childCount=2] - FrameLayout > [text^="扭动或点击"]',
+        snapshotUrls: 'https://i.gkd.li/i/13188475',
+        _uniqueKey: 0
       },
-      { key: 0, matches: 'ImageView -2 FrameLayout > FrameLayout > FrameLayout > FrameLayout > ImageView' },
-    ],
-  }
+      {
+        key: 1,
+        matches: 'ImageView -2 FrameLayout > FrameLayout > FrameLayout > FrameLayout > ImageView',
+        _uniqueKey: 1
+      },
+      ],
+    },
   ],
 });

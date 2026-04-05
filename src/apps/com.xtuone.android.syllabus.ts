@@ -5,58 +5,78 @@ export default defineGkdApp({
   name: '超级课程表',
   groups: [
 {
-    key: 1,
-    name: '局部广告-首页卡片广告',
-    rules: [
+      key: 1,
+      name: '局部广告-首页卡片广告',
+      rules: [
       {
-          activityIds: 'com.xtuone.android.friday.MainFragmentActivity',
-          matches: '[id="com.xtuone.android.syllabus:id/treehole_banner_close"]',
-          snapshotUrls: 'https://i.gkd.li/i/12840733',
+        key: 0,
+        activityIds: 'com.xtuone.android.friday.MainFragmentActivity',
+        matches: '[id="com.xtuone.android.syllabus:id/treehole_banner_close"]',
+        snapshotUrls: 'https://i.gkd.li/i/12840733',
+        _uniqueKey: 0
       },
-      { key: 0, matches: '[id="com.xtuone.android.syllabus:id/treehole_banner_close"]' },
-    ],
-  },
+      {
+        key: 1,
+        matches: '[id="com.xtuone.android.syllabus:id/treehole_banner_close"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
 {
-    key: 2,
-    name: '局部广告-课程表界面广告',
-    rules: [
+      key: 2,
+      name: '局部广告-课程表界面广告',
+      rules: [
       {
-          activityIds: 'com.xtuone.android.friday.MainFragmentActivity',
-          matches: '[id="com.xtuone.android.syllabus:id/imgv_close"]',
-          snapshotUrls: 'https://i.gkd.li/i/12999642',
+        key: 0,
+        activityIds: 'com.xtuone.android.friday.MainFragmentActivity',
+        matches: '[id="com.xtuone.android.syllabus:id/imgv_close"]',
+        snapshotUrls: 'https://i.gkd.li/i/12999642',
+        _uniqueKey: 0
       },
-      { key: 0, matches: '[id="com.xtuone.android.syllabus:id/imgv_close"]' },
-    ],
-  },
+      {
+        key: 1,
+        matches: '[id="com.xtuone.android.syllabus:id/imgv_close"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
 {
-    key: 3,
-    name: '全屏广告-弹窗广告',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 3,
+      name: '全屏广告-弹窗广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: 'com.xtuone.android.friday.MainFragmentActivity',
-          matches: '[id="com.xtuone.android.syllabus:id/dialog_ad_close"]',
-          snapshotUrls: 'https://i.gkd.li/i/13166501',
+        key: 0,
+        activityIds: 'com.xtuone.android.friday.MainFragmentActivity',
+        matches: '[id="com.xtuone.android.syllabus:id/dialog_ad_close"]',
+        snapshotUrls: 'https://i.gkd.li/i/13166501',
+        _uniqueKey: 0
       },
-      { key: 0, matches: '[id="com.xtuone.android.syllabus:id/dialog_ad_close"]' },
-    ],
-  },
+      {
+        key: 1,
+        matches: '[id="com.xtuone.android.syllabus:id/dialog_ad_close"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
 {
-    key: 4,
-    name: '更新提示',
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 4,
+      name: '更新提示',
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: 'com.xtuone.android.friday.UpdateActivity',
-          matches: '@[vid="update_cancel"] + [vid="go_to_update"]',
-          snapshotUrls: 'https://i.gkd.li/i/14292875',
+        key: 0,
+        activityIds: 'com.xtuone.android.friday.UpdateActivity',
+        matches: '@[vid="update_cancel"] + [vid="go_to_update"]',
+        snapshotUrls: 'https://i.gkd.li/i/14292875',
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

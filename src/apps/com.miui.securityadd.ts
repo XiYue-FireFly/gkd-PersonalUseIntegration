@@ -5,36 +5,33 @@ export default defineGkdApp({
   name: '系统服务组件',
   groups: [
 {
-    key: 1,
-    name: '全屏广告-游戏广告弹窗',
-    desc: '关闭游戏加速弹出的活动广告弹窗',
-    enable: false,
-    rules: [
+      key: 1,
+      name: '全屏广告-游戏广告弹窗',
+      desc: '关闭游戏加速弹出的活动广告弹窗',
+      enable: false,
+      rules: [
       {
-          activityIds: 'com.miui.gamebooster.GameBoosterRichWebActivity',
-          matches: '[text="活动图片"] +2 Image[clickable=true]',
-          snapshotUrls: [
-              'https://i.gkd.li/import/13914659',
-              'https://i.gkd.li/i/14668629',
-          ],
+        key: 0,
+        activityIds: 'com.miui.gamebooster.GameBoosterRichWebActivity',
+        matches: '[text="活动图片"] +2 Image[clickable=true]',
+        snapshotUrls: ['https://i.gkd.li/import/13914659', 'https://i.gkd.li/i/14668629'],
+        _uniqueKey: 0
       },
       {
-          activityIds: 'com.miui.gamebooster.GameBoosterRichWebActivity',
-          matches: '[text="活动图片"] +2 @Image[clickable=true][childCount=0][visibleToUser=true] <<n [vid="content_view"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/13914659',
-              'https://i.gkd.li/i/14668629',
-          ],
+        key: 1,
+        activityIds: 'com.miui.gamebooster.GameBoosterRichWebActivity',
+        matches: '[text="活动图片"] +2 @Image[clickable=true][childCount=0][visibleToUser=true] <<n [vid="content_view"]',
+        snapshotUrls: ['https://i.gkd.li/i/13914659', 'https://i.gkd.li/i/14668629'],
+        _uniqueKey: 1
       },
       {
-          activityIds: 'com.miui.gamebooster.GameBoosterRichWebActivity',
-          matches: '[text="活动图片"] +2 Image[clickable=true]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/13914659',
-              'https://i.gkd.li/i/14668629',
-          ],
+        key: 2,
+        activityIds: 'com.miui.gamebooster.GameBoosterRichWebActivity',
+        matches: '[text="活动图片"] +2 Image[clickable=true]',
+        snapshotUrls: ['https://i.gkd.li/i/13914659', 'https://i.gkd.li/i/14668629'],
+        _uniqueKey: 2
       },
-    ],
-  }
+      ],
+    },
   ],
 });

@@ -5,46 +5,42 @@ export default defineGkdApp({
   name: '荣耀商城',
   groups: [
 {
-    key: 1,
-    name: '全屏广告-应用内弹窗广告',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    rules: [
+      key: 1,
+      name: '全屏广告-应用内弹窗广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
       {
-          activityIds: [
-              'com.vmall.client.base.fragment.VmallWapActivity',
-              'com.vmall.client.splash.fragment.SplashActivity',
-          ],
-          matches: '[id="com.hihonor.vmall:id/gift_close_iv"]',
-          snapshotUrls: 'https://i.gkd.li/i/13060881',
+        key: 0,
+        activityIds: ['com.vmall.client.base.fragment.VmallWapActivity', 'com.vmall.client.splash.fragment.SplashActivity'],
+        matches: '[id="com.hihonor.vmall:id/gift_close_iv"]',
+        snapshotUrls: 'https://i.gkd.li/i/13060881',
+        _uniqueKey: 0
       },
-      { key: 0, matches: '[id="com.hihonor.vmall:id/gift_close_iv"]' },
-    ],
-  },
+      {
+        key: 1,
+        matches: '[id="com.hihonor.vmall:id/gift_close_iv"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
 {
-    key: 2,
-    name: '权限提示-通知权限',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 2,
+      name: '权限提示-通知权限',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: [
-              'com.vmall.client.messageCenter.fragment.MessageCenterActivity',
-              'com.vmall.client.base.fragment.VmallWapActivity',
-          ],
-          matches: [
-              '[text="开启消息通知"]',
-              '[vid="notification_close" || vid="iv_close"]',
-          ],
-          snapshotUrls: [
-              'https://i.gkd.li/i/13959029',
-              'https://i.gkd.li/i/16776398',
-          ],
+        key: 0,
+        activityIds: ['com.vmall.client.messageCenter.fragment.MessageCenterActivity', 'com.vmall.client.base.fragment.VmallWapActivity'],
+        matches: ['[text="开启消息通知"]', '[vid="notification_close" || vid="iv_close"]'],
+        snapshotUrls: ['https://i.gkd.li/i/13959029', 'https://i.gkd.li/i/16776398'],
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

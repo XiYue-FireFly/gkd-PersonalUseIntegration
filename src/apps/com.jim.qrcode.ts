@@ -5,20 +5,18 @@ export default defineGkdApp({
   name: '随便扫',
   groups: [
 {
-    key: 0,
-    name: '局部广告-顶部卡片广告',
-    desc: '点击卡片右上角关闭按钮',
-    activityIds: [
-      'com.jim.qrcode.MainActivity',
-      'com.miui.home.launcher.Launcher',
-    ],
-    snapshotUrls: [
-      'https://i.gkd.li/i/12606861',
-      'https://i.gkd.li/i/12606862',
-    ],
-    rules: [
-      { key: 0, matches: 'TextView[text.length>0] < FrameLayout + FrameLayout > ImageView' },
-    ],
-  }
+      key: 0,
+      name: '局部广告-顶部卡片广告',
+      desc: '点击卡片右上角关闭按钮',
+      activityIds: ['com.jim.qrcode.MainActivity', 'com.miui.home.launcher.Launcher'],
+      snapshotUrls: ['https://i.gkd.li/i/12606861', 'https://i.gkd.li/i/12606862'],
+      rules: [
+      {
+        key: 0,
+        matches: 'TextView[text.length>0] < FrameLayout + FrameLayout > ImageView',
+        _uniqueKey: 0
+      },
+      ],
+    },
   ],
 });

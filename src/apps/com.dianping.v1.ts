@@ -5,129 +5,131 @@ export default defineGkdApp({
   name: '大众点评',
   groups: [
 {
-    key: 1,
-    name: '全屏广告-主页推荐关注弹窗',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    rules: [
+      key: 1,
+      name: '全屏广告-主页推荐关注弹窗',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
       {
-          activityIds: 'com.dianping.main.guide.SplashActivity',
-          matches: 'FrameLayout[id="android:id/content"] >2 FrameLayout > ImageView + FrameLayout[id=null][desc="关闭"][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/12727011',
+        key: 0,
+        activityIds: 'com.dianping.main.guide.SplashActivity',
+        matches: 'FrameLayout[id="android:id/content"] >2 FrameLayout > ImageView + FrameLayout[id=null][desc="关闭"][clickable=true]',
+        snapshotUrls: 'https://i.gkd.li/i/12727011',
+        _uniqueKey: 0
       },
-      { key: 0, matches: 'FrameLayout[id="android:id/content"] >2 FrameLayout > ImageView + FrameLayout[id=null][desc="关闭"][clickable=true]' },
-    ],
-  },
+      {
+        key: 1,
+        matches: 'FrameLayout[id="android:id/content"] >2 FrameLayout > ImageView + FrameLayout[id=null][desc="关闭"][clickable=true]',
+        _uniqueKey: 1
+      },
+      ],
+    },
 {
-    key: 2,
-    name: '权限提示-通知权限',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    rules: [
+      key: 2,
+      name: '权限提示-通知权限',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
       {
-          matches: '[text="去开启"][clickable=true] +2 @FrameLayout[clickable=true] > ImageView',
-          action: 'clickCenter',
-          snapshotUrls: 'https://i.gkd.li/i/12727070',
+        key: 0,
+        matches: '[text="去开启"][clickable=true] +2 @FrameLayout[clickable=true] > ImageView',
+        snapshotUrls: 'https://i.gkd.li/i/12727070',
+        action: 'clickCenter',
+        _uniqueKey: 0
       },
       {
-          matches: '[text="去开启"][clickable=true] +2 @FrameLayout[clickable=true] > ImageView',
-          action: 'clickCenter',
+        key: 1,
+        matches: '[text="去开启"][clickable=true] +2 @FrameLayout[clickable=true] > ImageView',
+        action: 'clickCenter',
+        _uniqueKey: 1
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 3,
-    name: '局部广告-关闭[签到开红包]',
-    desc: '点击右下角悬浮图片右上角的x图标',
-    activityIds: [
-      'com.dianping.v1.NovaMainActivity',
-    ],
-    snapshotUrls: 'https://i.gkd.li/i/12727366',
-    rules: [
-      { key: 0, matches: '[id="com.dianping.v1:id/float_image"] + [id="com.dianping.v1:id/close"][clickable=true]' },
-    ],
-  },
+      key: 3,
+      name: '局部广告-关闭[签到开红包]',
+      desc: '点击右下角悬浮图片右上角的x图标',
+      activityIds: ['com.dianping.v1.NovaMainActivity'],
+      snapshotUrls: 'https://i.gkd.li/i/12727366',
+      rules: [
+      {
+        key: 0,
+        matches: '[id="com.dianping.v1:id/float_image"] + [id="com.dianping.v1:id/close"][clickable=true]',
+        _uniqueKey: 0
+      },
+      ],
+    },
 {
-    key: 4,
-    name: '全屏广告-弹窗广告',
-    rules: [
+      key: 4,
+      name: '全屏广告-弹窗广告',
+      rules: [
       {
-          key: 0,
-          activityIds: 'com.dianping.v1.NovaMainActivity',
-          fastQuery: true,
-          matches: '[id="com.dianping.v1:id/operate_cross_icon"]',
-          snapshotUrls: 'https://i.gkd.li/i/13538340',
+        key: 0,
+        activityIds: 'com.dianping.v1.NovaMainActivity',
+        matches: '[id="com.dianping.v1:id/operate_cross_icon"]',
+        snapshotUrls: 'https://i.gkd.li/i/13538340',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 5,
-    name: '分段广告-推荐页卡片广告',
-    rules: [
+      key: 5,
+      name: '分段广告-推荐页卡片广告',
+      rules: [
       {
-          key: 0,
-          activityIds: 'com.dianping.v1.NovaMainActivity',
-          matches: '@[desc="reculike_delete"][clickable=true][visibleToUser=true] +3 [childCount=2]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/13759369',
-              'https://i.gkd.li/i/14332054',
-          ],
+        key: 0,
+        activityIds: 'com.dianping.v1.NovaMainActivity',
+        matches: '@[desc="reculike_delete"][clickable=true][visibleToUser=true] +3 [childCount=2]',
+        snapshotUrls: ['https://i.gkd.li/i/13759369', 'https://i.gkd.li/i/14332054'],
+        _uniqueKey: 0
       },
       {
-          preKeys: [
-              0,
-          ],
-          key: 1,
-          action: 'clickCenter',
-          activityIds: 'com.dianping.v1.NovaMainActivity',
-          matches: '@[clickable=true] > [text="重复出现"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/14238381',
-              'https://i.gkd.li/i/14269115',
-          ],
+        key: 1,
+        activityIds: 'com.dianping.v1.NovaMainActivity',
+        matches: '@[clickable=true] > [text="重复出现"]',
+        snapshotUrls: ['https://i.gkd.li/i/14238381', 'https://i.gkd.li/i/14269115'],
+        preKeys: [0],
+        action: 'clickCenter',
+        _uniqueKey: 1
       },
       {
-          preKeys: [
-              0,
-          ],
-          key: 2,
-          fastQuery: true,
-          activityIds: 'com.dianping.v1.NovaMainActivity',
-          matches: '[text$="重复出现"][clickable=true]',
-          exampleUrls: 'https://m.gkd.li/57941037/010c0314-e89b-468f-8143-691925a308a6',
-          snapshotUrls: 'https://i.gkd.li/i/14393256',
+        key: 2,
+        activityIds: 'com.dianping.v1.NovaMainActivity',
+        matches: '[text$="重复出现"][clickable=true]',
+        snapshotUrls: 'https://i.gkd.li/i/14393256',
+        exampleUrls: 'https://m.gkd.li/57941037/010c0314-e89b-468f-8143-691925a308a6',
+        preKeys: [0],
+        fastQuery: true,
+        _uniqueKey: 2
       },
       {
-          key: 1,
-          fastQuery: true,
-          action: 'clickCenter',
-          activityIds: 'com.dianping.v1.NovaMainActivity',
-          matches: '[text*="重复出现"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/14238381',
-              'https://i.gkd.li/i/14269115',
-              'https://i.gkd.li/i/14393253',
-          ],
+        key: 3,
+        activityIds: 'com.dianping.v1.NovaMainActivity',
+        matches: '[text*="重复出现"]',
+        snapshotUrls: ['https://i.gkd.li/i/14238381', 'https://i.gkd.li/i/14269115', 'https://i.gkd.li/i/14393253'],
+        fastQuery: true,
+        action: 'clickCenter',
+        _uniqueKey: 3
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 6,
-    name: '功能类-选择地图时自动点击[更多]',
-    rules: [
+      key: 6,
+      name: '功能类-选择地图时自动点击[更多]',
+      rules: [
       {
-          fastQuery: true,
-          activityIds: 'com.dianping.nova.picasso.DPPicassoBoxActivity',
-          matches: [
-              '[text="请选择地图"][visibleToUser=true]',
-              '@[clickable=true] > [text^="更多"][visibleToUser=true]',
-          ],
-          exampleUrls: 'https://e.gkd.li/ce751918-dab2-4670-a608-9edbcb3bdc0e',
-          snapshotUrls: 'https://i.gkd.li/i/23289239',
+        key: 0,
+        activityIds: 'com.dianping.nova.picasso.DPPicassoBoxActivity',
+        matches: ['[text="请选择地图"][visibleToUser=true]', '@[clickable=true] > [text^="更多"][visibleToUser=true]'],
+        snapshotUrls: 'https://i.gkd.li/i/23289239',
+        exampleUrls: 'https://e.gkd.li/ce751918-dab2-4670-a608-9edbcb3bdc0e',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

@@ -5,22 +5,21 @@ export default defineGkdApp({
   name: '嘀嗒出行',
   groups: [
 {
-    key: 1,
-    name: '开屏广告',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    order: -10,
-    rules: [
+      key: 1,
+      name: '开屏广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      order: -10,
+      rules: [
       {
-          fastQuery: true,
-          matches: '@View[clickable=true] <n * <2 * < [vid="flCSJAdContainer"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/13988957',
-              'https://i.gkd.li/i/13989178',
-          ],
+        key: 0,
+        matches: '@View[clickable=true] <n * <2 * < [vid="flCSJAdContainer"]',
+        snapshotUrls: ['https://i.gkd.li/i/13988957', 'https://i.gkd.li/i/13989178'],
+        fastQuery: true,
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

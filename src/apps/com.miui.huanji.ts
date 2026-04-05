@@ -5,18 +5,20 @@ export default defineGkdApp({
   name: '小米换机',
   groups: [
 {
-    key: 1,
-    name: '更新提示',
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 1,
+      name: '更新提示',
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: '.MainActivity',
-          matches: '@[text="下次再说"] + [text="立即升级"]',
-          snapshotUrls: 'https://i.gkd.li/i/14332463',
+        key: 0,
+        activityIds: '.MainActivity',
+        matches: '@[text="下次再说"] + [text="立即升级"]',
+        snapshotUrls: 'https://i.gkd.li/i/14332463',
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

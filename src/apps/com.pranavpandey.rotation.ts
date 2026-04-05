@@ -5,15 +5,17 @@ export default defineGkdApp({
   name: 'Rotation',
   groups: [
 {
-    key: 1,
-    name: '全屏广告',
-    rules: [
+      key: 1,
+      name: '全屏广告',
+      rules: [
       {
-          activityIds: 'com.google.android.gms.ads.AdActivity',
-          matches: '[desc="Interstitial close button"][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/23497601',
+        key: 0,
+        activityIds: 'com.google.android.gms.ads.AdActivity',
+        matches: '[desc="Interstitial close button"][clickable=true]',
+        snapshotUrls: 'https://i.gkd.li/i/23497601',
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

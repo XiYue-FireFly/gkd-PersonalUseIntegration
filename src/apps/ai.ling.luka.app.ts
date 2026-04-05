@@ -5,23 +5,22 @@ export default defineGkdApp({
   name: 'Luka阅读养成',
   groups: [
 {
-    key: 1,
-    name: '权限提示-通知权限',
-    desc: '点击[取消]',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 1,
+      name: '权限提示-通知权限',
+      desc: '点击[取消]',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: '.page.activity.MainActivity',
-          matches: [
-              '[text="通知服务未开启"]',
-              '[text="取消"]',
-          ],
-          snapshotUrls: 'https://i.gkd.li/i/15796616',
+        key: 0,
+        activityIds: '.page.activity.MainActivity',
+        matches: ['[text="通知服务未开启"]', '[text="取消"]'],
+        snapshotUrls: 'https://i.gkd.li/i/15796616',
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

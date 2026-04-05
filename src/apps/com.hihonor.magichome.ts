@@ -5,40 +5,54 @@ export default defineGkdApp({
   name: '荣耀智慧空间',
   groups: [
 {
-    key: 10,
-    name: '局部广告-首页顶部广告',
-    activityIds: 'com.hihonor.magichome.business.MainActivity',
-    snapshotUrls: 'https://i.gkd.li/i/12843930',
-    rules: [
-      { key: 0, matches: '[id="com.hihonor.magichome:id/item_close_image"]' },
-    ],
-  },
-{
-    key: 11,
-    name: '其他-推荐服务声明',
-    desc: '推荐服务声明弹窗。默认点击"取消"按钮',
-    activityIds: 'com.hihonor.magichome.business.MainActivity',
-    snapshotUrls: 'https://i.gkd.li/i/12843976',
-    rules: [
-      { key: 0, matches: '[text$="推荐服务声明"] < LinearLayout < LinearLayout + LinearLayout > [id="com.hihonor.magichome:id/negative_btn"]' },
-    ],
-  },
-{
-    key: 12,
-    name: '更新提示',
-    desc: '点击以后再说',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 10,
+      name: '局部广告-首页顶部广告',
+      activityIds: 'com.hihonor.magichome.business.MainActivity',
+      snapshotUrls: 'https://i.gkd.li/i/12843930',
+      rules: [
       {
-          activityIds: '.business.MainActivity',
-          matches: 'TextView[text="立即更新"] -2 [id="com.hihonor.magichome:id/negative_btn"][text="以后再说"]',
-          snapshotUrls: 'https://i.gkd.li/i/12916700',
+        key: 0,
+        matches: '[id="com.hihonor.magichome:id/item_close_image"]',
+        _uniqueKey: 0
       },
-      { key: 0, matches: 'TextView[text="立即更新"] -2 [id="com.hihonor.magichome:id/negative_btn"][text="以后再说"]' },
-    ],
-  }
+      ],
+    },
+{
+      key: 11,
+      name: '其他-推荐服务声明',
+      desc: '推荐服务声明弹窗。默认点击"取消"按钮',
+      activityIds: 'com.hihonor.magichome.business.MainActivity',
+      snapshotUrls: 'https://i.gkd.li/i/12843976',
+      rules: [
+      {
+        key: 0,
+        matches: '[text$="推荐服务声明"] < LinearLayout < LinearLayout + LinearLayout > [id="com.hihonor.magichome:id/negative_btn"]',
+        _uniqueKey: 0
+      },
+      ],
+    },
+{
+      key: 12,
+      name: '更新提示',
+      desc: '点击以后再说',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
+      {
+        key: 0,
+        activityIds: '.business.MainActivity',
+        matches: 'TextView[text="立即更新"] -2 [id="com.hihonor.magichome:id/negative_btn"][text="以后再说"]',
+        snapshotUrls: 'https://i.gkd.li/i/12916700',
+        _uniqueKey: 0
+      },
+      {
+        key: 1,
+        matches: 'TextView[text="立即更新"] -2 [id="com.hihonor.magichome:id/negative_btn"][text="以后再说"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
   ],
 });

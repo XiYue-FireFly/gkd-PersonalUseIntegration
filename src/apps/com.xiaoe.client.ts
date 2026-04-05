@@ -5,20 +5,22 @@ export default defineGkdApp({
   name: '小鹅通',
   groups: [
 {
-    key: 1,
-    name: '更新提示-版本更新弹窗',
-    desc: '点击暂不更新',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 1,
+      name: '更新提示-版本更新弹窗',
+      desc: '点击暂不更新',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: 'com.xiaoe.app.ui.main.XiaoeMainActivity',
-          matches: 'FrameLayout[vid="centerPopupContainer"] [text="暂不更新"]',
-          snapshotUrls: 'https://i.gkd.li/i/13832282',
+        key: 0,
+        activityIds: 'com.xiaoe.app.ui.main.XiaoeMainActivity',
+        matches: 'FrameLayout[vid="centerPopupContainer"] [text="暂不更新"]',
+        snapshotUrls: 'https://i.gkd.li/i/13832282',
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

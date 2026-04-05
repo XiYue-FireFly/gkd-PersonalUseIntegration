@@ -5,26 +5,30 @@ export default defineGkdApp({
   name: '万年历',
   groups: [
 {
-    key: 1,
-    name: '局部广告-悬浮广告',
-    rules: [
+      key: 1,
+      name: '局部广告-悬浮广告',
+      rules: [
       {
-          key: 0,
-          name: '万年历页面-右侧悬浮广告',
-          fastQuery: true,
-          activityIds: 'com.youloft.calendar.MainActivity',
-          matches: '[id="com.youloft.calendar:id/ad_iv_close"]',
-          snapshotUrls: 'https://i.gkd.li/i/13348416',
+        key: 0,
+        name: '万年历页面-右侧悬浮广告',
+        activityIds: 'com.youloft.calendar.MainActivity',
+        matches: '[id="com.youloft.calendar:id/ad_iv_close"]',
+        snapshotUrls: 'https://i.gkd.li/i/13348416',
+        fastQuery: true,
+        _uniqueKey: 0
       },
       {
-          key: 0,
-          name: '万年历页面-右侧悬浮广告',
-          activityIds: 'com.youloft.calendar.MainActivity',
-          fastQuery: true,
-          matches: '[id="com.youloft.calendar:id/ad_iv_close"]',
-          snapshotUrls: 'https://i.gkd.li/i/13348416',
+        key: 1,
+        name: '万年历页面-右侧悬浮广告-1',
+        activityIds: 'com.youloft.calendar.MainActivity',
+        matches: '[id="com.youloft.calendar:id/ad_iv_close"]',
+        snapshotUrls: 'https://i.gkd.li/i/13348416',
+        fastQuery: true,
+        _uniqueKey: 1,
+        _uniqueName: '万年历页面-右侧悬浮广告-1',
+        name: '万年历页面-右侧悬浮广告-1'
       },
-    ],
-  }
+      ],
+    },
   ],
 });

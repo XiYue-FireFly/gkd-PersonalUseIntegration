@@ -14,14 +14,14 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Generate source files
-        run: npx tsx gen_template.cjs
+      - name: Check subscription
+        run: npx tsx scripts/check.ts
 
       - name: Build subscription
         run: npx tsx scripts/build.ts

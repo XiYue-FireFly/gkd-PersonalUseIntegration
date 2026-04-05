@@ -5,19 +5,25 @@ export default defineGkdApp({
   name: '人民日报',
   groups: [
 {
-    key: 1,
-    name: '全屏广告-弹窗广告',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    rules: [
+      key: 1,
+      name: '全屏广告-弹窗广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
       {
-          activityIds: 'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
-          matches: '@Image[text=""] < View +n View > View > TextView[text="广告"]',
-          snapshotUrls: 'https://i.gkd.li/i/12841081',
+        key: 0,
+        activityIds: 'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
+        matches: '@Image[text=""] < View +n View > View > TextView[text="广告"]',
+        snapshotUrls: 'https://i.gkd.li/i/12841081',
+        _uniqueKey: 0
       },
-      { key: 0, matches: '@Image[text=""] < View +n View > View > TextView[text="广告"]' },
-    ],
-  }
+      {
+        key: 1,
+        matches: '@Image[text=""] < View +n View > View > TextView[text="广告"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
   ],
 });

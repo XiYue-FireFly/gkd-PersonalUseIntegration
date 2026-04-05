@@ -5,58 +5,63 @@ export default defineGkdApp({
   name: '腾讯会议',
   groups: [
 {
-    key: 1,
-    name: '更新提示',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 1,
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: '.StartupActivity',
-          matches: '[text^="腾讯会议新版本"] +3 * > [text="下次安装"]',
-          snapshotUrls: 'https://i.gkd.li/i/14332625',
+        key: 0,
+        activityIds: '.StartupActivity',
+        matches: '[text^="腾讯会议新版本"] +3 * > [text="下次安装"]',
+        snapshotUrls: 'https://i.gkd.li/i/14332625',
+        _uniqueKey: 0
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 2,
-    name: '评价提示-通话质量评价',
-    rules: [
+      key: 2,
+      name: '评价提示-通话质量评价',
+      rules: [
       {
-          fastQuery: true,
-          activityIds: 'com.tencent.wemeet.sdk.meeting.aftermeeting.AfterMeetingFeedbackMeetingExperienceActivity',
-          matches: [
-              '[text="通话品质如何"]',
-              '[vid="closeBtn"][clickable=true]',
-          ],
-          snapshotUrls: 'https://i.gkd.li/i/23786665',
+        key: 0,
+        activityIds: 'com.tencent.wemeet.sdk.meeting.aftermeeting.AfterMeetingFeedbackMeetingExperienceActivity',
+        matches: ['[text="通话品质如何"]', '[vid="closeBtn"][clickable=true]'],
+        snapshotUrls: 'https://i.gkd.li/i/23786665',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 3,
-    name: '局部广告-卡片广告',
-    rules: [
+      key: 3,
+      name: '局部广告-卡片广告',
+      rules: [
       {
-          fastQuery: true,
-          activityIds: 'com.tencent.wemeet.sdk.meeting.premeeting.home.HomeActivity',
-          matches: '@Button[clickable=true][childCount=1] > ImageView[childCount=0][width<80 && height<80] <<n [vid="operatingBannerContainer"]',
-          snapshotUrls: 'https://i.gkd.li/i/23786670',
+        key: 0,
+        activityIds: 'com.tencent.wemeet.sdk.meeting.premeeting.home.HomeActivity',
+        matches: '@Button[clickable=true][childCount=1] > ImageView[childCount=0][width<80 && height<80] <<n [vid="operatingBannerContainer"]',
+        snapshotUrls: 'https://i.gkd.li/i/23786670',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 4,
-    name: '全屏广告',
-    rules: [
+      key: 4,
+      name: '全屏广告',
+      rules: [
       {
-          fastQuery: true,
-          activityIds: 'com.tencent.wemeet.sdk.meeting.aftermeeting.AfterMeetingPictureActivity',
-          matches: '[vid="btnClose"]',
-          snapshotUrls: 'https://i.gkd.li/i/23787037',
+        key: 0,
+        activityIds: 'com.tencent.wemeet.sdk.meeting.aftermeeting.AfterMeetingPictureActivity',
+        matches: '[vid="btnClose"]',
+        snapshotUrls: 'https://i.gkd.li/i/23787037',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

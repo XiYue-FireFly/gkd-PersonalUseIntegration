@@ -5,38 +5,44 @@ export default defineGkdApp({
   name: '荣耀亲选',
   groups: [
 {
-    key: 1,
-    name: '全屏广告-首页弹窗广告',
-    desc: '点击关闭',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 1,
+      name: '全屏广告-首页弹窗广告',
+      desc: '点击关闭',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: 'cn.honor.qinxuan.MainActivity',
-          matches: '[id="cn.honor.qinxuan:id/iv_close_dlg"]',
-          snapshotUrls: 'https://i.gkd.li/i/13930613',
+        key: 0,
+        activityIds: 'cn.honor.qinxuan.MainActivity',
+        matches: '[id="cn.honor.qinxuan:id/iv_close_dlg"]',
+        snapshotUrls: 'https://i.gkd.li/i/13930613',
+        _uniqueKey: 0
       },
       {
-          matches: '[id="cn.honor.qinxuan:id/iv_close_dlg"]',
-          snapshotUrls: 'https://i.gkd.li/i/13930613',
+        key: 1,
+        matches: '[id="cn.honor.qinxuan:id/iv_close_dlg"]',
+        snapshotUrls: 'https://i.gkd.li/i/13930613',
+        _uniqueKey: 1
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 2,
-    name: '权限提示-通知权限',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 2,
+      name: '权限提示-通知权限',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          matches: '@[vid="iv_close"] < * > [text="开启消息通知"]',
-          snapshotUrls: 'https://i.gkd.li/i/14946137',
+        key: 0,
+        matches: '@[vid="iv_close"] < * > [text="开启消息通知"]',
+        snapshotUrls: 'https://i.gkd.li/i/14946137',
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

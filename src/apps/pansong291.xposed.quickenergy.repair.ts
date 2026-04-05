@@ -5,31 +5,29 @@ export default defineGkdApp({
   name: '芝麻粒',
   groups: [
 {
-    key: 1,
-    name: '通知提示-开屏[提示]弹窗',
-    desc: '点击[我知道了]',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 1,
+      name: '通知提示-开屏[提示]弹窗',
+      desc: '点击[我知道了]',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: 'pansong291.xposed.quickenergy.ui.MainActivity',
-          matches: '[text="我知道了"]',
-          snapshotUrls: 'https://i.gkd.li/i/13445477',
+        key: 0,
+        activityIds: 'pansong291.xposed.quickenergy.ui.MainActivity',
+        matches: '[text="我知道了"]',
+        snapshotUrls: 'https://i.gkd.li/i/13445477',
+        _uniqueKey: 0
       },
       {
-          activityIds: [
-              'pansong291.xposed.quickenergy.ui.MainActivity',
-          ],
-          matches: [
-              "[id='android:id/button2']",
-          ],
-          snapshotUrls: [
-              'https://i.gkd.li/i/13445477',
-          ],
+        key: 1,
+        activityIds: ['pansong291.xposed.quickenergy.ui.MainActivity'],
+        matches: ['[id=\'android:id/button2\']'],
+        snapshotUrls: ['https://i.gkd.li/i/13445477'],
+        _uniqueKey: 1
       },
-    ],
-  }
+      ],
+    },
   ],
 });

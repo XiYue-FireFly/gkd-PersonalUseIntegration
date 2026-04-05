@@ -5,19 +5,18 @@ export default defineGkdApp({
   name: '表盘自定义工具',
   groups: [
 {
-    key: 1,
-    name: '通知提示-公告',
-    rules: [
+      key: 1,
+      name: '通知提示-公告',
+      rules: [
       {
-          fastQuery: true,
-          activityIds: 'io.dcloud.PandoraEntryActivity',
-          matches: [
-              '[text*="请勿"][text*="电子书"]',
-              '[text="确定"][clickable=true]',
-          ],
-          snapshotUrls: 'https://i.gkd.li/i/23714166',
+        key: 0,
+        activityIds: 'io.dcloud.PandoraEntryActivity',
+        matches: ['[text*="请勿"][text*="电子书"]', '[text="确定"][clickable=true]'],
+        snapshotUrls: 'https://i.gkd.li/i/23714166',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

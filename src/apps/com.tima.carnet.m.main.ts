@@ -5,125 +5,91 @@ export default defineGkdApp({
   name: '钛马星',
   groups: [
 {
-    key: 2,
-    name: '全屏广告-每日弹窗广告',
-    activityIds: [
-      'com.tima.carnet.m.main.lib.common.dialog.TimaLoadingDialog',
-      'com.tima.carnet.m.main.app.main.NoticeActivity',
-      'com.tima.carnet.m.main.app.main.MainActivity',
-      'com.tima.carnet.m.main.LaunchActivity',
-    ],
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 2,
+      name: '全屏广告-每日弹窗广告',
+      activityIds: ['com.tima.carnet.m.main.lib.common.dialog.TimaLoadingDialog', 'com.tima.carnet.m.main.app.main.NoticeActivity', 'com.tima.carnet.m.main.app.main.MainActivity', 'com.tima.carnet.m.main.LaunchActivity'],
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          key: 1,
-          matches: '[text="今天内不显示"][checked=false]',
-          exampleUrls: 'https://e.gkd.li/66af6710-ec2e-472b-a589-cac40ac6ea6d',
-          snapshotUrls: [
-              'https://i.gkd.li/i/12654432',
-              'https://i.gkd.li/i/13507746',
-              'https://i.gkd.li/i/13508074',
-              'https://i.gkd.li/i/13508041',
-          ],
+        key: 1,
+        matches: '[text="今天内不显示"][checked=false]',
+        snapshotUrls: ['https://i.gkd.li/i/12654432', 'https://i.gkd.li/i/13507746', 'https://i.gkd.li/i/13508074', 'https://i.gkd.li/i/13508041'],
+        exampleUrls: 'https://e.gkd.li/66af6710-ec2e-472b-a589-cac40ac6ea6d',
+        _uniqueKey: 1
       },
       {
-          preKeys: [
-              1,
-          ],
-          key: 2,
-          matches: '@ImageButton[clickable=true] - [text="今天内不显示"]',
-          exampleUrls: 'https://e.gkd.li/66af6710-ec2e-472b-a589-cac40ac6ea6d',
-          snapshotUrls: [
-              'https://i.gkd.li/i/12654432',
-              'https://i.gkd.li/i/13507746',
-              'https://i.gkd.li/i/13508074',
-              'https://i.gkd.li/i/13508041',
-          ],
+        key: 2,
+        matches: '@ImageButton[clickable=true] - [text="今天内不显示"]',
+        snapshotUrls: ['https://i.gkd.li/i/12654432', 'https://i.gkd.li/i/13507746', 'https://i.gkd.li/i/13508074', 'https://i.gkd.li/i/13508041'],
+        exampleUrls: 'https://e.gkd.li/66af6710-ec2e-472b-a589-cac40ac6ea6d',
+        preKeys: [1],
+        _uniqueKey: 2
       },
       {
-          matches: [
-              'CheckBox[id$="today_will_not_shown"] + ImageButton[clickable=true]',
-          ],
-          snapshotUrls: [
-              'https://i.gkd.li/i/12654432',
-              'https://i.gkd.li/i/13507746',
-              'https://i.gkd.li/i/13508074',
-              'https://i.gkd.li/i/13508041',
-          ],
+        key: 3,
+        matches: ['CheckBox[id$="today_will_not_shown"] + ImageButton[clickable=true]'],
+        snapshotUrls: ['https://i.gkd.li/i/12654432', 'https://i.gkd.li/i/13507746', 'https://i.gkd.li/i/13508074', 'https://i.gkd.li/i/13508041'],
+        _uniqueKey: 3
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 3,
-    name: '分段广告-设备界面顶部广告',
-    activityIds: 'com.tima.carnet.m.main.app.main.MainActivity',
-    rules: [
+      key: 3,
+      name: '分段广告-设备界面顶部广告',
+      activityIds: 'com.tima.carnet.m.main.app.main.MainActivity',
+      rules: [
       {
-          key: 1,
-          matches: '@Image[childCount=0][visibleToUser=true] < View[childCount=1] + View >2 [visibleToUser=true][text="广告"] <<n [id="com.tima.carnet.m.main:id/fl_ad_banner"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/13508030',
-              'https://i.gkd.li/i/13508115',
-          ],
+        key: 1,
+        matches: '@Image[childCount=0][visibleToUser=true] < View[childCount=1] + View >2 [visibleToUser=true][text="广告"] <<n [id="com.tima.carnet.m.main:id/fl_ad_banner"]',
+        snapshotUrls: ['https://i.gkd.li/i/13508030', 'https://i.gkd.li/i/13508115'],
+        _uniqueKey: 1
       },
       {
-          key: 3,
-          preKeys: [
-              1,
-          ],
-          matches: '@[clickable=true] > [text="不感兴趣"]',
-          snapshotUrls: 'https://i.gkd.li/i/13508102',
+        key: 3,
+        matches: '@[clickable=true] > [text="不感兴趣"]',
+        snapshotUrls: 'https://i.gkd.li/i/13508102',
+        preKeys: [1],
+        _uniqueKey: 3
       },
       {
-          key: 4,
-          preKeys: [
-              1,
-          ],
-          action: 'back',
-          matches: 'ListView[id="com.byted.pangle:id/tt_filer_words_lv"][childCount=0]',
-          snapshotUrls: 'https://i.gkd.li/i/13508072',
+        key: 4,
+        matches: 'ListView[id="com.byted.pangle:id/tt_filer_words_lv"][childCount=0]',
+        snapshotUrls: 'https://i.gkd.li/i/13508072',
+        preKeys: [1],
+        action: 'back',
+        _uniqueKey: 4
       },
       {
-          key: 1,
-          matches: '[id="com.tima.carnet.m.main:id/fl_ad_banner"] >n Image[text!=null&&text!=""] < View +n View > Image',
-          snapshotUrls: [
-              'https://i.gkd.li/i/13508030',
-          ],
+        key: 2,
+        matches: '[id="com.tima.carnet.m.main:id/fl_ad_banner"] >n Image[text!=null&&text!=""] < View +n View > Image',
+        snapshotUrls: ['https://i.gkd.li/i/13508030'],
+        _uniqueKey: 2
       },
       {
-          key: 2,
-          matches: '[id="com.tima.carnet.m.main:id/fl_ad_banner"] >n Image[text!=null&&text!=""] + View > Image',
-          snapshotUrls: [
-              'https://i.gkd.li/i/13508115',
-          ],
+        key: 5,
+        matches: '[id="com.tima.carnet.m.main:id/fl_ad_banner"] >n Image[text!=null&&text!=""] + View > Image',
+        snapshotUrls: ['https://i.gkd.li/i/13508115'],
+        _uniqueKey: 5
       },
       {
-          key: 3,
-          preKeys: [
-              1,
-              2,
-          ],
-          matches: '[text="不感兴趣"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/13508102',
-          ],
+        key: 6,
+        matches: '[text="不感兴趣"]',
+        snapshotUrls: ['https://i.gkd.li/i/13508102'],
+        preKeys: [1,2],
+        _uniqueKey: 6
       },
       {
-          key: 4,
-          preKeys: [
-              1,
-              2,
-          ],
-          action: 'back',
-          matches: 'ListView[childCount=0]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/13508072',
-          ],
+        key: 7,
+        matches: 'ListView[childCount=0]',
+        snapshotUrls: ['https://i.gkd.li/i/13508072'],
+        preKeys: [1,2],
+        action: 'back',
+        _uniqueKey: 7
       },
-    ],
-  }
+      ],
+    },
   ],
 });

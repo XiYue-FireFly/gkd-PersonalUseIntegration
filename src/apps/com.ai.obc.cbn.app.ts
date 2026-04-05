@@ -5,32 +5,27 @@ export default defineGkdApp({
   name: '中国广电',
   groups: [
 {
-    key: 2,
-    name: '更新提示',
-    enable: false,
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    rules: [
+      key: 2,
+      name: '更新提示',
+      enable: false,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
       {
-          activityIds: [
-              '.ui.other.activity.MainActivity',
-              '.ui.main.fragment.MainFragment$7$1',
-          ],
-          matches: '[id$="/ivDis"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/12617201',
-              'https://i.gkd.li/i/12655061',
-          ],
+        key: 0,
+        activityIds: ['.ui.other.activity.MainActivity', '.ui.main.fragment.MainFragment$7$1'],
+        matches: '[id$="/ivDis"]',
+        snapshotUrls: ['https://i.gkd.li/i/12617201', 'https://i.gkd.li/i/12655061'],
+        _uniqueKey: 0
       },
       {
-          matches: '[id$="/ivDis"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/12617201',
-              'https://i.gkd.li/i/12655061',
-          ],
+        key: 1,
+        matches: '[id$="/ivDis"]',
+        snapshotUrls: ['https://i.gkd.li/i/12617201', 'https://i.gkd.li/i/12655061'],
+        _uniqueKey: 1
       },
-    ],
-  }
+      ],
+    },
   ],
 });

@@ -5,23 +5,19 @@ export default defineGkdApp({
   name: '疯狂刷题',
   groups: [
 {
-    key: 1,
-    name: '更新提示',
-    enable: false,
-    activityIds: [
-      'com.yaerxing.fkst.activity.MainActivity',
-      'com.yaerxing.fkst.activity.SplashActivity',
-      'com.yaerxing.fkst.activity.SelectModuleActivity',
-    ],
-    order: -9,
-    snapshotUrls: [
-      'https://i.gkd.li/i/12715037',
-      'https://i.gkd.li/i/12715047',
-      'https://i.gkd.li/i/12715053',
-    ],
-    rules: [
-      { key: 0, matches: '@[id="com.yaerxing.fkst:id/iv_close"] < LinearLayout - LinearLayout > [id="com.yaerxing.fkst:id/btn_update"]' },
-    ],
-  }
+      key: 1,
+      name: '更新提示',
+      enable: false,
+      activityIds: ['com.yaerxing.fkst.activity.MainActivity', 'com.yaerxing.fkst.activity.SplashActivity', 'com.yaerxing.fkst.activity.SelectModuleActivity'],
+      order: -9,
+      snapshotUrls: ['https://i.gkd.li/i/12715037', 'https://i.gkd.li/i/12715047', 'https://i.gkd.li/i/12715053'],
+      rules: [
+      {
+        key: 0,
+        matches: '@[id="com.yaerxing.fkst:id/iv_close"] < LinearLayout - LinearLayout > [id="com.yaerxing.fkst:id/btn_update"]',
+        _uniqueKey: 0
+      },
+      ],
+    },
   ],
 });

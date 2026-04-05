@@ -5,40 +5,48 @@ export default defineGkdApp({
   name: '天翼云盘',
   groups: [
 {
-    key: 1,
-    name: '全屏广告-首页弹窗广告',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 1,
+      name: '全屏广告-首页弹窗广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: 'com.cn21.ecloud.activity.MainPageActivity',
-          matches: 'FrameLayout > View[childCount=1] > View[childCount=1] >(1,4) View[childCount=2][desc=null] > @ImageView[clickable=true][visibleToUser=true] <<n [vid="content_frame"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/12865488',
-              'https://i.gkd.li/i/16653930',
-              'https://i.gkd.li/i/16647901',
-          ],
+        key: 0,
+        activityIds: 'com.cn21.ecloud.activity.MainPageActivity',
+        matches: 'FrameLayout > View[childCount=1] > View[childCount=1] >(1,4) View[childCount=2][desc=null] > @ImageView[clickable=true][visibleToUser=true] <<n [vid="content_frame"]',
+        snapshotUrls: ['https://i.gkd.li/i/12865488', 'https://i.gkd.li/i/16653930', 'https://i.gkd.li/i/16647901'],
+        _uniqueKey: 0
       },
-      { key: 0, matches: '[id="com.cn21.ecloud:id/content_frame"] >n FrameLayout >n @ImageView[desc=null] - View < View[childCount=2]' },
-    ],
-  },
+      {
+        key: 1,
+        matches: '[id="com.cn21.ecloud:id/content_frame"] >n FrameLayout >n @ImageView[desc=null] - View < View[childCount=2]',
+        _uniqueKey: 1
+      },
+      ],
+    },
 {
-    key: 2,
-    name: '更新提示',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 2,
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: '.activity.MainPageActivity',
-          matches: '[id="com.cn21.ecloud:id/ivCancel"]',
-          snapshotUrls: 'https://i.gkd.li/i/13399488',
+        key: 0,
+        activityIds: '.activity.MainPageActivity',
+        matches: '[id="com.cn21.ecloud:id/ivCancel"]',
+        snapshotUrls: 'https://i.gkd.li/i/13399488',
+        _uniqueKey: 0
       },
-      { key: 0, matches: '[id="com.cn21.ecloud:id/ivCancel"]' },
-    ],
-  }
+      {
+        key: 1,
+        matches: '[id="com.cn21.ecloud:id/ivCancel"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
   ],
 });

@@ -5,20 +5,26 @@ export default defineGkdApp({
   name: '观星',
   groups: [
 {
-    key: 1,
-    name: '全屏广告-弹窗广告',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    rules: [
+      key: 1,
+      name: '全屏广告-弹窗广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
       {
-          fastQuery: true,
-          activityIds: 'com.x.istar.view.main.MainActivity',
-          matches: '[text="关闭广告"][vid="btn_negative"]',
-          snapshotUrls: 'https://i.gkd.li/i/13974606',
+        key: 0,
+        activityIds: 'com.x.istar.view.main.MainActivity',
+        matches: '[text="关闭广告"][vid="btn_negative"]',
+        snapshotUrls: 'https://i.gkd.li/i/13974606',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-      { key: 0, matches: '[text="关闭广告"][vid="btn_negative"]' },
-    ],
-  }
+      {
+        key: 1,
+        matches: '[text="关闭广告"][vid="btn_negative"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
   ],
 });

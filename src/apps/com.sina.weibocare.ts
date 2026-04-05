@@ -5,18 +5,24 @@ export default defineGkdApp({
   name: 'WeiboBig',
   groups: [
 {
-    key: 1,
-    name: '功能类-流量继续播放视频',
-    desc: '点击[播放]',
-    rules: [
+      key: 1,
+      name: '功能类-流量继续播放视频',
+      desc: '点击[播放]',
+      rules: [
       {
-          fastQuery: true,
-          activityIds: 'com.weico.international.activity.MainFragmentActivity',
-          matches: '[id="com.sina.weibocare:id/ed_btn_positive"][text="播放"]',
-          snapshotUrls: 'https://i.gkd.li/i/13253223',
+        key: 0,
+        activityIds: 'com.weico.international.activity.MainFragmentActivity',
+        matches: '[id="com.sina.weibocare:id/ed_btn_positive"][text="播放"]',
+        snapshotUrls: 'https://i.gkd.li/i/13253223',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-      { key: 0, matches: '[id="com.sina.weibocare:id/ed_btn_positive"][text="播放"]' },
-    ],
-  }
+      {
+        key: 1,
+        matches: '[id="com.sina.weibocare:id/ed_btn_positive"][text="播放"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
   ],
 });

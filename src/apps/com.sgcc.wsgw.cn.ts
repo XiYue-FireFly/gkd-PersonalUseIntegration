@@ -5,82 +5,75 @@ export default defineGkdApp({
   name: '网上国网',
   groups: [
 {
-    key: 1,
-    name: '分段广告-首页弹窗广告',
-    activityIds: [
-      'com.sgcc.wsgw.mainbundle.NewsSyRemind2Activity',
-      'com.sgcc.wsgw.rnbundle.activity.HomeReactActivity',
-    ],
-    rules: [
+      key: 1,
+      name: '分段广告-首页弹窗广告',
+      activityIds: ['com.sgcc.wsgw.mainbundle.NewsSyRemind2Activity', 'com.sgcc.wsgw.rnbundle.activity.HomeReactActivity'],
+      rules: [
       {
-          key: 1,
-          actionCd: 2000,
-          fastQuery: true,
-          matches: '@[focusable=true] + [text="今日不再出现"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/12745042',
-              'https://i.gkd.li/i/13247655',
-          ],
+        key: 1,
+        matches: '@[focusable=true] + [text="今日不再出现"]',
+        snapshotUrls: ['https://i.gkd.li/i/12745042', 'https://i.gkd.li/i/13247655'],
+        actionCd: 2000,
+        fastQuery: true,
+        _uniqueKey: 1
       },
       {
-          preKeys: [
-              1,
-          ],
-          key: 2,
-          actionDelay: 300,
-          matches: 'ViewGroup[childCount=1] > @ViewGroup[childCount=1] > ImageView',
-          snapshotUrls: [
-              'https://i.gkd.li/i/13247655',
-              'https://i.gkd.li/i/13247655',
-          ],
+        key: 2,
+        matches: 'ViewGroup[childCount=1] > @ViewGroup[childCount=1] > ImageView',
+        snapshotUrls: ['https://i.gkd.li/i/13247655', 'https://i.gkd.li/i/13247655'],
+        preKeys: [1],
+        actionDelay: 300,
+        _uniqueKey: 2
       },
       {
-          preKeys: [
-              1,
-          ],
-          key: 3,
-          actionDelay: 300,
-          fastQuery: true,
-          matches: '[id="com.sgcc.wsgw.cn:id/news_remind_laytout"] >n [id="com.sgcc.wsgw.cn:id/btn_remind_close"]',
-          snapshotUrls: 'https://i.gkd.li/i/12745042',
+        key: 3,
+        matches: '[id="com.sgcc.wsgw.cn:id/news_remind_laytout"] >n [id="com.sgcc.wsgw.cn:id/btn_remind_close"]',
+        snapshotUrls: 'https://i.gkd.li/i/12745042',
+        preKeys: [1],
+        actionDelay: 300,
+        fastQuery: true,
+        _uniqueKey: 3
       },
       {
-          preKeys: 1,
-          key: 2,
-          actionDelay: 300,
-          matches: 'ViewGroup[childCount=1] > @ViewGroup[childCount=1] > ImageView',
-          snapshotUrls: [
-              'https://i.gkd.li/i/13247655',
-              'https://i.gkd.li/i/13247655',
-          ],
+        key: 4,
+        matches: 'ViewGroup[childCount=1] > @ViewGroup[childCount=1] > ImageView',
+        snapshotUrls: ['https://i.gkd.li/i/13247655', 'https://i.gkd.li/i/13247655'],
+        preKeys: 1,
+        actionDelay: 300,
+        _uniqueKey: 4
       },
       {
-          preKeys: 1,
-          key: 3,
-          actionDelay: 300,
-          fastQuery: true,
-          matches: '[id="com.sgcc.wsgw.cn:id/news_remind_laytout"] >n [id="com.sgcc.wsgw.cn:id/btn_remind_close"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/12745042',
-          ],
+        key: 5,
+        matches: '[id="com.sgcc.wsgw.cn:id/news_remind_laytout"] >n [id="com.sgcc.wsgw.cn:id/btn_remind_close"]',
+        snapshotUrls: ['https://i.gkd.li/i/12745042'],
+        preKeys: 1,
+        actionDelay: 300,
+        fastQuery: true,
+        _uniqueKey: 5
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 2,
-    name: '更新提示',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 2,
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: 'com.sgcc.wsgw.rnbundle.activity.HomeReactActivity',
-          matches: '@ImageView < ViewGroup -3 [text="有新版本啦!"]',
-          snapshotUrls: 'https://i.gkd.li/i/13501638',
+        key: 0,
+        activityIds: 'com.sgcc.wsgw.rnbundle.activity.HomeReactActivity',
+        matches: '@ImageView < ViewGroup -3 [text="有新版本啦!"]',
+        snapshotUrls: 'https://i.gkd.li/i/13501638',
+        _uniqueKey: 0
       },
-      { key: 0, matches: '@ImageView < ViewGroup -3 [text="有新版本啦!"]' },
-    ],
-  }
+      {
+        key: 1,
+        matches: '@ImageView < ViewGroup -3 [text="有新版本啦!"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
   ],
 });

@@ -5,22 +5,21 @@ export default defineGkdApp({
   name: 'Nekogram',
   groups: [
 {
-    key: 1,
-    name: '更新提示',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 1,
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: 'org.telegram.ui.LaunchActivity',
-          matches: '@Button[desc$="稍后提醒我"] - [desc="立即下载"] <3 FrameLayout < FrameLayout < [id="android:id/content"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/14229236',
-              'https://i.gkd.li/i/14372061',
-          ],
+        key: 0,
+        activityIds: 'org.telegram.ui.LaunchActivity',
+        matches: '@Button[desc$="稍后提醒我"] - [desc="立即下载"] <3 FrameLayout < FrameLayout < [id="android:id/content"]',
+        snapshotUrls: ['https://i.gkd.li/i/14229236', 'https://i.gkd.li/i/14372061'],
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

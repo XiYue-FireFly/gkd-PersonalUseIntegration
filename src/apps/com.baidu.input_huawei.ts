@@ -5,23 +5,22 @@ export default defineGkdApp({
   name: '百度输入法华为定制版',
   groups: [
 {
-    key: 0,
-    name: '开屏广告',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    order: -10,
-    rules: [
+      key: 0,
+      name: '开屏广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      order: -10,
+      rules: [
       {
-          matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
-          exampleUrls: 'https://e.gkd.li/0754949d-3440-4a0f-9b2e-949c6850b292',
-          snapshotUrls: [
-              'https://i.gkd.li/i/16493628',
-              'https://i.gkd.li/i/16493619',
-          ],
+        key: 0,
+        matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
+        snapshotUrls: ['https://i.gkd.li/i/16493628', 'https://i.gkd.li/i/16493619'],
+        exampleUrls: 'https://e.gkd.li/0754949d-3440-4a0f-9b2e-949c6850b292',
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

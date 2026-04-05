@@ -5,16 +5,18 @@ export default defineGkdApp({
   name: '粉笔',
   groups: [
 {
-    key: 1,
-    name: '未分类-升级弹窗',
-    enable: false,
-    activityIds: 'com.fenbi.android.module.home.HomeActivity',
-    rules: [
+      key: 1,
+      name: '青少年模式-升级弹窗',
+      enable: false,
+      activityIds: 'com.fenbi.android.module.home.HomeActivity',
+      rules: [
       {
-          matches: '[id="com.fenbi.android.servant:id/close"]',
-          snapshotUrls: 'https://i.gkd.li/i/12999725',
+        key: 0,
+        matches: '[id="com.fenbi.android.servant:id/close"]',
+        snapshotUrls: 'https://i.gkd.li/i/12999725',
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

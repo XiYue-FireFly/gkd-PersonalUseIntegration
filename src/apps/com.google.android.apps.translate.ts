@@ -5,23 +5,26 @@ export default defineGkdApp({
   name: 'Google翻译',
   groups: [
 {
-    key: 4,
-    name: '功能类-关闭登录备份翻译记录弹窗',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 4,
+      name: '功能类-关闭登录备份翻译记录弹窗',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: 'com.google.android.apps.translate.TranslateActivity',
-          matches: [
-              '[text="备份您的翻译历史记录"]',
-              '[text="取消"]',
-          ],
-          snapshotUrls: 'https://i.gkd.li/i/13495796',
+        key: 0,
+        activityIds: 'com.google.android.apps.translate.TranslateActivity',
+        matches: ['[text="备份您的翻译历史记录"]', '[text="取消"]'],
+        snapshotUrls: 'https://i.gkd.li/i/13495796',
+        _uniqueKey: 0
       },
-      { key: 0, matches: 'Button[id="com.google.android.apps.translate:id/sign_in_button"] + [id="com.google.android.apps.translate:id/secondary_action_button"]' },
-    ],
-  }
+      {
+        key: 1,
+        matches: 'Button[id="com.google.android.apps.translate:id/sign_in_button"] + [id="com.google.android.apps.translate:id/secondary_action_button"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
   ],
 });

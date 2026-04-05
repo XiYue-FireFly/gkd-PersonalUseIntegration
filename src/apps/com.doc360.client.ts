@@ -5,18 +5,24 @@ export default defineGkdApp({
   name: '个人图书馆',
   groups: [
 {
-    key: 5,
-    name: '局部广告-信息流广告',
-    desc: '点击关闭',
-    rules: [
+      key: 5,
+      name: '局部广告-信息流广告',
+      desc: '点击关闭',
+      rules: [
       {
-          fastQuery: true,
-          activityIds: 'com.doc360.client.activity.ReadRoomActivity',
-          matches: '@View[clickable=true] < FrameLayout[desc^="dislike"] -2 FrameLayout >2 [text="广告"]',
-          snapshotUrls: 'https://i.gkd.li/i/13485051',
+        key: 0,
+        activityIds: 'com.doc360.client.activity.ReadRoomActivity',
+        matches: '@View[clickable=true] < FrameLayout[desc^="dislike"] -2 FrameLayout >2 [text="广告"]',
+        snapshotUrls: 'https://i.gkd.li/i/13485051',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-      { key: 0, matches: '@FrameLayout[desc^="dislike"] <<n [id="com.doc360.client:id/fl_ad_container"]' },
-    ],
-  }
+      {
+        key: 1,
+        matches: '@FrameLayout[desc^="dislike"] <<n [id="com.doc360.client:id/fl_ad_container"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
   ],
 });

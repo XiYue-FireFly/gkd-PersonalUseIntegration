@@ -5,24 +5,26 @@ export default defineGkdApp({
   name: '澎湃新闻',
   groups: [
 {
-    key: 2,
-    name: '全屏广告-弹窗广告',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    rules: [
+      key: 2,
+      name: '全屏广告-弹窗广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
       {
-          activityIds: 'cn.thepaper.paper.ui.main.MainActivity',
-          matches: '[id="com.wondertek.paper:id/relative_layout"] + [id="com.wondertek.paper:id/close_photo"]',
-          snapshotUrls: 'https://i.gkd.li/i/12899226',
+        key: 0,
+        activityIds: 'cn.thepaper.paper.ui.main.MainActivity',
+        matches: '[id="com.wondertek.paper:id/relative_layout"] + [id="com.wondertek.paper:id/close_photo"]',
+        snapshotUrls: 'https://i.gkd.li/i/12899226',
+        _uniqueKey: 0
       },
       {
-          matches: '[id="com.wondertek.paper:id/second_num"] <2 [id="com.wondertek.paper:id/relative_layout"] + [id="com.wondertek.paper:id/close_photo"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/12899226',
-          ],
+        key: 1,
+        matches: '[id="com.wondertek.paper:id/second_num"] <2 [id="com.wondertek.paper:id/relative_layout"] + [id="com.wondertek.paper:id/close_photo"]',
+        snapshotUrls: ['https://i.gkd.li/i/12899226'],
+        _uniqueKey: 1
       },
-    ],
-  }
+      ],
+    },
   ],
 });

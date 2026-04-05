@@ -5,18 +5,24 @@ export default defineGkdApp({
   name: '得物',
   groups: [
 {
-    key: 4,
-    name: '其他-截屏分享',
-    desc: '关闭截屏时app弹出的分享弹窗',
-    rules: [
+      key: 4,
+      name: '其他-截屏分享',
+      desc: '关闭截屏时app弹出的分享弹窗',
+      rules: [
       {
-          fastQuery: true,
-          activityIds: 'com.shizhuang.duapp.modules.product_detail.detailv4.ui.ProductDetailActivityV4',
-          matches: '[id="com.shizhuang.duapp:id/ivClose"] +2 [id="com.shizhuang.duapp:id/ivSave"]',
-          snapshotUrls: 'https://i.gkd.li/i/13473449',
+        key: 0,
+        activityIds: 'com.shizhuang.duapp.modules.product_detail.detailv4.ui.ProductDetailActivityV4',
+        matches: '[id="com.shizhuang.duapp:id/ivClose"] +2 [id="com.shizhuang.duapp:id/ivSave"]',
+        snapshotUrls: 'https://i.gkd.li/i/13473449',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-      { key: 0, matches: '[id="com.shizhuang.duapp:id/ivClose"] +2 [id="com.shizhuang.duapp:id/ivSave"]' },
-    ],
-  }
+      {
+        key: 1,
+        matches: '[id="com.shizhuang.duapp:id/ivClose"] +2 [id="com.shizhuang.duapp:id/ivSave"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
   ],
 });

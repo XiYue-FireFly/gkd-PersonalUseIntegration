@@ -5,34 +5,46 @@ export default defineGkdApp({
   name: '网速管家极速版',
   groups: [
 {
-    key: 1,
-    name: '更新提示',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    rules: [
+      key: 1,
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
       {
-          activityIds: '.main.MainActivity',
-          matches: '@[id="cn.speedtest.lite:id/iv_close"] - [id="cn.speedtest.lite:id/ll_main_pane"] >2 [id="cn.speedtest.lite:id/tv_upgrade_content"]',
-          snapshotUrls: 'https://i.gkd.li/i/12715483',
+        key: 0,
+        activityIds: '.main.MainActivity',
+        matches: '@[id="cn.speedtest.lite:id/iv_close"] - [id="cn.speedtest.lite:id/ll_main_pane"] >2 [id="cn.speedtest.lite:id/tv_upgrade_content"]',
+        snapshotUrls: 'https://i.gkd.li/i/12715483',
+        _uniqueKey: 0
       },
-      { key: 0, matches: '@[id="cn.speedtest.lite:id/iv_close"] - [id="cn.speedtest.lite:id/ll_main_pane"] >2 [id="cn.speedtest.lite:id/tv_upgrade_content"]' },
-    ],
-  },
+      {
+        key: 1,
+        matches: '@[id="cn.speedtest.lite:id/iv_close"] - [id="cn.speedtest.lite:id/ll_main_pane"] >2 [id="cn.speedtest.lite:id/tv_upgrade_content"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
 {
-    key: 10,
-    name: '全屏广告-新人专享优惠弹窗',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    rules: [
+      key: 10,
+      name: '全屏广告-新人专享优惠弹窗',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
       {
-          activityIds: 'cn.speedtest.lite.main.MainActivity',
-          matches: '@[id="cn.speedtest.lite:id/iv_close"] - RelativeLayout >n [id="cn.speedtest.lite:id/ad_banner"]',
-          snapshotUrls: 'https://i.gkd.li/i/12715511',
+        key: 0,
+        activityIds: 'cn.speedtest.lite.main.MainActivity',
+        matches: '@[id="cn.speedtest.lite:id/iv_close"] - RelativeLayout >n [id="cn.speedtest.lite:id/ad_banner"]',
+        snapshotUrls: 'https://i.gkd.li/i/12715511',
+        _uniqueKey: 0
       },
-      { key: 0, matches: '@[id="cn.speedtest.lite:id/iv_close"] - RelativeLayout >n [id="cn.speedtest.lite:id/ad_banner"]' },
-    ],
-  }
+      {
+        key: 1,
+        matches: '@[id="cn.speedtest.lite:id/iv_close"] - RelativeLayout >n [id="cn.speedtest.lite:id/ad_banner"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
   ],
 });

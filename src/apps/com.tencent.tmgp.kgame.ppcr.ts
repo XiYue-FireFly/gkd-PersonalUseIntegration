@@ -5,26 +5,28 @@ export default defineGkdApp({
   name: '全民泡泡超人',
   groups: [
 {
-    key: 0,
-    name: '开屏广告',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    priorityTime: 10000,
-    order: -10,
-    rules: [
+      key: 0,
+      name: '开屏广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      priorityTime: 10000,
+      order: -10,
+      rules: [
       {
-          matches: '[id="com.tencent.ysdkcore:id/com_tencent_ysdk_icon_h5_xx"]',
-          snapshotUrls: 'https://i.gkd.li/i/13276317',
+        key: 0,
+        matches: '[id="com.tencent.ysdkcore:id/com_tencent_ysdk_icon_h5_xx"]',
+        snapshotUrls: 'https://i.gkd.li/i/13276317',
+        _uniqueKey: 0
       },
       {
-          matches: '[id="com.tencent.ysdkcore:id/com_tencent_ysdk_icon_h5_xx"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/13276317',
-          ],
+        key: 1,
+        matches: '[id="com.tencent.ysdkcore:id/com_tencent_ysdk_icon_h5_xx"]',
+        snapshotUrls: ['https://i.gkd.li/i/13276317'],
+        _uniqueKey: 1
       },
-    ],
-  }
+      ],
+    },
   ],
 });

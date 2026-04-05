@@ -5,25 +5,27 @@ export default defineGkdApp({
   name: '搜书大师',
   groups: [
 {
-    key: 1,
-    name: '开屏广告',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    order: -10,
-    rules: [
+      key: 1,
+      name: '开屏广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      order: -10,
+      rules: [
       {
-          key: 0,
-          matches: '[id="com.flyersoft.seekbooks:id/splash_container1"] >5 [text^="跳过"][text.length<=3]',
-          snapshotUrls: 'https://i.gkd.li/i/12857275',
+        key: 0,
+        matches: '[id="com.flyersoft.seekbooks:id/splash_container1"] >5 [text^="跳过"][text.length<=3]',
+        snapshotUrls: 'https://i.gkd.li/i/12857275',
+        _uniqueKey: 0
       },
       {
-          key: 1,
-          matches: 'FrameLayout > TextView[text=null] - View[visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/13797352',
+        key: 1,
+        matches: 'FrameLayout > TextView[text=null] - View[visibleToUser=true]',
+        snapshotUrls: 'https://i.gkd.li/i/13797352',
+        _uniqueKey: 1
       },
-    ],
-  }
+      ],
+    },
   ],
 });

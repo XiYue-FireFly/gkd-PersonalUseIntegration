@@ -5,18 +5,20 @@ export default defineGkdApp({
   name: '知乎极速版',
   groups: [
 {
-    key: 1,
-    name: '局部广告-底部悬浮卡片',
-    desc: '点击关闭',
-    rules: [
+      key: 1,
+      name: '局部广告-底部悬浮卡片',
+      desc: '点击关闭',
+      rules: [
       {
-          fastQuery: true,
-          activityIds: 'com.zhihu.android.mixshortcontainer.MixShortContainerActivity',
-          matches: 'View[childCount=3] > @View[clickable=true][childCount=1][text=""] > Image[childCount=0][text=""] <<n [vid="view_content"]',
-          exampleUrls: 'https://e.gkd.li/23c80cb4-4bad-451c-b8e9-bfdbdfa7c6c5',
-          snapshotUrls: 'https://i.gkd.li/i/16413243',
+        key: 0,
+        activityIds: 'com.zhihu.android.mixshortcontainer.MixShortContainerActivity',
+        matches: 'View[childCount=3] > @View[clickable=true][childCount=1][text=""] > Image[childCount=0][text=""] <<n [vid="view_content"]',
+        snapshotUrls: 'https://i.gkd.li/i/16413243',
+        exampleUrls: 'https://e.gkd.li/23c80cb4-4bad-451c-b8e9-bfdbdfa7c6c5',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

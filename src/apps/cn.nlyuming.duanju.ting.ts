@@ -5,22 +5,28 @@ export default defineGkdApp({
   name: '星影视频',
   groups: [
 {
-    key: 1,
-    name: '其他-[您还未登录]弹窗',
-    desc: '点击关闭',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 1,
+      name: '其他-[您还未登录]弹窗',
+      desc: '点击关闭',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: 'cn.nlyuming.duanju.ting.MainActivity',
-          matches: '@ImageView[childCount=0][visibleToUser=true] < FrameLayout[childCount=1] <2 FrameLayout[childCount=3] < FrameLayout < FrameLayout < FrameLayout < FrameLayout < [id="android:id/content"]',
-          exampleUrls: 'https://m.gkd.li/57941037/3041769f-b644-460b-b0de-9c2a84518849',
-          snapshotUrls: 'https://i.gkd.li/i/14321891',
+        key: 0,
+        activityIds: 'cn.nlyuming.duanju.ting.MainActivity',
+        matches: '@ImageView[childCount=0][visibleToUser=true] < FrameLayout[childCount=1] <2 FrameLayout[childCount=3] < FrameLayout < FrameLayout < FrameLayout < FrameLayout < [id="android:id/content"]',
+        snapshotUrls: 'https://i.gkd.li/i/14321891',
+        exampleUrls: 'https://m.gkd.li/57941037/3041769f-b644-460b-b0de-9c2a84518849',
+        _uniqueKey: 0
       },
-      { key: 0, matches: '[desc="了解更多"] - [desc="我知道了"]' },
-    ],
-  }
+      {
+        key: 1,
+        matches: '[desc="了解更多"] - [desc="我知道了"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
   ],
 });

@@ -5,19 +5,21 @@ export default defineGkdApp({
   name: '下载管理',
   groups: [
 {
-    key: 1,
-    name: '更新提示',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 1,
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: '.DownloadList',
-          matches: '@[text="以后再说"] + [text="立即更新"]',
-          snapshotUrls: 'https://i.gkd.li/i/13631769',
+        key: 0,
+        activityIds: '.DownloadList',
+        matches: '@[text="以后再说"] + [text="立即更新"]',
+        snapshotUrls: 'https://i.gkd.li/i/13631769',
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

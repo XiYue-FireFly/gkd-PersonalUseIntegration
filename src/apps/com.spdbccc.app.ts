@@ -5,62 +5,64 @@ export default defineGkdApp({
   name: '浦大喜奔',
   groups: [
 {
-    key: 1,
-    name: '通知提示-代理提示弹窗',
-    desc: '点击[确定]',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    rules: [
+      key: 1,
+      name: '通知提示-代理提示弹窗',
+      desc: '点击[确定]',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
       {
-          fastQuery: true,
-          activityIds: '.sp.splash.activity.SplashActivity',
-          matches: [
-              '[text="提示"][visibleToUser=true]',
-              '[text="确定"][visibleToUser=true]',
-          ],
-          exampleUrls: 'https://e.gkd.li/e582c5d4-bce3-46a2-ad69-7d0ac4e2fb52',
-          snapshotUrls: 'https://i.gkd.li/i/18275651',
+        key: 0,
+        activityIds: '.sp.splash.activity.SplashActivity',
+        matches: ['[text="提示"][visibleToUser=true]', '[text="确定"][visibleToUser=true]'],
+        snapshotUrls: 'https://i.gkd.li/i/18275651',
+        exampleUrls: 'https://e.gkd.li/e582c5d4-bce3-46a2-ad69-7d0ac4e2fb52',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 2,
-    name: '全屏广告-首页弹窗广告',
-    activityIds: '.sp.main.MainActivity',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 2,
+      name: '全屏广告-首页弹窗广告',
+      activityIds: '.sp.main.MainActivity',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          key: 1,
-          matches: '[vid="ckb_not_show_again"][checked=false][visibleToUser=true]',
-          exampleUrls: 'https://e.gkd.li/bb770917-9fbb-4910-9c9e-8bf58437bb1e',
-          snapshotUrls: 'https://i.gkd.li/i/18275682',
+        key: 1,
+        matches: '[vid="ckb_not_show_again"][checked=false][visibleToUser=true]',
+        snapshotUrls: 'https://i.gkd.li/i/18275682',
+        exampleUrls: 'https://e.gkd.li/bb770917-9fbb-4910-9c9e-8bf58437bb1e',
+        _uniqueKey: 1
       },
       {
-          preKeys: [
-              1,
-          ],
-          matches: '[vid="iv_kfc_image_close"][visibleToUser=true]',
-          exampleUrls: 'https://e.gkd.li/bb770917-9fbb-4910-9c9e-8bf58437bb1e',
-          snapshotUrls: 'https://i.gkd.li/i/18275682',
+        key: 2,
+        matches: '[vid="iv_kfc_image_close"][visibleToUser=true]',
+        snapshotUrls: 'https://i.gkd.li/i/18275682',
+        exampleUrls: 'https://e.gkd.li/bb770917-9fbb-4910-9c9e-8bf58437bb1e',
+        preKeys: [1],
+        _uniqueKey: 2
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 3,
-    name: '局部广告-悬浮广告',
-    rules: [
+      key: 3,
+      name: '局部广告-悬浮广告',
+      rules: [
       {
-          fastQuery: true,
-          activityIds: '.sp.main.MainActivity',
-          matches: '[vid="ll_quolity_float_close"][visibleToUser=true]',
-          exampleUrls: 'https://e.gkd.li/4cb41225-609a-4b7f-8ff4-ecca03d37c38',
-          snapshotUrls: 'https://i.gkd.li/i/18275729',
+        key: 0,
+        activityIds: '.sp.main.MainActivity',
+        matches: '[vid="ll_quolity_float_close"][visibleToUser=true]',
+        snapshotUrls: 'https://i.gkd.li/i/18275729',
+        exampleUrls: 'https://e.gkd.li/4cb41225-609a-4b7f-8ff4-ecca03d37c38',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

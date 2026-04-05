@@ -5,68 +5,83 @@ export default defineGkdApp({
   name: '小米社区',
   groups: [
 {
-    key: 1,
-    name: '更新提示',
-    actionMaximum: 1,
-    resetMatch: 'app',
-    rules: [
+      key: 1,
+      name: '更新提示',
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
       {
-          activityIds: 'miuix.appcompat.app.AlertDialog',
-          matches: '@[text="稍后安装"] < LinearLayout - ScrollView >(4) [text="发现新版本"]',
-          snapshotUrls: 'https://i.gkd.li/i/12642466',
+        key: 0,
+        activityIds: 'miuix.appcompat.app.AlertDialog',
+        matches: '@[text="稍后安装"] < LinearLayout - ScrollView >(4) [text="发现新版本"]',
+        snapshotUrls: 'https://i.gkd.li/i/12642466',
+        _uniqueKey: 0
       },
-      { key: 0, matches: '@[text="稍后安装"] < LinearLayout - ScrollView >(4) [text="发现新版本"]' },
-    ],
-  },
+      {
+        key: 1,
+        matches: '@[text="稍后安装"] < LinearLayout - ScrollView >(4) [text="发现新版本"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
 {
-    key: 2,
-    name: '局部广告-评论区卡片广告',
-    rules: [
+      key: 2,
+      name: '局部广告-评论区卡片广告',
+      rules: [
       {
-          activityIds: 'com.xiaomi.vipaccount.newbrowser.NormalWebActivity',
-          matches: '[text="closeGray"][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/12642459',
+        key: 0,
+        activityIds: 'com.xiaomi.vipaccount.newbrowser.NormalWebActivity',
+        matches: '[text="closeGray"][clickable=true]',
+        snapshotUrls: 'https://i.gkd.li/i/12642459',
+        _uniqueKey: 0
       },
-      { key: 0, matches: '[text="closeGray"][clickable=true]' },
-    ],
-  },
+      {
+        key: 1,
+        matches: '[text="closeGray"][clickable=true]',
+        _uniqueKey: 1
+      },
+      ],
+    },
 {
-    key: 3,
-    name: '全屏广告-签到弹窗',
-    rules: [
+      key: 3,
+      name: '全屏广告-签到弹窗',
+      rules: [
       {
-          activityIds: 'com.xiaomi.vipaccount.newbrowser.NormalWebActivity',
-          matches: '[text="签到赢权益"] +n Image[text*="cancel_circle"]',
-          snapshotUrls: 'https://i.gkd.li/i/13328271',
+        key: 0,
+        activityIds: 'com.xiaomi.vipaccount.newbrowser.NormalWebActivity',
+        matches: '[text="签到赢权益"] +n Image[text*="cancel_circle"]',
+        snapshotUrls: 'https://i.gkd.li/i/13328271',
+        _uniqueKey: 0
       },
-      { key: 0, matches: '[text="签到赢权益"] +n Image[text*="cancel_circle"]' },
-    ],
-  },
+      {
+        key: 1,
+        matches: '[text="签到赢权益"] +n Image[text*="cancel_circle"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
 {
-    key: 4,
-    name: '全屏广告-公告板弹窗',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 4,
+      name: '全屏广告-公告板弹窗',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: [
-              'com.xiaomi.vipaccount.ui.home.page.HomeFrameActivity',
-              'com.xiaomi.vipaccount.newbrowser.NormalWebActivity',
-          ],
-          anyMatches: [
-              '[desc="公告版弹窗"] +2 [id="com.xiaomi.vipaccount:id/close"]',
-              '[desc="公告版弹窗"] + ViewGroup[vid="image_container"] > [id="com.xiaomi.vipaccount:id/close"]',
-          ],
-          exampleUrls: 'https://e.gkd.li/46e16bc5-2f13-408e-9c34-927a13ba3e9c',
-          snapshotUrls: [
-              'https://i.gkd.li/i/13400617',
-              'https://i.gkd.li/i/24289621',
-          ],
+        key: 0,
+        activityIds: ['com.xiaomi.vipaccount.ui.home.page.HomeFrameActivity', 'com.xiaomi.vipaccount.newbrowser.NormalWebActivity'],
+        snapshotUrls: ['https://i.gkd.li/i/13400617', 'https://i.gkd.li/i/24289621'],
+        exampleUrls: 'https://e.gkd.li/46e16bc5-2f13-408e-9c34-927a13ba3e9c',
+        anyMatches: ['[desc="公告版弹窗"] +2 [id="com.xiaomi.vipaccount:id/close"]', '[desc="公告版弹窗"] + ViewGroup[vid="image_container"] > [id="com.xiaomi.vipaccount:id/close"]'],
+        _uniqueKey: 0
       },
-      { key: 0, matches: '[desc="公告版弹窗"] +2 [id="com.xiaomi.vipaccount:id/close"]' },
-    ],
-  }
+      {
+        key: 1,
+        matches: '[desc="公告版弹窗"] +2 [id="com.xiaomi.vipaccount:id/close"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
   ],
 });

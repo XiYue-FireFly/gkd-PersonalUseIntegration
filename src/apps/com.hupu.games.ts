@@ -5,61 +5,39 @@ export default defineGkdApp({
   name: '虎扑',
   groups: [
 {
-    key: 1,
-    name: '分段广告-信息流广告',
-    desc: '点击卡片右上角广告文字,出现广告反馈,点击屏蔽该广告',
-    activityIds: [
-      'com.hupu.games.main.MainActivity',
-      'com.hupu.android.bbs.detail.PostDetailActivity',
-      'com.hupu.topic.TopicActivity',
-      'com.hupu.android.bbs.page.rating.ratingDetail.RatingDetailActivity',
-    ],
-    fastQuery: true,
-    rules: [
+      key: 1,
+      name: '分段广告-信息流广告',
+      desc: '点击卡片右上角广告文字,出现广告反馈,点击屏蔽该广告',
+      activityIds: ['com.hupu.games.main.MainActivity', 'com.hupu.android.bbs.detail.PostDetailActivity', 'com.hupu.topic.TopicActivity', 'com.hupu.android.bbs.page.rating.ratingDetail.RatingDetailActivity'],
+      fastQuery: true,
+      rules: [
       {
-          key: 0,
-          matches: '[vid="shield_view"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/12511005',
-              'https://i.gkd.li/i/13258026',
-              'https://i.gkd.li/i/13259692',
-              'https://i.gkd.li/i/15360331',
-          ],
+        key: 0,
+        matches: '[vid="shield_view"]',
+        snapshotUrls: ['https://i.gkd.li/i/12511005', 'https://i.gkd.li/i/13258026', 'https://i.gkd.li/i/13259692', 'https://i.gkd.li/i/15360331'],
+        _uniqueKey: 0
       },
       {
-          preKeys: [
-              0,
-          ],
-          key: 1,
-          matches: '@[clickable=true] > [text="屏蔽该广告" || text="不感兴趣"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/12511010',
-              'https://i.gkd.li/i/12534848',
-              'https://i.gkd.li/i/13259699',
-              'https://i.gkd.li/i/15360360',
-              'https://i.gkd.li/i/17869227',
-          ],
+        key: 1,
+        matches: '@[clickable=true] > [text="屏蔽该广告" || text="不感兴趣"]',
+        snapshotUrls: ['https://i.gkd.li/i/12511010', 'https://i.gkd.li/i/12534848', 'https://i.gkd.li/i/13259699', 'https://i.gkd.li/i/15360360', 'https://i.gkd.li/i/17869227'],
+        preKeys: [0],
+        _uniqueKey: 1
       },
       {
-          key: 0,
-          matches: '@[id="com.hupu.games:id/shield_view"] >2 [id="com.hupu.games:id/tv_tag"][text="广告"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/12511005',
-              'https://i.gkd.li/i/13258026',
-              'https://i.gkd.li/i/13259692',
-          ],
+        key: 2,
+        matches: '@[id="com.hupu.games:id/shield_view"] >2 [id="com.hupu.games:id/tv_tag"][text="广告"]',
+        snapshotUrls: ['https://i.gkd.li/i/12511005', 'https://i.gkd.li/i/13258026', 'https://i.gkd.li/i/13259692'],
+        _uniqueKey: 2
       },
       {
-          preKeys: 0,
-          key: 1,
-          matches: '@[clickable=true] > [id="com.hupu.games:id/tv_title"][text="屏蔽该广告"]',
-          snapshotUrls: [
-              'https://i.gkd.li/i/12511010',
-              'https://i.gkd.li/i/12534848',
-              'https://i.gkd.li/i/13259699',
-          ],
+        key: 3,
+        matches: '@[clickable=true] > [id="com.hupu.games:id/tv_title"][text="屏蔽该广告"]',
+        snapshotUrls: ['https://i.gkd.li/i/12511010', 'https://i.gkd.li/i/12534848', 'https://i.gkd.li/i/13259699'],
+        preKeys: 0,
+        _uniqueKey: 3
       },
-    ],
-  }
+      ],
+    },
   ],
 });

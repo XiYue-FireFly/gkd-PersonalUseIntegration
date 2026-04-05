@@ -5,17 +5,23 @@ export default defineGkdApp({
   name: 'OnStream',
   groups: [
 {
-    key: 1,
-    name: '全屏广告',
-    rules: [
+      key: 1,
+      name: '全屏广告',
+      rules: [
       {
-          fastQuery: true,
-          activityIds: 'co.notix.interstitial.InterstitialActivity',
-          matches: '[vid="tv_button"]',
-          snapshotUrls: 'https://i.gkd.li/i/13842558',
+        key: 0,
+        activityIds: 'co.notix.interstitial.InterstitialActivity',
+        matches: '[vid="tv_button"]',
+        snapshotUrls: 'https://i.gkd.li/i/13842558',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-      { key: 0, matches: '[vid="tv_button"]' },
-    ],
-  }
+      {
+        key: 1,
+        matches: '[vid="tv_button"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
   ],
 });

@@ -5,31 +5,32 @@ export default defineGkdApp({
   name: 'WakeUp课程表',
   groups: [
 {
-    key: 1,
-    name: '评价提示',
-    rules: [
+      key: 1,
+      name: '评价提示',
+      rules: [
       {
-          fastQuery: true,
-          activityIds: 'com.suda.yzune.wakeupschedule.schedule.ScheduleActivity',
-          matches: '@[vid="ib_close"][clickable=true] +n [text$="五星好评"]',
-          snapshotUrls: 'https://i.gkd.li/i/24230090',
+        key: 0,
+        activityIds: 'com.suda.yzune.wakeupschedule.schedule.ScheduleActivity',
+        matches: '@[vid="ib_close"][clickable=true] +n [text$="五星好评"]',
+        snapshotUrls: 'https://i.gkd.li/i/24230090',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 2,
-    name: '更新提示',
-    rules: [
+      key: 2,
+      name: '更新提示',
+      rules: [
       {
-          fastQuery: true,
-          activityIds: 'com.suda.yzune.wakeupschedule.schedule.ScheduleActivity',
-          matches: [
-              '[text^="新版"]',
-              '[vid="update_close"][clickable=true]',
-          ],
-          snapshotUrls: 'https://i.gkd.li/i/24336743',
+        key: 0,
+        activityIds: 'com.suda.yzune.wakeupschedule.schedule.ScheduleActivity',
+        matches: ['[text^="新版"]', '[vid="update_close"][clickable=true]'],
+        snapshotUrls: 'https://i.gkd.li/i/24336743',
+        fastQuery: true,
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

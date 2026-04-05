@@ -5,19 +5,25 @@ export default defineGkdApp({
   name: '无线魔盒',
   groups: [
 {
-    key: 1,
-    name: '更新提示',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    rules: [
+      key: 1,
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
       {
-          activityIds: 'cn.com.ruijie.wifibox.activity.MainActivity',
-          matches: '@ImageView[id="cn.com.ruijie.magicbox:id/imageView_close"] +(2) RelativeLayout > LinearLayout > [text*="新版本"]',
-          snapshotUrls: 'https://i.gkd.li/i/12642359',
+        key: 0,
+        activityIds: 'cn.com.ruijie.wifibox.activity.MainActivity',
+        matches: '@ImageView[id="cn.com.ruijie.magicbox:id/imageView_close"] +(2) RelativeLayout > LinearLayout > [text*="新版本"]',
+        snapshotUrls: 'https://i.gkd.li/i/12642359',
+        _uniqueKey: 0
       },
-      { key: 0, matches: '@ImageView[id="cn.com.ruijie.magicbox:id/imageView_close"] +(2) RelativeLayout > LinearLayout > [text*="新版本"]' },
-    ],
-  }
+      {
+        key: 1,
+        matches: '@ImageView[id="cn.com.ruijie.magicbox:id/imageView_close"] +(2) RelativeLayout > LinearLayout > [text*="新版本"]',
+        _uniqueKey: 1
+      },
+      ],
+    },
   ],
 });

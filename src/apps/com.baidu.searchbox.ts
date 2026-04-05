@@ -5,67 +5,80 @@ export default defineGkdApp({
   name: '百度',
   groups: [
 {
-    key: 1,
-    name: '全屏广告-红包弹窗',
-    desc: '点击关闭',
-    fastQuery: true,
-    rules: [
+      key: 1,
+      name: '全屏广告-红包弹窗',
+      desc: '点击关闭',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: 'com.baidu.searchbox.MainActivity',
-          matches: '@View[vid="obfuscated"][clickable=true][visibleToUser=false] +3 [text="看视频，领现金"]',
-          snapshotUrls: 'https://i.gkd.li/i/13806848',
+        key: 0,
+        activityIds: 'com.baidu.searchbox.MainActivity',
+        matches: '@View[vid="obfuscated"][clickable=true][visibleToUser=false] +3 [text="看视频，领现金"]',
+        snapshotUrls: 'https://i.gkd.li/i/13806848',
+        _uniqueKey: 0
       },
       {
-          activityIds: 'com.baidu.searchbox.MainActivity',
-          matches: '@ImageView[vid="obfuscated"][text=null][childCount=0][clickable=true][visibleToUser=true][index=1] <2 LinearLayout[childCount=2] < FrameLayout[childCount=1] < [id="android:id/content"]',
-          snapshotUrls: 'https://i.gkd.li/i/13988536',
+        key: 1,
+        activityIds: 'com.baidu.searchbox.MainActivity',
+        matches: '@ImageView[vid="obfuscated"][text=null][childCount=0][clickable=true][visibleToUser=true][index=1] <2 LinearLayout[childCount=2] < FrameLayout[childCount=1] < [id="android:id/content"]',
+        snapshotUrls: 'https://i.gkd.li/i/13988536',
+        _uniqueKey: 1
       },
       {
-          activityIds: 'com.baidu.searchbox.MainActivity',
-          matches: '@ImageView[vid="obfuscated"][text=null][childCount=0][clickable=true][visibleToUser=true] +4 [text^="继续看视频"]',
-          snapshotUrls: 'https://i.gkd.li/i/14034223',
+        key: 2,
+        activityIds: 'com.baidu.searchbox.MainActivity',
+        matches: '@ImageView[vid="obfuscated"][text=null][childCount=0][clickable=true][visibleToUser=true] +4 [text^="继续看视频"]',
+        snapshotUrls: 'https://i.gkd.li/i/14034223',
+        _uniqueKey: 2
       },
       {
-          activityIds: 'com.baidu.searchbox.MainActivity',
-          matches: '[text^="看视频"] -2 ImageView[index=4]',
-          snapshotUrls: 'https://i.gkd.li/i/13806848',
+        key: 3,
+        activityIds: 'com.baidu.searchbox.MainActivity',
+        matches: '[text^="看视频"] -2 ImageView[index=4]',
+        snapshotUrls: 'https://i.gkd.li/i/13806848',
+        _uniqueKey: 3
       },
       {
-          activityIds: 'com.baidu.searchbox.MainActivity',
-          matches: '[id="android:id/content"] >2 LinearLayout[childCount=2] > ImageView[index=1]',
-          snapshotUrls: 'https://i.gkd.li/i/13988536',
+        key: 4,
+        activityIds: 'com.baidu.searchbox.MainActivity',
+        matches: '[id="android:id/content"] >2 LinearLayout[childCount=2] > ImageView[index=1]',
+        snapshotUrls: 'https://i.gkd.li/i/13988536',
+        _uniqueKey: 4
       },
       {
-          activityIds: 'com.baidu.searchbox.MainActivity',
-          matches: 'ViewGroup[childCount=7] > ImageView[index=1]',
-          snapshotUrls: 'https://i.gkd.li/i/14034223',
+        key: 5,
+        activityIds: 'com.baidu.searchbox.MainActivity',
+        matches: 'ViewGroup[childCount=7] > ImageView[index=1]',
+        snapshotUrls: 'https://i.gkd.li/i/14034223',
+        _uniqueKey: 5
       },
-    ],
-  },
+      ],
+    },
 {
-    key: 2,
-    name: '更新提示',
-    desc: '点击关闭',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 2,
+      name: '更新提示',
+      desc: '点击关闭',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: '.update.UpdateDialogActivity',
-          matches: '@ImageView[desc="关闭"] <2 RelativeLayout < [id="android:id/content"]',
-          exampleUrls: 'https://m.gkd.li/57941037/f2712b2e-7327-4068-bcff-92646b3400bd',
-          snapshotUrls: 'https://i.gkd.li/i/14730100',
+        key: 0,
+        activityIds: '.update.UpdateDialogActivity',
+        matches: '@ImageView[desc="关闭"] <2 RelativeLayout < [id="android:id/content"]',
+        snapshotUrls: 'https://i.gkd.li/i/14730100',
+        exampleUrls: 'https://m.gkd.li/57941037/f2712b2e-7327-4068-bcff-92646b3400bd',
+        _uniqueKey: 0
       },
       {
-          matches: '[id="android:id/content"] > RelativeLayout > [vid="obfuscated"] + [desc="关闭"]',
-          exampleUrls: 'https://m.gkd.li/57941037/f2712b2e-7327-4068-bcff-92646b3400bd',
-          snapshotUrls: [
-              'https://i.gkd.li/i/14730100',
-              'https://i.gkd.li/i/14896700',
-          ],
+        key: 1,
+        matches: '[id="android:id/content"] > RelativeLayout > [vid="obfuscated"] + [desc="关闭"]',
+        snapshotUrls: ['https://i.gkd.li/i/14730100', 'https://i.gkd.li/i/14896700'],
+        exampleUrls: 'https://m.gkd.li/57941037/f2712b2e-7327-4068-bcff-92646b3400bd',
+        _uniqueKey: 1
       },
-    ],
-  }
+      ],
+    },
   ],
 });

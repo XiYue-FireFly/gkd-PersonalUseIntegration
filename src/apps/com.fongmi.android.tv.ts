@@ -5,19 +5,21 @@ export default defineGkdApp({
   name: '影视',
   groups: [
 {
-    key: 1,
-    name: '更新提示',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 1,
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: '.ui.activity.MainActivity',
-          matches: '[id="com.fongmi.android.tv:id/buttonPanel"] >2 [text="取消"]',
-          snapshotUrls: 'https://i.gkd.li/i/14035154',
+        key: 0,
+        activityIds: '.ui.activity.MainActivity',
+        matches: '[id="com.fongmi.android.tv:id/buttonPanel"] >2 [text="取消"]',
+        snapshotUrls: 'https://i.gkd.li/i/14035154',
+        _uniqueKey: 0
       },
-    ],
-  }
+      ],
+    },
   ],
 });

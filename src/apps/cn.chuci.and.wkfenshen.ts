@@ -5,30 +5,28 @@ export default defineGkdApp({
   name: '猴子分身',
   groups: [
 {
-    key: 1,
-    name: '全屏广告-购买会员弹窗',
-    matchTime: 10000,
-    actionMaximum: 1,
-    resetMatch: 'app',
-    fastQuery: true,
-    rules: [
+      key: 1,
+      name: '全屏广告-购买会员弹窗',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      rules: [
       {
-          activityIds: 'cn.chuci.and.wkfenshen.ActMain',
-          matches: [
-              '[id="cn.chuci.and.wkfenshen:id/dialog_local_buy_btn"]',
-              '[id="cn.chuci.and.wkfenshen:id/action_close"]',
-          ],
-          snapshotUrls: 'https://i.gkd.li/i/13226988',
+        key: 0,
+        activityIds: 'cn.chuci.and.wkfenshen.ActMain',
+        matches: ['[id="cn.chuci.and.wkfenshen:id/dialog_local_buy_btn"]', '[id="cn.chuci.and.wkfenshen:id/action_close"]'],
+        snapshotUrls: 'https://i.gkd.li/i/13226988',
+        _uniqueKey: 0
       },
       {
-          fastQuery: true,
-          matches: [
-              '[id="cn.chuci.and.wkfenshen:id/dialog_local_buy_btn"]',
-              '[id="cn.chuci.and.wkfenshen:id/action_close"]',
-          ],
-          snapshotUrls: 'https://i.gkd.li/i/13226988',
+        key: 1,
+        matches: ['[id="cn.chuci.and.wkfenshen:id/dialog_local_buy_btn"]', '[id="cn.chuci.and.wkfenshen:id/action_close"]'],
+        snapshotUrls: 'https://i.gkd.li/i/13226988',
+        fastQuery: true,
+        _uniqueKey: 1
       },
-    ],
-  }
+      ],
+    },
   ],
 });
