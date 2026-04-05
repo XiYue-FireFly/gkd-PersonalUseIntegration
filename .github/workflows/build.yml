@@ -1,0 +1,39 @@
+name: Build GKD Subscription
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate source files
+        run: npx tsx gen_template.cjs
+
+      - name: Build subscription
+        run: npx tsx scripts/build.ts
+
+      - name: Commit and push dist
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add dist/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "ci: auto build $(date +'%Y-%m-%d %H:%M')"
+            git push
+          fi
