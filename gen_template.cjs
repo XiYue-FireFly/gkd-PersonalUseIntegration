@@ -22,7 +22,37 @@ function serializeToTS(obj, indent = 2) {
   return JSON5.stringify(obj, null, indent);
 }
 
-function groupToTS(group, baseIndent = 2) {
+// 将 rule 转换为 TS 格式（兼容字符串和对象两种形式）
+function ruleToTS(rule) {
+  if (typeof rule === 'string') {
+    // 简化格式：直接是 matches 字符串
+    const escaped = rule.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+    return `      { key: 0, matches: '${escaped}' },`;
+  } else {
+    return serializeToTS(rule, 4)
+      .split('\n')
+      .map((l, i) => i === 0 ? '      ' + l : '      ' + l)
+      .join('\n') + ',';
+  }
+}
+
+// 将 rules 数组转换为 TS 格式（兼容字符串和对象数组两种形式）
+function rulesToTS(rules) {
+  if (typeof rules === 'string') {
+    // 字符串格式 → 转换为单条规则对象
+    const escaped = rules.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+    return `[\n      { key: 0, matches: '${escaped}' },\n    ]`;
+  } else if (Array.isArray(rules)) {
+    if (rules.length === 0) return '[]';
+    return '[\n' + rules.map(r => ruleToTS(r)).join('\n') + '\n    ]';
+  } else {
+    // object 类型（不应该出现，但容错处理）
+    return '[]';
+  }
+}
+
+// 将 group 的元字段（不含 rules）序列化为 TS
+function groupMetaToTS(group, baseIndent = 2) {
   const pad = ' '.repeat(baseIndent);
   const pad2 = ' '.repeat(baseIndent + 2);
   const lines = ['{'];
@@ -32,16 +62,14 @@ function groupToTS(group, baseIndent = 2) {
     'matchTime', 'actionMaximum', 'actionMaximumKey', 'resetMatch',
     'fastQuery', 'matchRoot', 'forcedTime', 'actionCdKey', 'priorityTime',
     'disableIfAppGroupMatch', 'order', 'categoryNames',
-    'rules', 'snapshotUrls', 'exampleUrls'
+    'snapshotUrls', 'exampleUrls'
   ];
 
-  const seenKeys = new Set();
-  const allKeys = [...orderedKeys.filter(k => k in group), ...Object.keys(group).filter(k => !orderedKeys.includes(k))];
+  const seenKeys = new Set(['rules']); // rules 单独处理
 
-  for (const key of allKeys) {
+  for (const key of orderedKeys) {
     if (!(key in group) || seenKeys.has(key)) continue;
     seenKeys.add(key);
-
     const val = group[key];
     if (val === undefined || val === null) continue;
 
@@ -65,8 +93,15 @@ function groupToTS(group, baseIndent = 2) {
     }
   }
 
+  // rules 单独序列化（关键修复！）
+  lines.push(pad2 + 'rules: ' + rulesToTS(group.rules) + ',');
   lines.push(pad + '}');
   return lines.join('\n');
+}
+
+// 兼容旧调用（app groups 不含 rules 作为顶层字段）
+function groupToTS(group, baseIndent = 2) {
+  return groupMetaToTS(group, baseIndent);
 }
 
 // ==================== Subscription ====================
@@ -119,7 +154,7 @@ ${data.globalGroups.map((g) => {
   const lines = [
     '  {',
     `    key: ${g.key ?? 'undefined'},`,
-    `    name: '${g.name || ''}',`,
+    `    name: '${(g.name || '').replace(/'/g, "\\'")}',`,
     `    categories: [${catName}],`,
   ];
   if (g.order !== undefined) lines.push(`    order: ${g.order},`);
@@ -133,7 +168,7 @@ ${data.globalGroups.map((g) => {
   if (g.disableIfAppGroupMatch !== undefined) lines.push(`    disableIfAppGroupMatch: '${g.disableIfAppGroupMatch}',`);
   if (g.fastQuery !== undefined) lines.push(`    fastQuery: ${g.fastQuery},`);
   if (g.matchRoot !== undefined) lines.push(`    matchRoot: ${g.matchRoot},`);
-  lines.push(`    rules: ${groupToTS(g, 4)}`);
+  lines.push(`    rules: ${rulesToTS(g.rules)}`);
   lines.push('  }');
   return lines.join('\n');
 }).join(',\n')}

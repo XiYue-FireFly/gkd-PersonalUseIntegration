@@ -4,36 +4,36 @@ export default defineGkdApp({
   id: 'com.zuoyebang.knowledge',
   name: '作业帮家长版',
   groups: [
-    {
-      key: 1,
-      name: '更新提示',
-      fastQuery: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      rules: [
-        {
+{
+    key: 1,
+    name: '更新提示',
+    matchTime: 10000,
+    actionMaximum: 1,
+    resetMatch: 'app',
+    fastQuery: true,
+    rules: [
+      {
           matches: '[id="com.zuoyebang.knowledge:id/cancel_button"]',
           snapshotUrls: 'https://i.gkd.li/i/13695522',
-        },
-        '[id="com.zuoyebang.knowledge:id/cancel_button"]',
-      ],
-    },
-    {
-      key: 3,
-      name: '评价提示-赏好评弹窗',
-      fastQuery: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      rules: [
-        {
+      },
+      { key: 0, matches: '[id="com.zuoyebang.knowledge:id/cancel_button"]' },
+    ],
+  },
+{
+    key: 3,
+    name: '评价提示-赏好评弹窗',
+    matchTime: 10000,
+    actionMaximum: 1,
+    resetMatch: 'app',
+    fastQuery: true,
+    rules: [
+      {
           activityIds: 'com.baidu.homework.activity.init.InitActivity',
           matches: 'TextView[id="com.zuoyebang.knowledge:id/btn_cancle"]',
           snapshotUrls: 'https://i.gkd.li/i/13043228',
-        },
-        'TextView[id="com.zuoyebang.knowledge:id/btn_cancle"]',
-      ],
-    },
+      },
+      { key: 0, matches: 'TextView[id="com.zuoyebang.knowledge:id/btn_cancle"]' },
+    ],
+  }
   ],
 });

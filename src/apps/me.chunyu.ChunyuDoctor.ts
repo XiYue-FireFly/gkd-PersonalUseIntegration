@@ -4,33 +4,33 @@ export default defineGkdApp({
   id: 'me.chunyu.ChunyuDoctor',
   name: '春雨医生',
   groups: [
-    {
-      key: 10,
-      name: '评价提示-应用评分弹窗',
-      fastQuery: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      rules: [
-        {
+{
+    key: 10,
+    name: '评价提示-应用评分弹窗',
+    matchTime: 10000,
+    actionMaximum: 1,
+    resetMatch: 'app',
+    fastQuery: true,
+    rules: [
+      {
           activityIds: [
-            '.Activities.MainActivity',
-            '.Activities.WelcomeActivity',
+              '.Activities.MainActivity',
+              '.Activities.WelcomeActivity',
           ],
           matches: '[text="给应用评分"] +(2) RelativeLayout > [text="下次再说"]',
           snapshotUrls: [
-            'https://i.gkd.li/i/12661907',
-            'https://i.gkd.li/i/12661924',
+              'https://i.gkd.li/i/12661907',
+              'https://i.gkd.li/i/12661924',
           ],
-        },
-        {
+      },
+      {
           matches: '[text="给应用评分"] +(2) RelativeLayout > [text="下次再说"]',
           snapshotUrls: [
-            'https://i.gkd.li/i/12661907',
-            'https://i.gkd.li/i/12661924',
+              'https://i.gkd.li/i/12661907',
+              'https://i.gkd.li/i/12661924',
           ],
-        },
-      ],
-    },
+      },
+    ],
+  }
   ],
 });

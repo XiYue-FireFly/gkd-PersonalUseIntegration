@@ -4,23 +4,23 @@ export default defineGkdApp({
   id: 'com.didapinche.booking',
   name: '嘀嗒出行',
   groups: [
-    {
-      key: 1,
-      name: '开屏广告',
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      rules: [
-        {
+{
+    key: 1,
+    name: '开屏广告',
+    matchTime: 10000,
+    actionMaximum: 1,
+    resetMatch: 'app',
+    order: -10,
+    rules: [
+      {
           fastQuery: true,
           matches: '@View[clickable=true] <n * <2 * < [vid="flCSJAdContainer"]',
           snapshotUrls: [
-            'https://i.gkd.li/i/13988957',
-            'https://i.gkd.li/i/13989178',
+              'https://i.gkd.li/i/13988957',
+              'https://i.gkd.li/i/13989178',
           ],
-        },
-      ],
-      order: -10,
-    },
+      },
+    ],
+  }
   ],
 });

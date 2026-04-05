@@ -4,18 +4,18 @@ export default defineGkdApp({
   id: 'com.wzwh.bzpaipan',
   name: '问真八字排盘',
   groups: [
-    {
-      key: 3,
-      name: '全屏广告',
-      rules: [
-        {
+{
+    key: 3,
+    name: '全屏广告',
+    rules: [
+      {
           fastQuery: true,
           activityIds: 'com.qq.e.ads.PortraitADActivity',
           matches: '@ImageView[clickable=true] < LinearLayout[childCount=1] <2 FrameLayout[childCount=2] < [id="android:id/content"][childCount=1]',
           snapshotUrls: 'https://i.gkd.li/i/13162912',
-        },
-        '@ImageView[clickable=true] < LinearLayout[childCount=1] <2 FrameLayout[childCount=2] < [id="android:id/content"][childCount=1]',
-      ],
-    },
+      },
+      { key: 0, matches: '@ImageView[clickable=true] < LinearLayout[childCount=1] <2 FrameLayout[childCount=2] < [id="android:id/content"][childCount=1]' },
+    ],
+  }
   ],
 });

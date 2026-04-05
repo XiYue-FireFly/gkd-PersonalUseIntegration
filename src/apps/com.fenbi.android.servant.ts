@@ -4,17 +4,17 @@ export default defineGkdApp({
   id: 'com.fenbi.android.servant',
   name: '粉笔',
   groups: [
-    {
-      key: 1,
-      name: '未分类-升级弹窗',
-      activityIds: 'com.fenbi.android.module.home.HomeActivity',
-      rules: [
-        {
+{
+    key: 1,
+    name: '未分类-升级弹窗',
+    enable: false,
+    activityIds: 'com.fenbi.android.module.home.HomeActivity',
+    rules: [
+      {
           matches: '[id="com.fenbi.android.servant:id/close"]',
           snapshotUrls: 'https://i.gkd.li/i/12999725',
-        },
-      ],
-      enable: false,
-    },
+      },
+    ],
+  }
   ],
 });

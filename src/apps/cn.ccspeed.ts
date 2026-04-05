@@ -4,24 +4,24 @@ export default defineGkdApp({
   id: 'cn.ccspeed',
   name: 'CC加速器',
   groups: [
-    {
-      key: 1,
-      name: '局部广告-加速页分享抽奖浮窗',
-      fastQuery: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      rules: [
-        {
+{
+    key: 1,
+    name: '局部广告-加速页分享抽奖浮窗',
+    matchTime: 10000,
+    actionMaximum: 1,
+    resetMatch: 'app',
+    fastQuery: true,
+    rules: [
+      {
           activityIds: 'cn.ccspeed.app.MainActivity',
           matches: '@ImageView[visibleToUser=true] + [id="cn.ccspeed:id/iv_float"]',
           snapshotUrls: 'https://i.gkd.li/i/13539299',
-        },
-        {
+      },
+      {
           matches: 'FrameLayout[id="cn.ccspeed:id/float_layout"] > ImageView - ImageView',
           snapshotUrls: 'https://i.gkd.li/i/13539299',
-        },
-      ],
-    },
+      },
+    ],
+  }
   ],
 });

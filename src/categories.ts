@@ -1,6 +1,6 @@
-import { defineGkdCategories } from '@gkd-kit/define';
+import { GkdCategory } from '@gkd-kit/api';
 
-export default defineGkdCategories([
+export default <GkdCategory[]>[
   {
     key: 0,
     name: '开屏广告',
@@ -55,5 +55,5 @@ export default defineGkdCategories([
     key: 10,
     name: '其他',
     enable: false,
-  },
-]);
+  }
+];

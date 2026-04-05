@@ -4,20 +4,20 @@ export default defineGkdApp({
   id: 'com.pandabus.android.zb',
   name: '淄博出行',
   groups: [
-    {
-      key: 3,
-      name: '全屏广告-弹窗广告',
-      fastQuery: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      rules: [
-        {
+{
+    key: 3,
+    name: '全屏广告-弹窗广告',
+    matchTime: 10000,
+    actionMaximum: 1,
+    resetMatch: 'app',
+    fastQuery: true,
+    rules: [
+      {
           matches: '[id="com.pandabus.android.zb:id/iv_native_dislike"]',
           snapshotUrls: 'https://i.gkd.li/i/13400177',
-        },
-        '[id="com.pandabus.android.zb:id/iv_native_dislike"]',
-      ],
-    },
+      },
+      { key: 0, matches: '[id="com.pandabus.android.zb:id/iv_native_dislike"]' },
+    ],
+  }
   ],
 });

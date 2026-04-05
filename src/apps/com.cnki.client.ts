@@ -4,20 +4,20 @@ export default defineGkdApp({
   id: 'com.cnki.client',
   name: '手机知网',
   groups: [
-    {
-      key: 1,
-      name: '更新提示',
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      rules: [
-        {
+{
+    key: 1,
+    name: '更新提示',
+    matchTime: 10000,
+    actionMaximum: 1,
+    resetMatch: 'app',
+    rules: [
+      {
           activityIds: '.core.tramp.SplashActivity',
           matches: '[id="com.cnki.client:id/update_undo"]',
           snapshotUrls: 'https://i.gkd.li/i/12854857',
-        },
-        '[id="com.cnki.client:id/update_undo"]',
-      ],
-    },
+      },
+      { key: 0, matches: '[id="com.cnki.client:id/update_undo"]' },
+    ],
+  }
   ],
 });

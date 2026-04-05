@@ -1,16 +1,18 @@
-import { defineGkdSubscription } from '@gkd-kit/define';
-import { batchImportApps } from '@gkd-kit/tools';
+import { Subscription } from '@gkd-kit/api';
 import categories from './categories';
 import globalGroups from './globalGroups';
+import apps from './apps';
 
-export default defineGkdSubscription({
+export default <Subscription>{
   id: 888,
-  name: 'GKD合并订阅(aoguai+AIsouler+Adpro)',
-  version: 407,
-  author: 'aoguai & AIsouler & Adpro (merged)',
-  checkUpdateUrl: './gkd.version.json5',
-  supportUri: 'https://github.com/gkd-kit/subscription/issues/new/choose',
+  name: 'GKD订阅',
+  version: 1,
+  author: '',
+  description: '',
+  supportUri: '',
+  openEmptyRuleGroup: true,
+  referenceRules: [],
   categories,
   globalGroups,
-  apps: await batchImportApps(`${import.meta.dirname}/apps`),
-});
+  apps,
+};

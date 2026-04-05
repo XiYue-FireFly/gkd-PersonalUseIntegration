@@ -4,34 +4,34 @@ export default defineGkdApp({
   id: 'com.lofter.android',
   name: 'LOFTER',
   groups: [
-    {
-      key: 0,
-      name: '开屏广告',
-      fastQuery: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      actionMaximumKey: 0,
-      rules: [
-        {
+{
+    key: 0,
+    name: '开屏广告',
+    matchTime: 10000,
+    actionMaximum: 1,
+    actionMaximumKey: 0,
+    resetMatch: 'app',
+    fastQuery: true,
+    order: -10,
+    rules: [
+      {
           key: 0,
           matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/15023951',
-        },
-        {
+      },
+      {
           key: 1,
           matches: 'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true][visibleToUser=true] + TextView[text=null] <<n [id="android:id/content"]',
           snapshotUrls: 'https://i.gkd.li/i/14204158',
-        },
-      ],
-      order: -10,
-    },
-    {
-      key: 1,
-      name: '局部广告-悬浮广告',
-      desc: '点击关闭',
-      rules: [
-        {
+      },
+    ],
+  },
+{
+    key: 1,
+    name: '局部广告-悬浮广告',
+    desc: '点击关闭',
+    rules: [
+      {
           fastQuery: true,
           matchTime: 10000,
           actionMaximum: 1,
@@ -40,8 +40,8 @@ export default defineGkdApp({
           matches: '[vid="global_ad_layout"] > [vid="close"][visibleToUser=true]',
           exampleUrls: 'https://e.gkd.li/0559eada-7899-4c8a-8634-ef3f55227492',
           snapshotUrls: 'https://i.gkd.li/i/16494241',
-        },
-      ],
-    },
+      },
+    ],
+  }
   ],
 });

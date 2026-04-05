@@ -4,15 +4,17 @@ export default defineGkdApp({
   id: 'com.github.catvod.app',
   name: '猫影视',
   groups: [
-    {
-      key: 1,
-      name: '功能类-应用协议弹窗',
-      resetMatch: 'app',
-      actionMaximum: 1,
-      activityIds: 'com.github.catvod.app.MainActivity',
-      rules: '[desc*="本软件仅供学习"] + [desc="同意"]',
-      snapshotUrls: 'https://i.gkd.li/i/13938918',
-      enable: false,
-    },
+{
+    key: 1,
+    name: '功能类-应用协议弹窗',
+    enable: false,
+    activityIds: 'com.github.catvod.app.MainActivity',
+    actionMaximum: 1,
+    resetMatch: 'app',
+    snapshotUrls: 'https://i.gkd.li/i/13938918',
+    rules: [
+      { key: 0, matches: '[desc*="本软件仅供学习"] + [desc="同意"]' },
+    ],
+  }
   ],
 });
