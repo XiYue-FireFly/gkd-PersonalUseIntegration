@@ -1,0 +1,25 @@
+{
+  "name": "gkd-merged-subscription",
+  "version": "0.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsx ./scripts/build.ts",
+    "check": "tsx ./scripts/check.ts"
+  },
+  "devDependencies": {
+    "@gkd-kit/api": "^0.8.0",
+    "@gkd-kit/define": "^0.0.1",
+    "@gkd-kit/tools": "^0.8.0",
+    "json5": "^2.2.3",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "gkd": {
+    "outDir": "dist",
+    "file": "gkd.json5",
+    "versionFile": "gkd.version.json5"
+  }
+}
