@@ -17,13 +17,17 @@ export default defineGkdApp({
           activityIds: 'com.cloudera.android.ui.activity.SplashActivity',
           matches: [
             '[text*="跳过" && text.length<=10]',
-            '[vid*="skip" || vid*="count"]',
+            '[vid*="skip" || vid*="count" || vid*="jump"]',
           ],
           snapshotUrls: 'https://i.gkd.li/i/18375410',
         },
         {
           matches: '[text*="跳过" && text.length<=10][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/18375410',
+        },
+        {
+          matches: '[text*="跳过" && text*="s" && text.length<=10][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/18375415',
         },
       ],
     },
@@ -61,8 +65,13 @@ export default defineGkdApp({
         },
         {
           activityIds: 'com.cloudera.android.ui.activity.MainActivity',
-          matches: '[text*="广告" && text.length<=4][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/18375414',
+          matches: '[text="立即参与" || text="立即领取"] + [text="查看"] + [text="×"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/18375416',
+        },
+        {
+          activityIds: 'com.cloudera.android.ui.activity.MainActivity',
+          matches: '[text="京东"] <<n [text="×"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/18375417',
         },
       ],
     },
