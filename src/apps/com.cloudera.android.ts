@@ -18,6 +18,11 @@ export default defineGkdApp({
           matches: '[text="跳过"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/18375410',
         },
+        {
+          activityIds: 'com.cloudera.android.ui.activity.SplashActivity',
+          matches: '[text^="跳过" && text.length<=4][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/18375415',
+        },
       ],
     },
     {
