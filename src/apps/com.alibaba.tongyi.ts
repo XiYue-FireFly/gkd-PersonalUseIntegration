@@ -15,6 +15,13 @@ export default defineGkdApp({
       rules: [
         {
           activityIds: 'com.alibaba.tongyi.ui.activity.SplashActivity',
+          matches: [
+            '[text*="跳过" && text.length<=10]',
+            '[vid*="skip" || vid*="count" || vid*="jump"]',
+          ],
+          snapshotUrls: 'https://i.gkd.li/i/18375430',
+        },
+        {
           matches: '[text*="跳过" && text.length<=10][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/18375430',
         },
