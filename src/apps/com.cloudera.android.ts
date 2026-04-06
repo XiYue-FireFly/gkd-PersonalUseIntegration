@@ -59,6 +59,11 @@ export default defineGkdApp({
           matches: '[text^="来 oppo 软件商店"] + [vid="close_btn" || id="close_btn" || text="×"]',
           snapshotUrls: 'https://i.gkd.li/i/18375413',
         },
+        {
+          activityIds: 'com.cloudera.android.ui.activity.MainActivity',
+          matches: '[text*="广告" && text.length<=4][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/18375414',
+        },
       ],
     },
   ],
