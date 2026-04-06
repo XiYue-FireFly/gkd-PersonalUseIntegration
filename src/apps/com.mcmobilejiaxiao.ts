@@ -47,6 +47,11 @@ export default defineGkdApp({
           matches: '[text^="来 oppo 软件商店" || text*="附近动态"] + [vid="close_btn" || id="close_btn" || text="×"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/18375422',
         },
+        {
+          activityIds: 'com.mcmobilejiaxiao.ui.activity.MainActivity',
+          matches: '[text="立即领取"] + [text="查看"] + [text="×"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/18375423',
+        },
       ],
     },
   ],

@@ -941,6 +941,7 @@ import com_midea_vm_washer from './apps/com.midea.vm.washer';
 import com_cloudera_android from './apps/com.cloudera.android';
 import com_theappninjas_fakegpsjoystick from './apps/com.theappninjas.fakegpsjoystick';
 import com_mcmobilejiaxiao from './apps/com.mcmobilejiaxiao';
+import com_alibaba_tongyi from './apps/com.alibaba.tongyi';
 
 export default <GkdApp[]>[
   com_google_android_gm,
@@ -1884,5 +1885,6 @@ export default <GkdApp[]>[
   com_midea_vm_washer,
   com_cloudera_android,
   com_theappninjas_fakegpsjoystick,
-  com_mcmobilejiaxiao
+  com_mcmobilejiaxiao,
+  com_alibaba_tongyi
 ];
