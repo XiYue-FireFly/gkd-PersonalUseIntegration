@@ -940,6 +940,7 @@ import so_tita from './apps/so.tita';
 import com_midea_vm_washer from './apps/com.midea.vm.washer';
 import com_cloudera_android from './apps/com.cloudera.android';
 import com_theappninjas_fakegpsjoystick from './apps/com.theappninjas.fakegpsjoystick';
+import com_mcmobilejiaxiao from './apps/com.mcmobilejiaxiao';
 
 export default <GkdApp[]>[
   com_google_android_gm,
@@ -1882,5 +1883,6 @@ export default <GkdApp[]>[
   so_tita,
   com_midea_vm_washer,
   com_cloudera_android,
-  com_theappninjas_fakegpsjoystick
+  com_theappninjas_fakegpsjoystick,
+  com_mcmobilejiaxiao
 ];

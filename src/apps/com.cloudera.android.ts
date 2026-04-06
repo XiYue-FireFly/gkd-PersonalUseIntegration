@@ -27,5 +27,39 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 1,
+      name: '全屏广告',
+      categoryKey: 7,
+      fastQuery: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
+        {
+          activityIds: 'com.cloudera.android.ui.activity.MainActivity',
+          matches: '@[text="清除" || text="关闭" || vid="close_btn" || id="close_btn"]',
+          snapshotUrls: 'https://i.gkd.li/i/18375411',
+        },
+      ],
+    },
+    {
+      key: 2,
+      name: '局部广告',
+      categoryKey: 6,
+      fastQuery: true,
+      rules: [
+        {
+          activityIds: 'com.cloudera.android.ui.activity.MainActivity',
+          matches: '[text="京东" || text="查看详情"] + [vid="close_btn" || id="close_btn" || text="×"]',
+          snapshotUrls: 'https://i.gkd.li/i/18375412',
+        },
+        {
+          activityIds: 'com.cloudera.android.ui.activity.MainActivity',
+          matches: '[text^="来 oppo 软件商店"] + [vid="close_btn" || id="close_btn" || text="×"]',
+          snapshotUrls: 'https://i.gkd.li/i/18375413',
+        },
+      ],
+    },
   ],
 });
