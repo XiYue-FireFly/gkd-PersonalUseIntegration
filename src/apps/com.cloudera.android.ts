@@ -36,6 +36,11 @@ export default defineGkdApp({
       rules: [
         {
           activityIds: 'com.cloudera.android.ui.activity.MainActivity',
+          matches: '@[text="×"][visibleToUser=true][childCount=0]',
+          snapshotUrls: 'https://i.gkd.li/i/18375421',
+        },
+        {
+          activityIds: 'com.cloudera.android.ui.activity.MainActivity',
           matches: '@[text="清除" || text="关闭" || vid="close_btn" || id="close_btn"]',
           snapshotUrls: 'https://i.gkd.li/i/18375411',
         },
@@ -56,6 +61,11 @@ export default defineGkdApp({
           activityIds: 'com.cloudera.android.ui.activity.MainActivity',
           matches: '[text="立即参与" || text="立即领取"] + [text="查看"] + [text="×"][visibleToUser=true][childCount=0]',
           snapshotUrls: 'https://i.gkd.li/i/18375416',
+        },
+        {
+          activityIds: 'com.cloudera.android.ui.activity.MainActivity',
+          matches: '[text="立即下载"] + [text="×"][visibleToUser=true][childCount=0]',
+          snapshotUrls: 'https://i.gkd.li/i/18375422',
         },
       ],
     },
