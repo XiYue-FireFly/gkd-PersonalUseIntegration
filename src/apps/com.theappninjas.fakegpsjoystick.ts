@@ -43,7 +43,28 @@ export default defineGkdApp({
           matches: '@[text="×"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/18375413',
         },
+        {
+          activityIds: 'com.theappninjas.fakegpsjoystick.ui.MainActivity',
+          matches: '@[text="×" && visibleToUser=true][childCount=0]',
+          snapshotUrls: 'https://i.gkd.li/i/18375418',
+        },
         '@[text="关闭广告" || desc="关闭广告" || text="×"]',
+      ],
+    },
+    {
+      key: 2,
+      name: '开屏广告',
+      categoryKey: 0,
+      fastQuery: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
+        {
+          activityIds: 'com.theappninjas.fakegpsjoystick.ui.MainActivity',
+          matches: '@[text="×"][visibleToUser=true][childCount=0]',
+          snapshotUrls: 'https://i.gkd.li/i/18375419',
+        },
       ],
     },
   ],
