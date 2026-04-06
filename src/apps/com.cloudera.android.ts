@@ -15,10 +15,16 @@ export default defineGkdApp({
       rules: [
         {
           activityIds: 'com.cloudera.android.ui.activity.SplashActivity',
-          matches: '[text*="跳过" || text*="Skip"][text.length<=10]',
+          matches: [
+            '[text*="跳过" && text.length<=10]',
+            '[vid*="skip" || vid*="count"]',
+          ],
           snapshotUrls: 'https://i.gkd.li/i/18375410',
         },
-        '[text*="跳过" || text*="Skip"][text.length<=10]',
+        {
+          matches: '[text*="跳过" && text.length<=10][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/18375410',
+        },
       ],
     },
   ],
