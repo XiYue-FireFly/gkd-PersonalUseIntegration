@@ -65,6 +65,11 @@ export default defineGkdApp({
           matches: '@[text="×"][visibleToUser=true][childCount=0]',
           snapshotUrls: 'https://i.gkd.li/i/18375419',
         },
+        {
+          activityIds: 'com.theappninjas.fakegpsjoystick.ui.MainActivity',
+          matches: '[text*="跳过" && text.length<=10][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/18375420',
+        },
       ],
     },
   ],
