@@ -938,6 +938,8 @@ import com_hihanhan_one_rt45 from './apps/com.hihanhan.one.rt45';
 import com_tencent_qqlite from './apps/com.tencent.qqlite';
 import so_tita from './apps/so.tita';
 import com_midea_vm_washer from './apps/com.midea.vm.washer';
+import com_cloudera_android from './apps/com.cloudera.android';
+import com_theappninjas_fakegpsjoystick from './apps/com.theappninjas.fakegpsjoystick';
 
 export default <GkdApp[]>[
   com_google_android_gm,
@@ -1878,5 +1880,7 @@ export default <GkdApp[]>[
   com_hihanhan_one_rt45,
   com_tencent_qqlite,
   so_tita,
-  com_midea_vm_washer
+  com_midea_vm_washer,
+  com_cloudera_android,
+  com_theappninjas_fakegpsjoystick
 ];
