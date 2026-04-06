@@ -38,7 +38,12 @@ export default defineGkdApp({
           matches: '@[text="关闭广告" || desc="关闭广告" || vid="close_btn" || id="close_btn"]',
           snapshotUrls: 'https://i.gkd.li/i/18375412',
         },
-        '@[text="关闭广告" || desc="关闭广告"]',
+        {
+          activityIds: 'com.theappninjas.fakegpsjoystick.ui.MainActivity',
+          matches: '@[text="×"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/18375413',
+        },
+        '@[text="关闭广告" || desc="关闭广告" || text="×"]',
       ],
     },
   ],
